@@ -1,0 +1,43 @@
+version: '3.6'
+
+services:
+  wordpress:
+    image: wordpress:5.9.0
+    restart: always
+    container_name: sce.wordpress
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wp_sce
+    volumes:
+      - ./app:/var/www/html
+    networks:
+      - default
+
+  db:
+    image: mysql:5.7
+    restart: always
+    platform: linux/amd64
+    container_name: sce.db
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      MYSQL_DATABASE: 'wp_sce'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'password'
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - default
+
+volumes:
+  wordpress:
+  db:
+
+networks:
+  default:
+    driver: bridge
