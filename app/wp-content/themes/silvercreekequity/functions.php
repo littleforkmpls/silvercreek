@@ -70,6 +70,47 @@ function my_deregister_scripts(){
 }
 add_action('wp_footer', 'my_deregister_scripts');
 
+function remove_json_api () {
+
+    // Remove the REST API lines from the HTML Header
+    remove_action('wp_head', 'rest_output_link_wp_head', 10);
+    remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+
+    // Remove the REST API endpoint.
+    remove_action('rest_api_init', 'wp_oembed_register_route');
+
+    // Turn off oEmbed auto discovery.
+    add_filter('embed_oembed_discover', '__return_false');
+
+    // Don't filter oEmbed results.
+    remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+
+    // Remove oEmbed discovery links.
+    remove_action('wp_head', 'wp_oembed_add_discovery_links');
+
+    // Remove oEmbed-specific JavaScript from the front-end and back-end.
+    remove_action('wp_head', 'wp_oembed_add_host_js');
+
+    // Remove all embeds rewrite rules.
+    add_filter('rewrite_rules_array', 'disable_embeds_rewrites');
+}
+add_action('after_setup_theme', 'remove_json_api');
+
+// Remove Gutenberg Block Library CSS from loading on the frontend
+function try_remove_wp_block_library_css() {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('wc-block-style'); // Remove WooCommerce block CSS
+    wp_dequeue_style('global-styles'); // Remove theme.json
+}
+add_action('wp_enqueue_scripts', 'try_remove_wp_block_library_css', 100);
+
+function remove_global_styles() {
+  remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+  remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
+}
+add_action('after_setup_theme', 'remove_global_styles', 10, 0);
+
 /* ====================================================================================================
    Enqueue Scripts and Styles
 ==================================================================================================== */
