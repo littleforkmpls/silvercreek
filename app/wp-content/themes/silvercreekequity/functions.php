@@ -80,7 +80,7 @@ add_action('wp_footer', 'my_deregister_scripts');
 ==================================================================================================== */
 function include_scripts_and_styles() {
     wp_enqueue_style(
-        'nssm-style',
+        'sce-style',
         get_template_directory_uri() . '/assets/styles/app.css',
         array(),
         '',
@@ -88,7 +88,7 @@ function include_scripts_and_styles() {
     );
 
    wp_enqueue_script(
-        'nssm-script',
+        'sce-script',
         get_template_directory_uri() . '/assets/scripts/app.js',
         array(),
         '',
