@@ -1,10 +1,5 @@
 <?php
 /* ====================================================================================================
-   Constants
-==================================================================================================== */
-define('DISALLOW_FILE_EDIT', true); // don't allow file editing via the admin
-
-/* ====================================================================================================
    Theme Support Configuration
 ==================================================================================================== */
 add_theme_support('menus');
@@ -71,7 +66,7 @@ add_filter('xmlrpc_enabled', function (): bool {
 });
 
 function my_deregister_scripts(){
-    wp_deregister_script( 'wp-embed' );
+    wp_deregister_script('wp-embed');
 }
 add_action('wp_footer', 'my_deregister_scripts');
 
@@ -97,16 +92,6 @@ function include_scripts_and_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'include_scripts_and_styles');
-
-/* ====================================================================================================
-   Customize Admin Panel
-==================================================================================================== */
-function hide_admin_pages(){
-    global $submenu;
-    remove_action('admin_menu', '_add_themes_utility_last', 101); // remove theme editor link
-}
-
-add_action('admin_menu', 'hide_admin_pages');
 
 /* ====================================================================================================
    Enable ACF Functionality
