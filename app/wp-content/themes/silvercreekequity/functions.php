@@ -37,16 +37,6 @@ add_action(
     }
 );
 
-// custom image sizes(s)
-add_image_size('card-image-size', 400, 400, true );
-
-// add classes to pagination links
-add_filter('next_posts_link_attributes', 'posts_link_attributes');
-add_filter('previous_posts_link_attributes', 'posts_link_attributes');
-function posts_link_attributes() {
-    return 'class="btn btn--fixedSize"';
-}
-
 /* ====================================================================================================
    Cleanup the Head
 ==================================================================================================== */
@@ -127,15 +117,6 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 /* ====================================================================================================
-   Enable Novo Map on Posts
-==================================================================================================== */
-add_filter( 'novo_map_allowed_post_type', 'novo_map_post_types' );
-function novo_map_post_types($types) {
-    $types = array('post');
-    return $types;
-}
-
-/* ====================================================================================================
    Enable Support for uploading SVGs to Media Library
 ==================================================================================================== */
 add_filter('wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
@@ -180,7 +161,7 @@ add_action( 'admin_head', 'fix_svg' );
 function custom_menus() {
     register_nav_menus(
         array(
-            'masthead-navigation' => 'Masthead Navigation'
+            'primary-navigation' => 'Primary Navigation'
         )
     );
 }
