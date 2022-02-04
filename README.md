@@ -16,11 +16,13 @@ Silver Creek Equity is a WordPress site originally developed in 2022 to showcase
 ## Initial Setup
 
 1. Create Hosting account on WPEngine
-1. Setup a site using WPEngine admin panel
+1. Setup a prod and stage site using WPEngine admin panel
 1. Create an ssh keypair for WPEngine Deployment
 1. Add private key to the GitHub Repository Secrets using the name `WPE_SSHG_KEY_PRIVATE`
 1. Add public key to WPEngine SSH Gateway Key settings
 1. Make sure `.gitignore` is setup to ignore files you don't want to deploy
+1. Create `.github/workflows/main.yml` and mimic the example
+1. Add the WPEngine environment names and GitHub branch names to `.github/workflows/main.yml`
 
 ## Local Development
 
