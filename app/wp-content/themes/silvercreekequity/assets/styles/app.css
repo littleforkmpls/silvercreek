@@ -198,6 +198,39 @@ a:active {
 /* ---------------------------------------------------------------------
  Landmark - Footer
 ------------------------------------------------------------------------ */
+.footer {
+    padding: 20px;
+}
+
+.footer__legal {
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------------
+ Layout - Site (basically a sticky footer)
+------------------------------------------------------------------------ */
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.site__main {
+    flex: 1;
+}
+
+/* ---------------------------------------------------------------------
+ Layout - Tier
+------------------------------------------------------------------------ */
+.tier {
+    min-height: 20px;
+}
+
+.tier--peacock-dark-gradient {
+    background-color: var(--color-brand-peacock);
+    background-image: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+}
+
 
 /* ---------------------------------------------------------------------
  Layout - Wrapper
