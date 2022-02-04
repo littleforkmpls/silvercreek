@@ -21,3 +21,5 @@ jobs:
         PRD_BRANCH: main
         PRD_ENV: scequity
 
+        STG_BRANCH: develop
+        STG_ENV: scequitystage
