@@ -1,7 +1,7 @@
 <?php // HOME PAGE ?>
 
 <?php get_header(); ?>
-<div class="main" role="main">
+<div class="site__main" role="main">
 
     <div class="tier">
         <div class="wrapper">

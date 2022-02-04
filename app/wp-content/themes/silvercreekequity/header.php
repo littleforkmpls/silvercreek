@@ -7,11 +7,12 @@
         <?php wp_head(); ?>
     </head>
     <body>
-        <div class="tier">
-            <div class="wrapper">
-                <div class="masthead" role="banner">
+        <div class="site">
+            <div class="site__masthead" role="banner">
+                <div class="tier">
+                    <div class="wrapper">
 
+
+                    </div>
                 </div>
             </div>
-        </div>
-
