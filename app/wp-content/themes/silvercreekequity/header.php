@@ -11,37 +11,45 @@
             <div class="site__masthead" role="banner">
                 <div class="tier tier--peacock-dark-gradient">
                     <div class="wrapper">
-                        <div class="masthead">
+                        <div class="masthead" role="nav">
                             <div class="masthead__brand">
-                                <div class="logo">
-                                    <img src="" alt="Silver Creek Equity" />
-                                </div>
+                                <a href="<?php echo site_url(); ?>">
+                                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/silver-creek-equity-logo.svg" alt="Silver Creek Equity" />
+                                </a>
                             </div>
-                            <div class="masthead__nav">
-                                <div class="nav" role="nav">
-                                    <ul id="primaryNav" class="nav__list">
-                                        <li>
-                                            <a href="#">About</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Projects</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">News</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Contact</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="masthead__toggle">
+                                <a class="masthead__toggle__icon" href="#toggle" role="button" id="js-navToggleTrigger" aria-expanded="false">
+                                    <span class="masthead__toggle__icon__bar masthead__toggle__icon__bar--top"></span>
+                                    <span class="masthead__toggle__icon__bar masthead__toggle__icon__bar--bottom"></span>
+                                </a>
                             </div>
-                            <div class="masthead__utils">
-                                <div class="utils">
-                                    <div class="utils__contact">
-                                        <a href="#">612-282-7053</a>
+                            <div class="masthead__nav" id="js-navToggleTarget" aria-hidden="true">
+                                <div class="masthead__nav__primary">
+                                    <div class="nav">
+                                        <ul id="primaryNav" class="nav__list">
+                                            <li>
+                                                <a href="#about">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="#projects">Projects</a>
+                                            </li>
+                                            <li>
+                                                <a href="#news">News</a>
+                                            </li>
+                                            <li>
+                                                <a href="#contact">Contact</a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="utils__portal"
-                                        <a href="#">Login</a>
+                                </div>
+                                <div class="masthead__nav__secondary">
+                                    <div class="utils">
+                                        <div class="utils__contact">
+                                            <a href="#phone">612-282-7053</a>
+                                        </div>
+                                        <div class="utils__portal">
+                                            <a href="#login">Login</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
