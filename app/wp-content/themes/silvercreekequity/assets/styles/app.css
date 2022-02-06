@@ -2,9 +2,27 @@
  Fonts
 ------------------------------------------------------------------------ */
 @font-face {
-    font-family: "Bodoni72";
-    src: url("../fonts/bodoni72/bodoni72-book.woff2") format("woff2"),
-         url('../fonts/bodoni72/bodoni72-book.woff') format('woff');
+    font-family: "Bodoni72-Book";
+    src: url("../fonts/bodoni72/book.woff2") format("woff2"),
+         url('../fonts/bodoni72/book.woff') format('woff');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FreightSansPro-Medium";
+    src: url("../fonts/freight-sans-pro/medium.woff2") format("woff2"),
+         url('../fonts/freight-sans-pro/medium.woff') format('woff');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FreightSansPro-SemiBold";
+    src: url("../fonts/freight-sans-pro/semibold.woff2") format("woff2"),
+         url('../fonts/freight-sans-pro/semibold.woff') format('woff');
     font-display: swap;
     font-weight: normal;
     font-style: normal;
@@ -95,16 +113,19 @@ template {
     --color-brand-peacock: #273c40;
     --color-brand-light: #d9d9d9;
     --color-brand-dark: #030d01;
-    --fontFamily-sans: "Freight Sans Pro", Helvetica, Arial, sans-serif;
-    --fontFamily-serif: "Bodoni72", Georgia, Times, Times New Roman, serif;
-    --fontSize-xs: 14px;
+    --fontFamily-sans: "FreightSansPro-Medium", Helvetica, Arial, sans-serif;
+    --fontFamily-sans-bold: "FreightSansPro-SemiBold", Helvetica, Arial, sans-serif;
+    --fontFamily-serif: "Bodoni72-Book", Georgia, Times, Times New Roman, serif;
+    --fontSize-xxs: 14px;
+    --fontSize-xs: 15px;
     --fontSize-sm: 16px;
     --fontSize-md: 18px;
     --fontSize-lg: 21px;
     --fontSize-xl: 24px;
     --fontSize-xxl: 36px;
+    --fontSize-xxxl: 72px;
     --lineHeight-one: 1;
-    --lineHeight-std: 1.5;
+    --lineHeight-std: 1.55;
 }
 
 /* ---------------------------------------------------------------------
