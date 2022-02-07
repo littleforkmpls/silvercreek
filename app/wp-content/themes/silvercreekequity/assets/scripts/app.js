@@ -2,7 +2,9 @@ const body = document.querySelector('body');
 const navToggleTrigger = document.querySelector("#js-navToggleTrigger");
 const navToggleTarget  = document.querySelector("#js-navToggleTarget");
 
-navToggleTrigger.onclick = function () {
+navToggleTrigger.onclick = function (e) {
+
+    e.preventDefault();
 
     let navIsVisible = navToggleTarget.getAttribute('aria-hidden');
 

@@ -25,32 +25,30 @@
                             </div>
                             <div class="masthead__nav" id="js-navToggleTarget" aria-hidden="true">
                                 <div class="masthead__nav__primary">
-                                    <div class="nav">
-                                        <ul id="primaryNav" class="nav__list">
-                                            <li>
-                                                <a href="#about">About</a>
-                                            </li>
-                                            <li>
-                                                <a href="#projects">Projects</a>
-                                            </li>
-                                            <li>
-                                                <a href="#news">News</a>
-                                            </li>
-                                            <li>
-                                                <a href="#contact">Contact</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <ul id="primaryNav" class="masthead__nav__primary__list">
+                                        <li>
+                                            <a href="#about">About</a>
+                                        </li>
+                                        <li>
+                                            <a href="#projects">Projects</a>
+                                        </li>
+                                        <li>
+                                            <a href="#news">News</a>
+                                        </li>
+                                        <li>
+                                            <a href="#contact">Contact</a>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="masthead__nav__secondary">
-                                    <div class="utils">
-                                        <div class="utils__contact">
+                                    <ul class="masthead__nav__secondary__list">
+                                        <li>
                                             <a href="#phone">612-282-7053</a>
-                                        </div>
-                                        <div class="utils__portal">
+                                        </li>
+                                        <li>
                                             <a href="#login">Login</a>
-                                        </div>
-                                    </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

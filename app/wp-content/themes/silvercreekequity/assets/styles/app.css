@@ -139,7 +139,7 @@ body {
     min-height: 100vh;
     background-color: var(--color-white);
     color: var(--color-brand-dark);
-    font-family: var(--fontFamily-serif);
+    font-family: var(--fontFamily-sans);
     font-size: var(--fontSize-md);
     line-height: var(--lineHeight-std);
     font-style: normal;
@@ -237,110 +237,218 @@ a:active {
 /* ---------------------------------------------------------------------
  Landmark - Masthead
 ------------------------------------------------------------------------ */
-.masthead {
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.masthead__brand {
-    width: 208px; /* calculated height of contained image is 48 to match nav toggle button */
-}
-
 .masthead__brand > a {
     display: block;
-    padding: 20px 0;
 }
 
 .masthead__brand > a > img {
     display: block;
 }
 
-.masthead__nav {
-    position: fixed;
-    top: 28px;
-    left: 0;
-    right: 0;
-    height: 0;
-    padding: 20px;
-    background-color: var(--color-brand-peacock);
-    overflow: hidden;
-    visibility: hidden;
-    transition: height 1s cubic-bezier(0.19, 1, 0.22, 1), 1s top, 1.5s visibility;
-    z-index: -1;
+@media (max-width: 779px) {
+    .masthead {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .masthead__brand {
+        width: 208px; /* calculated height of contained image is 48 to match nav toggle button */
+    }
+
+    .masthead__brand > a {
+        padding: 20px 0;
+    }
+
+    .masthead__nav {
+        position: fixed;
+        top: 28px;
+        left: 0;
+        right: 0;
+        height: 0;
+        padding: 20px;
+        background-color: var(--color-brand-peacock);
+        overflow: hidden;
+        visibility: hidden;
+        transition: height 1s cubic-bezier(0.19, 1, 0.22, 1), 1s top, 1.5s visibility;
+        z-index: -1;
+    }
+
+    .masthead__nav.isVisible {
+        top: 48px;
+        height: 100%;
+        overflow-x: scroll;
+        visibility: visible;
+        background-color: var(--color-brand-peacock);
+    }
+
+    .masthead__nav a {
+        display: block;
+        opacity: 0;
+        transition: opacity 0.75s, background-color 0.2s;
+
+        /* actually useful once displayed */
+        margin: 0 -20px; /* undo wrapper */
+        padding: 0 20px; /* redo wrapper */
+        height: 40px;
+        line-height: 40px;
+        font-family: var(--fontFamily-sans);
+        font-size: var(--fontSize-md);
+    }
+
+    .masthead__nav a:hover,
+    .masthead__nav a:focus {
+        background-color: rgba(220,220,220,0.2);
+    }
+
+    .masthead__nav.isVisible a {
+        opacity: 1;
+    }
+
+    .masthead__toggle {
+        width: calc(100% - 240px);
+    }
+
+    .masthead__toggle__icon {
+        position: absolute;
+        top: 0;
+        right: -20px; /* undo wrapp padding */
+        display: block;
+        height: 68px;
+        width: 48px;
+    }
+
+    .masthead__toggle__icon__bar {
+        position: absolute;
+        left: 10px;
+        right: 20px;
+        height: 1px;
+        background-color: var(--color-brand-light);
+        transition: transform 0.2s linear;
+    }
+
+    .masthead__toggle__icon__bar--top {
+        top: 30px;
+    }
+
+    .masthead__toggle__icon__bar--bottom {
+        bottom: 30px;
+    }
+
+    .masthead__toggle__icon[aria-expanded=true] .masthead__toggle__icon__bar--top {
+        transform: rotate(45deg) translateY(5px);
+    }
+
+    .masthead__toggle__icon[aria-expanded=true] .masthead__toggle__icon__bar--bottom {
+        transform: rotate(-45deg) translateY(-5px);
+    }
 }
 
-.masthead__nav.isVisible {
-    top: 48px;
-    height: 100%;
-    overflow-x: scroll;
-    visibility: visible;
-    background-color: var(--color-brand-peacock);
+@media (min-width: 780px) {
+    .masthead {
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px 0;
+    }
+
+    .masthead__brand{
+        width: 208px; /*220 later*/
+    }
+
+    .masthead__toggle {
+        display: none;
+    }
+
+    .masthead__nav {
+        width: calc(100% - 208px);
+    }
+
+    .masthead__nav__primary__list {
+        padding: 0 15px 0 30px;
+    }
+
+    .masthead__nav__primary__list li {
+        display: inline-block;
+    }
+
+    .masthead__nav__primary__list a {
+        display: block;
+        padding: 0 10px;
+        height: 28px;
+        line-height: 28px;
+        font-family: var(--fontFamily-serif);
+        font-size: var(--fontSize-md);
+    }
+
+    .masthead__nav__secondary {
+        position: absolute;
+        top: calc(50% - 14px);
+        right: -20px; /* undo wrapper */
+        display: block;
+        height: 28px;
+    }
+
+    .masthead__nav__secondary__list {
+        line-height: 1;
+    }
+
+    .masthead__nav__secondary__list li {
+        display: inline-block;
+    }
+
+    .masthead__nav__secondary__list a {
+        display: block;
+        height: 28px;
+        line-height: 28px;
+        font-family: var(--fontFamily-sans-bold);
+        font-size: var(--fontSize-xs);
+    }
+
+    .masthead__nav__secondary__list li:last-child a {
+        margin-left: 20px;
+        padding: 2px 16px;
+        height: 24px;
+        line-height: 24px;
+        background-color: var(--color-brand-light);
+        color: var(--color-brand-dark);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 }
 
-.masthead__nav a {
-    display: block;
-    opacity: 0;
-    transition: opacity 0.75s, background-color 0.2s;
+@media (min-width: 860px) {
+    .masthead__brand{
+        width: 260px;
+    }
 
-    /* actually useful once displayed */
-    margin: 0 -20px; /* undo wrapper */
-    padding: 0 20px; /* redo wrapper */
-    height: 40px;
-    line-height: 40px;
-    font-family: var(--fontFamily-sans);
-    font-size: var(--fontSize-md);
+    .masthead__toggle {
+        display: none;
+    }
 
+    .masthead__nav {
+        width: calc(100% - 260px);
+    }
 
-}
+    .masthead__nav__primary__list a {
+        height: 35px;
+        line-height: 35px;
+        font-size: var(--fontSize-lg);
+    }
 
-.masthead__nav a:hover,
-.masthead__nav a:focus {
-    background-color: rgba(220,220,220,0.2);
-}
+    .masthead__nav__secondary {
+        top: calc(50% - 17.5px);
+        height: 35px;
+    }
 
-.masthead__nav.isVisible a {
-    opacity: 1;
-}
-
-.masthead__toggle {
-    width: calc(100% - 240px);
-}
-
-.masthead__toggle__icon {
-    position: absolute;
-    top: 0;
-    right: -20px; /* undo wrapp padding */
-    display: block;
-    height: 68px;
-    width: 48px;
-}
-
-.masthead__toggle__icon__bar {
-    position: absolute;
-    left: 10px;
-    right: 20px;
-    height: 1px;
-    background-color: var(--color-brand-light);
-    transition: transform 0.2s linear;
-}
-
-.masthead__toggle__icon__bar--top {
-    top: 30px;
-}
-
-.masthead__toggle__icon__bar--bottom {
-    bottom: 30px;
-}
-
-.masthead__toggle__icon[aria-expanded=true] .masthead__toggle__icon__bar--top {
-    transform: rotate(45deg) translateY(5px);
-}
-
-.masthead__toggle__icon[aria-expanded=true] .masthead__toggle__icon__bar--bottom {
-    transform: rotate(-45deg) translateY(-5px);
+    .masthead__nav__secondary__list a {
+        height: 35px;
+        line-height: 35px;
+    }
 }
 
 /* ---------------------------------------------------------------------
