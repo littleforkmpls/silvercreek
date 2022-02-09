@@ -298,10 +298,10 @@ a:active {
         /* actually useful once displayed */
         margin: 0 -20px; /* undo wrapper */
         padding: 0 20px; /* redo wrapper */
-        height: 40px;
-        line-height: 40px;
+        height: 50px;
+        line-height: 50px;
         font-family: var(--fontFamily-sans);
-        font-size: var(--fontSize-md);
+        font-size: var(--fontSize-lg);
     }
 
     .masthead__nav a:hover,
