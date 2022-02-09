@@ -441,6 +441,7 @@ a:active {
     }
 
     .masthead__nav__primary__list a {
+        padding: 0 12px;
         height: 35px;
         line-height: 35px;
         font-size: var(--fontSize-lg);
@@ -454,6 +455,16 @@ a:active {
     .masthead__nav__secondary__list a {
         height: 35px;
         line-height: 35px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .masthead__nav__primary__list {
+        padding: 0 15px 0 60px;
+    }
+
+    .masthead__nav__primary__list a {
+
     }
 }
 
