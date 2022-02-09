@@ -30,7 +30,7 @@
                                             <a href="#about">About</a>
                                         </li>
                                         <li>
-                                            <a href="#projects">Projects</a>
+                                            <a class="isActive" href="#projects">Projects</a>
                                         </li>
                                         <li>
                                             <a href="#news">News</a>

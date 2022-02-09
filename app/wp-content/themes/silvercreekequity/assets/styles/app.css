@@ -110,9 +110,15 @@ template {
     --color-transparent: rgba(0,0,0,0);
     --color-white: #ffffff;
     --color-black: #000000;
-    --color-brand-peacock: #273c40;
+    --color-brand-peacock: #3e635c;
     --color-brand-light: #d9d9d9;
-    --color-brand-dark: #030d01;
+    --color-brand-dark: #091816;
+    --color-brand-light-gradLight: #fdfdfd;
+    --color-brand-light-gradDark: #bfbfbf;
+    --color-brand-peacock-gradLight: #3e635c;
+    --color-brand-peacock-gradDark: #2d4444;
+    --color-brand-peacock-dark-gradLight: #2d4444;
+    --color-brand-peacock-dark-gradDark: #081716;
     --fontFamily-sans: "FreightSansPro-Medium", Helvetica, Arial, sans-serif;
     --fontFamily-sans-bold: "FreightSansPro-SemiBold", Helvetica, Arial, sans-serif;
     --fontFamily-serif: "Bodoni72-Book", Georgia, Times, Times New Roman, serif;
@@ -478,11 +484,10 @@ a:active {
 }
 
 .tier--peacock-dark-gradient {
-    background-color: var(--color-brand-peacock);
-    background-image: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+    background-color: var(--color-brand-peacock-dark-gradLight);
+    background-image: linear-gradient(110deg, var(--color-brand-peacock-dark-gradLight) 0%, var(--color-brand-peacock-dark-gradLight) 30%, var(--color-brand-peacock-dark-gradDark) 100%);
     color: var(--color-white);
 }
-
 
 /* ---------------------------------------------------------------------
  Layout - Wrapper
