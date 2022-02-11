@@ -119,7 +119,7 @@ function include_scripts_and_styles() {
         'sce-style',
         get_template_directory_uri() . '/assets/styles/app.css',
         array(),
-        '',
+        filemtime(get_stylesheet_directory() . '/assets/styles/app.css'),
         'screen and (min-width: 1em)'
     );
 
@@ -127,7 +127,7 @@ function include_scripts_and_styles() {
         'sce-script',
         get_template_directory_uri() . '/assets/scripts/app.js',
         array(),
-        '',
+        filemtime(get_stylesheet_directory() . '/assets/scripts/app.js'),
         true
     );
 }
