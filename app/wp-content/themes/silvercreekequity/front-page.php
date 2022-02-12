@@ -16,7 +16,10 @@
                         <p class="txt txt--heroSub">We&rsquo;re private equity managers specializing in multifamily and senior living communities from concept to completion.</p>
                     </div>
                     <div class="hero__cta">
-                        <a class="btn btn--light" href="">About us</a>
+                        <a class="btn btn--light" href="">
+                            <span class="btn__txt">About us</span>
+                            <span class="btn__icon"></span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -26,7 +29,12 @@
     <div class="tier">
         <div class="wrapper">
             <div class="section">
-                <a class="btn" href="">All Projects</a>
+            <!--
+                <a class="btn" href="">
+                    <span class="btn__txt">All Projects</span>
+                    <span class="btn__icon"></span>
+                </a>
+            -->
             </div>
         </div>
     </div>

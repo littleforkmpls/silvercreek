@@ -507,9 +507,7 @@ a:active {
 /* ---------------------------------------------------------------------
  Layout - Tier
 ------------------------------------------------------------------------ */
-.tier {
-    min-height: 20px;
-}
+.tier {}
 
 .tier--peacock-dark-media {
     /* background-image supplied inline */
@@ -570,7 +568,7 @@ a:active {
     position: relative;
     display: inline-block;
     height: 34px;
-    padding: 0 20px;
+    padding: 0 30px 0 14px;
     border-color: var(--color-brand-dark);
     border-style: solid;
     border-width: 2px 20px;
@@ -585,10 +583,57 @@ a:active {
     white-space: nowrap;
 }
 
+.btn::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -18px;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-right: 18px solid var(--color-brand-peacock-dark);
+    border-bottom: 17px solid transparent;
+}
+
+.btn::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: -18px;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-left: 18px solid var(--color-brand-peacock-dark);
+    border-bottom: 17px solid transparent;
+}
+
+.btn__icon {
+    position: absolute;
+    top: calc(50% - 8px);
+    right: 0;
+    height: 16px;
+    width: 16px;
+    -webkit-mask-image: url("../images/arrow-right.svg");
+    mask-image: url("../images/arrow-right.svg");
+    background-color: var(--color-brand-light);
+}
+
 .btn--light {
     background-color: var(--color-brand-light);
     color: var(--color-brand-dark);
     border-color: var(--color-brand-peacock-dark);
+}
+
+.btn--light::before {
+    border-right-color: var(--color-brand-light);
+}
+
+.btn--light::after {
+    border-left-color: var(--color-brand-light);
+}
+
+.btn--light .btn__icon {
+    background-color: var(--color-brand-dark);
 }
 
 /* ---------------------------------------------------------------------
