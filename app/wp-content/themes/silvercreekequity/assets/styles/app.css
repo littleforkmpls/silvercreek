@@ -502,18 +502,35 @@ a:active {
 /* ---------------------------------------------------------------------
  Layout - Tier
 ------------------------------------------------------------------------ */
-.tier {
-    min-height: 20px;
+.tier {}
+
+.tier--main {
+    position: relative;
+    padding: 20px 0;
+}
+
+.tier--main .tier__ornament {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    background-color: var(--color-brand-peacock-gradLight);
+    background-image: linear-gradient(90deg, var(--color-brand-peacock-gradLight) 0%, var(--color-brand-peacock-gradDark) 100%);
+}
+
+.tier--main .tier__bd {
+    background-color: var(--color-white);
 }
 
 .tier--peacock-gradient {
     background-color: var(--color-brand-peacock-gradLight);
-    background-image: linear-gradient(110deg, var(--color-brand-peacock-gradLight) 0%, var(--color-brand-peacock-gradLight) 30%, var(--color-brand-peacock-gradDark) 100%);
+    background-image: linear-gradient(90deg, var(--color-brand-peacock-gradLight) 0%, var(--color-brand-peacock-gradDark) 100%);
 }
 
 .tier--peacock-dark-gradient {
     background-color: var(--color-brand-peacock-dark-gradLight);
-    background-image: linear-gradient(90deg, var(--color-brand-peacock-dark-gradLight) 0%, var(--color-brand-peacock-dark-gradDark) 100%);
+    background-image: linear-gradient(110deg, var(--color-brand-peacock-dark-gradLight) 0%, var(--color-brand-peacock-dark-gradLight) 30%, var(--color-brand-peacock-dark-gradDark) 100%);
 }
 
 .tier--peacock-dark-media {
@@ -562,7 +579,18 @@ a:active {
 }
 
 /* ---------------------------------------------------------------------
- Component - Button
+ Component - Slab
+------------------------------------------------------------------------ */
+.slab {
+    position: relative;
+    min-height: 800px;
+    background-color: var(--color-brand-light-gradDark);
+    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
+    z-index: 20;
+}
+
+/* ---------------------------------------------------------------------
+ Content - Button
 ------------------------------------------------------------------------ */
 .btn {
     all: unset;

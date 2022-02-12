@@ -3,6 +3,7 @@
 <?php get_header(); ?>
 <div class="site__main" role="main">
 
+    <?php // hero ?>
     <div class="tier tier--peacock-dark-media" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/content/hero-home.jpg')">
         <div class="wrapper">
             <div class="section">
@@ -26,19 +27,24 @@
         </div>
     </div>
 
-    <div class="tier tier--peacock-gradient">
-        <div class="wrapper">
-            <div class="section">
-            <!--
-                <a class="btn" href="">
-                    <span class="btn__txt">All Projects</span>
-                    <span class="btn__icon"></span>
-                </a>
-            -->
+    <?php // main content ?>
+    <div class="tier tier--main">
+        <div class="tier__ornament"></div>
+        <div class="tier__bd">
+            <div class="wrapper">
+                <div class="slab">
+
+                </div>
             </div>
         </div>
     </div>
 
+    <?php // contact form ?>
+    <div class="tier tier--peacock-gradient">
+        <div class="wrapper">
+
+        </div>
+    </div>
 
 </div>
 <?php get_footer(); ?>
