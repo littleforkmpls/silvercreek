@@ -43,17 +43,23 @@
                             </div>
                         </div>
                         <div class="section__bd">
-                            <div style="text-align: center">
-                                <h3 class="txt txt--hdg">Find the perfect project for your investment dollar.</h3>
-                                <p>From market rate apartments to a variety of unique senior living properties, our vast project portfolio gives you acres of investment options.</p>
-                                <div>Cards go here</div>
+                            <div class="feature">
+                                <div class="feature__hd">
+                                    <h3 class="txt txt--hdg">Find the perfect project for your investment dollar.</h3>
+                                </div>
+                                <div class="feature__bd">
+                                    <p>From market rate apartments to a variety of unique senior living properties, our vast project portfolio gives you acres of investment options.</p>
+                                </div>
                             </div>
                         </div>
+                        <div class="section__cards">
+
+                        </div>
                         <div class="section__ft">
-                            <a class="btn" href="">
+                            <!-- <a class="btn" href="">
                                 <span class="btn__txt">All Projects</span>
                                 <span class="btn__icon"></span>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
 
@@ -64,11 +70,17 @@
                             </div>
                         </div>
                         <div class="section__bd">
-                            <div style="text-align: center">
-                                <h3 class="txt txt--hdg">Our process creates low risk and high returns.</h3>
-                                <p>To give each project the best chance to succeed, we put our development experience to work and lean on the support of other experts in construction, design, project management and market study analysis.</p>
-                                <div>Cards go here</div>
+                            <div class="feature">
+                                <div class="feature__hd">
+                                    <h3 class="txt txt--hdg">Our process creates low risk and high returns.</h3>
+                                </div>
+                                <div class="feature__bd">
+                                 <p>To give each project the best chance to succeed, we put our development experience to work and lean on the support of other experts in construction, design, project management and market study analysis.</p>
+                                </div>
                             </div>
+                        </div>
+                        <div class="section__cards">
+
                         </div>
                     </div>
 
