@@ -11,7 +11,7 @@
             <div class="site__masthead" role="banner">
                 <div class="tier tier--peacock-dark-gradient">
                     <div class="wrapper">
-                        <div class="masthead" role="nav">
+                        <div class="masthead" role="navigation">
                             <div class="masthead__brand">
                                 <a href="<?php echo site_url(); ?>">
                                     <img src="<?php bloginfo('template_directory'); ?>/assets/images/silver-creek-equity-logo.svg" alt="Silver Creek Equity" />
