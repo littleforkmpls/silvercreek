@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="tier">
+    <div class="tier tier--peacock-gradient">
         <div class="wrapper">
             <div class="section">
             <!--

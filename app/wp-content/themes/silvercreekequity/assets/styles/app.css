@@ -245,6 +245,7 @@ a:active {
 .site__masthead {
     position: sticky;
     top: 0;
+    z-index: 99999;
 }
 
 .site__main {
@@ -377,6 +378,7 @@ a:active {
         justify-content: flex-start;
         align-items: flex-start;
         padding: 35px 0 20px 0;
+        color: var(--color-brand-light);
     }
 
     .masthead__brand{
@@ -486,18 +488,11 @@ a:active {
 }
 
 /* ---------------------------------------------------------------------
- Landmark - Navigation
------------------------------------------------------------------------- */
-
-/* ---------------------------------------------------------------------
- Landmark - Main
------------------------------------------------------------------------- */
-
-/* ---------------------------------------------------------------------
  Landmark - Footer
 ------------------------------------------------------------------------ */
 .footer {
     padding: 20px;
+    color: var(--color-brand-light);
 }
 
 .footer__legal {
@@ -507,7 +502,19 @@ a:active {
 /* ---------------------------------------------------------------------
  Layout - Tier
 ------------------------------------------------------------------------ */
-.tier {}
+.tier {
+    min-height: 20px;
+}
+
+.tier--peacock-gradient {
+    background-color: var(--color-brand-peacock-gradLight);
+    background-image: linear-gradient(110deg, var(--color-brand-peacock-gradLight) 0%, var(--color-brand-peacock-gradLight) 30%, var(--color-brand-peacock-gradDark) 100%);
+}
+
+.tier--peacock-dark-gradient {
+    background-color: var(--color-brand-peacock-dark-gradLight);
+    background-image: linear-gradient(90deg, var(--color-brand-peacock-dark-gradLight) 0%, var(--color-brand-peacock-dark-gradDark) 100%);
+}
 
 .tier--peacock-dark-media {
     /* background-image supplied inline */
@@ -515,12 +522,6 @@ a:active {
     background-size: cover;
     background-position: center center;
     background-blend-mode: multiply;
-}
-
-.tier--peacock-dark-gradient {
-    background-color: var(--color-brand-peacock-dark-gradLight);
-    background-image: linear-gradient(110deg, var(--color-brand-peacock-dark-gradLight) 0%, var(--color-brand-peacock-dark-gradLight) 30%, var(--color-brand-peacock-dark-gradDark) 100%);
-    color: var(--color-brand-light);
 }
 
 /* ---------------------------------------------------------------------
