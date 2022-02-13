@@ -112,7 +112,10 @@ template {
     --color-black: #000000;
     --color-brand-peacock: #1B8172;
     --color-brand-peacock-dark: #32645c;
+    --color-brand-peacock-darkest: #254544;
     --color-brand-light: #d9d9d9;
+    --color-brand-grey: #8c9093;
+    --color-brand-gray: var(--color-brand-grey); /* Just in case */
     --color-brand-dark: #001816;
     --color-brand-light-gradLight: #f2f2f2;
     --color-brand-light-gradDark: #bfbfbf;
@@ -323,6 +326,9 @@ a:active {
     .masthead__nav a:hover,
     .masthead__nav a:focus {
         color: var(--color-brand-peacock);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 20px;
     }
 
     .masthead__nav.isVisible a {
@@ -508,7 +514,7 @@ a:active {
     top: 0;
     left: 0;
     right: 0;
-    height: 250px;
+    height: 420px;
     background-color: var(--color-brand-peacock-gradLight);
     background-image: linear-gradient(90deg, var(--color-brand-peacock-gradLight) 0%, var(--color-brand-peacock-gradDark) 100%);
 }
@@ -583,6 +589,10 @@ a:active {
     margin-bottom: 30px;
 }
 
+.section__bd {
+    margin-bottom: 40px;
+}
+
 /* ---------------------------------------------------------------------
  Component - Feature
 ------------------------------------------------------------------------ */
@@ -611,6 +621,86 @@ a:active {
     background-color: var(--color-brand-light-gradDark);
     background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
     z-index: 20;
+}
+
+/* ---------------------------------------------------------------------
+ Component - Collection
+------------------------------------------------------------------------ */
+.collection {
+    overflow: hidden;
+    height: 400px;
+}
+
+.collection__stage {
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+}
+
+.collection__stage__list {
+    display: inline-flex;
+    vertical-align: top;
+}
+
+.collection__stage__list__item {
+    height: 430px; /* hide the scrollbar - bigger than .collection */
+    padding-right: 20px;
+}
+
+.collection__stage__list__item:first-child {
+    padding-left: 20px;
+}
+
+@media (min-width: 860px) {
+    .collection {
+        height: 440px;
+    }
+
+    .collection__stage__list__item {
+        height: 470px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+ Component - Card
+------------------------------------------------------------------------ */
+.card {
+    width: 260px;
+    padding-bottom: 20px;
+    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
+    box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.3);
+}
+
+.card__label {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: var(--color-brand-dark);
+    border-left: 20px solid var(--color-brand-grey);
+    border-right: 50px solid var(--color-brand-dark);
+    text-indent: 30px; /* equalize border treatments */
+}
+
+.card--completed .card__label {
+    background-color: var(--color-brand-peacock-darkest);
+    color: var(--color-brand-light);
+    border-left-color: var(--color-brand-peacock-dark);
+}
+
+.card--open .card__label {
+    background-color: var(--color-brand-peacock);
+    color: var(--color-white);
+    border-left-color: var(--color-brand-peacock-dark);
+}
+
+.card__bd {
+    padding: 40px 20px 20px 20px;
+    background-color: var(--color-white);
+}
+
+@media (min-width: 860px) {
+    .card {
+        width: 320px;
+    }
 }
 
 /* ---------------------------------------------------------------------
@@ -757,6 +847,15 @@ a:active {
     letter-spacing: 1px;
 }
 
+.txt--label {
+    font-family: var(--fontFamily-sans-bold);
+    font-size: var(--fontSize-sm);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: inherit; /* set by container */
+}
+
 .txt--body {
     font-family: var(--fontFamily-serif);
     font-size: var(--fontSize-md);
@@ -781,8 +880,6 @@ a:active {
         font-size: var(--fontSize-lg);
     }
 }
-
-
 
 /* Mix'n'Match */
 .txt--color-white { color: var(--color-white); }

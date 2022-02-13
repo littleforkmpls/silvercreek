@@ -53,7 +53,62 @@
                             </div>
                         </div>
                         <div class="section__cards">
-
+                            <div class="collection">
+                                <div class="collection__stage">
+                                    <div class="collection__stage__list">
+                                        <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                        <div class="collection__stage__list__item">
+                                            <a class="isInlineBlock" href="#">
+                                                <div class="card card--funded">
+                                                    <div class="card__label">
+                                                        <span class="txt txt--label">Funded</span>
+                                                    </div>
+                                                    <div class="card__bd">
+                                                        <h4>Project name goes here</h4>
+                                                        <h5>Minneapolis, MN</h5>
+                                                    </div>
+                                                    <div class="card__media">
+                                                        <img class="isBlock" src="https://via.placeholder.com/400x320.png?text=400x320" alt="" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="collection__stage__list__item">
+                                            <a class="isInlineBlock" href="#">
+                                                <div class="card card--completed">
+                                                    <div class="card__label">
+                                                        <span class="txt txt--label">Completed</span>
+                                                    </div>
+                                                    <div class="card__bd">
+                                                        <h4>Project name goes here</h4>
+                                                        <h5>Minneapolis, MN</h5>
+                                                    </div>
+                                                    <div class="card__media">
+                                                        <img class="isBlock" src="https://via.placeholder.com/400x320.png?text=400x320" alt="" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="collection__stage__list__item">
+                                            <a class="isInlineBlock" href="#">
+                                                <div class="card card--open">
+                                                    <div class="card__label">
+                                                        <span class="txt txt--label">Open</span>
+                                                    </div>
+                                                    <div class="card__bd">
+                                                        <h4>Project name goes here</h4>
+                                                        <h5>Minneapolis, MN</h5>
+                                                    </div>
+                                                    <div class="card__media">
+                                                        <img class="isBlock" src="https://via.placeholder.com/400x320.png?text=400x320" alt="" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="section__ft">
                             <!-- <a class="btn" href="">
