@@ -48,7 +48,7 @@
                                     <h3 class="txt txt--hdg">Find the perfect project for your investment dollar.</h3>
                                 </div>
                                 <div class="feature__bd">
-                                    <p>From market rate apartments to a variety of unique senior living properties, our vast project portfolio gives you acres of investment options.</p>
+                                    <p class="txt txt--body">From market rate apartments to a variety of unique senior living properties, our vast project portfolio gives you acres of investment options.</p>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                                     <h3 class="txt txt--hdg">Our process creates low risk and high returns.</h3>
                                 </div>
                                 <div class="feature__bd">
-                                 <p>To give each project the best chance to succeed, we put our development experience to work and lean on the support of other experts in construction, design, project management and market study analysis.</p>
+                                    <p class="txt txt--body">To give each project the best chance to succeed, we put our development experience to work and lean on the support of other experts in construction, design, project management and market study analysis.</p>
                                 </div>
                             </div>
                         </div>
