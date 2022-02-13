@@ -302,8 +302,8 @@ a:active {
 
     .masthead__nav.isVisible {
         top: 48px;
-        height: 100%;
-        overflow-x: scroll;
+        height: calc(100% - 88px); /* top + p-bot + p-top */
+        overflow: auto;
         visibility: visible;
 
     }
@@ -372,6 +372,10 @@ a:active {
     .masthead__toggle__icon[aria-expanded=true] .masthead__toggle__icon__bar--bottom {
         transform: rotate(-45deg) translateY(-5px);
     }
+
+    .masthead__nav__legal {
+        text-align: center;
+    }
 }
 
 @media (min-width: 780px) {
@@ -389,7 +393,9 @@ a:active {
         width: 208px; /*220 later*/
     }
 
-    .masthead__toggle {
+    .masthead__toggle,
+    .masthead__nav__social,
+    .masthead__nav__legal {
         display: none;
     }
 

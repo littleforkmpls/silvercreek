@@ -50,6 +50,24 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <div class="masthead__nav__social">
+                                    <ul>
+                                        <li>
+                                            <a href="#">LinkedIn</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Facebook</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Twitter</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="masthead__nav__legal">
+                                    <small class="txt txt--size-xs txt--family-sans">
+                                        &copy; <?php echo date('Y'); ?> Silver Creek Equity. All Rights Reserved.
+                                    </small>
+                                </div>
                             </div>
                         </div>
                     </div>
