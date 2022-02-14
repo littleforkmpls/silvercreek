@@ -51,20 +51,29 @@
                                     </ul>
                                 </div>
                                 <div class="masthead__nav__social">
-                                    <ul>
+                                    <ul class="masthead__nav__social__list">
                                         <li>
-                                            <a href="#">LinkedIn</a>
+                                            <a class="hasSocialIcon" href="#linkedin">
+                                                <i class="socialIcon socialIcon--linkedin"" aria-hidden="true"></i>
+                                                <span class="isVisuallyHidden">LinkedIn</span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="#">Facebook</a>
+                                            <a class="hasSocialIcon" href="#facebook">
+                                                <i class="socialIcon socialIcon--facebook"" aria-hidden="true"></i>
+                                                <span class="isVisuallyHidden">Facebook</span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="#">Twitter</a>
+                                            <a class="hasSocialIcon" href="#twitter">
+                                                <i class="socialIcon socialIcon--twitter"" aria-hidden="true"></i>
+                                                <span class="isVisuallyHidden">Twitter</span>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="masthead__nav__legal">
-                                    <small class="txt txt--size-xs txt--family-sans">
+                                    <small class="txt txt--size-xxs txt--family-sans">
                                         &copy; <?php echo date('Y'); ?> Silver Creek Equity. All Rights Reserved.
                                     </small>
                                 </div>
