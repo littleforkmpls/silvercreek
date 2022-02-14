@@ -629,6 +629,10 @@ a:active {
     margin-bottom: 40px;
 }
 
+.section__cards {
+    margin: 0 -20px; /* undo wrapper to fake offscreen stuff */
+}
+
 /* ---------------------------------------------------------------------
  Component - Feature
 ------------------------------------------------------------------------ */
@@ -674,6 +678,7 @@ a:active {
 
 .collection__stage__list {
     display: inline-flex;
+    padding: 0 20px; /* add back the wrapper removed in .section__cards */
     vertical-align: top;
 }
 
