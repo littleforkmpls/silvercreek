@@ -855,10 +855,6 @@ a:active {
     mask-size: 40px 40px;
 }
 
-a.hasSocialIcon:hover .socialIcon {
-    background-image: linear-gradient(90deg, var(--color-brand-peacock) 0%, var(--color-brand-peacock) 100%);
-}
-
 .socialIcon--linkedin {
     -webkit-mask-image: url("../images/icon-linkedin.svg");
     mask-image: url("../images/icon-linkedin.svg");
@@ -872,6 +868,16 @@ a.hasSocialIcon:hover .socialIcon {
 .socialIcon--twitter {
     -webkit-mask-image: url("../images/icon-twitter.svg");
     mask-image: url("../images/icon-twitter.svg");
+}
+
+a.hasSocialIcon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+a.hasSocialIcon:hover .socialIcon {
+    background-image: linear-gradient(90deg, var(--color-brand-peacock) 0%, var(--color-brand-peacock) 100%);
 }
 
 /* ---------------------------------------------------------------------
