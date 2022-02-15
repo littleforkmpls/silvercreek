@@ -527,8 +527,23 @@ a:active {
  Landmark - Footer
 ------------------------------------------------------------------------ */
 .footer {
-    padding: 20px;
+    padding: 20px 0;
     color: var(--color-brand-light);
+}
+
+.footer__social {
+    padding: 20px 0;
+}
+
+.footer__social__list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer__social__list li {
+    padding: 0 10px;
 }
 
 .footer__legal {
@@ -899,6 +914,10 @@ a:active {
     -webkit-mask-size: 40px 40px;
     mask-position: center center;
     mask-size: 40px 40px;
+}
+
+.socialIcon--isLight {
+    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
 }
 
 .socialIcon--linkedin {
