@@ -53,19 +53,19 @@
                                     <ul class="masthead__nav__social__list">
                                         <li>
                                             <a class="hasSocialIcon" href="#linkedin">
-                                                <i class="socialIcon socialIcon--linkedin"" aria-hidden="true"></i>
+                                                <i class="socialIcon socialIcon--linkedin" aria-hidden="true"></i>
                                                 <span class="isVisuallyHidden">LinkedIn</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a class="hasSocialIcon" href="#facebook">
-                                                <i class="socialIcon socialIcon--facebook"" aria-hidden="true"></i>
+                                                <i class="socialIcon socialIcon--facebook" aria-hidden="true"></i>
                                                 <span class="isVisuallyHidden">Facebook</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a class="hasSocialIcon" href="#twitter">
-                                                <i class="socialIcon socialIcon--twitter"" aria-hidden="true"></i>
+                                                <i class="socialIcon socialIcon--twitter" aria-hidden="true"></i>
                                                 <span class="isVisuallyHidden">Twitter</span>
                                             </a>
                                         </li>
