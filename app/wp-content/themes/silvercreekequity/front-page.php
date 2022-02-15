@@ -4,7 +4,7 @@
 <div class="site__main" role="main">
 
     <?php // hero ?>
-    <div class="tier tier--peacock-dark-media" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/content/hero-home.jpg')">
+    <div class="tier tier--peacock-dark-media" style="background-image: url('<?php the_field('home_hero_background_image'); ?>">
         <div class="wrapper">
             <div class="section">
 
