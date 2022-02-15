@@ -330,6 +330,10 @@ a:active {
         text-underline-offset: 20px;
     }
 
+    .masthead__nav__primary .current-menu-item a {
+        color: var(--color-brand-peacock);
+    }
+
     .masthead__nav__secondary {
         display: none;
     }
