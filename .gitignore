@@ -71,7 +71,6 @@ Thumbs.db
 /app/wp-content/themes/twentytwentytwo
 /app/wp-content/themes/index.php
 /app/wp-content/plugins/index.php
-/app/wp-content/plugins/akismet*
 
 # large/disallowed file types
 # a CDN should be used for these
