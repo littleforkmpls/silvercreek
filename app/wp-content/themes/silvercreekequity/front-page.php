@@ -81,8 +81,8 @@
                                                                 <span class="txt txt--label"><?php echo esc_html($project_status); ?></span>
                                                             </div>
                                                             <div class="card__bd">
-                                                                <h4><?php echo esc_html($project_title); ?></h4>
-                                                                <h5><?php echo esc_html($project_location); ?></h5>
+                                                                <h4 class="txt txt--card-hdg txt--truncated"><?php echo esc_html($project_title); ?></h4>
+                                                                <h5 class="txt txt--card-hdg2 txt--truncated"><?php echo esc_html($project_location); ?></h5>
                                                             </div>
                                                             <div class="card__media">
                                                                 <img class="isBlock" src="<?php echo $project_image; ?>" alt="" />
