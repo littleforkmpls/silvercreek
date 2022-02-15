@@ -11,15 +11,17 @@
                 <div class="hero">
                     <div class="hero__hd">
                         <h1 class="txt txt--hero">
-                            Let&rsquo;s start<br/> building wealth<br class="break break--whenSmall"> together.
+                            <?php the_field('home_hero_headline'); ?>
                         </h1>
                     </div>
                     <div class="hero__bd">
-                        <p class="txt txt--heroSub">We&rsquo;re private equity managers specializing in multifamily and senior living communities from concept to completion.</p>
+                        <p class="txt txt--heroSub">
+                            <?php the_field('home_hero_blurb'); ?>
+                        </p>
                     </div>
                     <div class="hero__cta">
-                        <a class="btn btn--light" href="">
-                            <span class="btn__txt">About us</span>
+                        <a class="btn btn--light" href="<?php the_field('home_hero_cta_link'); ?>">
+                            <span class="btn__txt"><?php the_field('home_hero_cta_text'); ?></span>
                             <span class="btn__icon"></span>
                         </a>
                     </div>
@@ -39,16 +41,22 @@
                     <div class="section">
                         <div class="section__hd">
                             <div class="title">
-                                <h2 class="txt txt--title">Projects</h2>
+                                <h2 class="txt txt--title">
+                                    <?php the_field('home_featured_projects_section_label'); ?>
+                                </h2>
                             </div>
                         </div>
                         <div class="section__bd">
                             <div class="feature">
                                 <div class="feature__hd">
-                                    <h3 class="txt txt--hdg">Find the perfect project for your investment dollar.</h3>
+                                    <h3 class="txt txt--hdg">
+                                        <?php the_field('home_featured_projects_headline'); ?>
+                                    </h3>
                                 </div>
                                 <div class="feature__bd">
-                                    <p class="txt txt--body">From market rate apartments to a variety of unique senior living properties, our vast project portfolio gives you acres of investment options.</p>
+                                    <p class="txt txt--body">
+                                        <?php the_field('home_featured_projects_blurb'); ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -56,56 +64,33 @@
                             <div class="collection">
                                 <div class="collection__stage">
                                     <div class="collection__stage__list">
-                                        <?php for ($i = 1; $i <= 2; $i++) { ?>
-                                        <div class="collection__stage__list__item">
-                                            <a class="isInlineBlock" href="#">
-                                                <div class="card card--funded">
-                                                    <div class="card__label">
-                                                        <span class="txt txt--label">Funded</span>
-                                                    </div>
-                                                    <div class="card__bd">
-                                                        <h4>Project name goes here</h4>
-                                                        <h5>Minneapolis, MN</h5>
-                                                    </div>
-                                                    <div class="card__media">
-                                                        <img class="isBlock" src="https://via.placeholder.com/400x320.png?text=400x320" alt="" />
-                                                    </div>
+                                        <?php $featured_projects = get_field('home_featured_projects'); ?>
+                                        <?php if ($featured_projects) : ?>
+                                            <?php foreach($featured_projects as $featured_project) : ?>
+                                                <?php
+                                                    $project_permalink = get_permalink($featured_project->ID);
+                                                    $project_title = get_the_title($featured_project->ID);
+                                                    $project_location = get_field('project_location', $featured_project->ID);
+                                                    $project_status = get_field('project_status', $featured_project->ID);
+                                                ?>
+                                                <div class="collection__stage__list__item">
+                                                    <a class="isInlineBlock" href="<?php echo esc_html($project_permalink); ?>">
+                                                        <div class="card card--<?php echo strtolower(esc_html($project_status)); ?>">
+                                                            <div class="card__label">
+                                                                <span class="txt txt--label"><?php echo esc_html($project_status); ?></span>
+                                                            </div>
+                                                            <div class="card__bd">
+                                                                <h4><?php echo esc_html($project_title); ?></h4>
+                                                                <h5><?php echo esc_html($project_location); ?></h5>
+                                                            </div>
+                                                            <div class="card__media">
+                                                                <img class="isBlock" src="https://via.placeholder.com/400x320.png?text=400x320" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                            </a>
-                                        </div>
-                                        <div class="collection__stage__list__item">
-                                            <a class="isInlineBlock" href="#">
-                                                <div class="card card--completed">
-                                                    <div class="card__label">
-                                                        <span class="txt txt--label">Completed</span>
-                                                    </div>
-                                                    <div class="card__bd">
-                                                        <h4>Project name goes here</h4>
-                                                        <h5>Minneapolis, MN</h5>
-                                                    </div>
-                                                    <div class="card__media">
-                                                        <img class="isBlock" src="https://via.placeholder.com/400x320.png?text=400x320" alt="" />
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="collection__stage__list__item">
-                                            <a class="isInlineBlock" href="#">
-                                                <div class="card card--open">
-                                                    <div class="card__label">
-                                                        <span class="txt txt--label">Open</span>
-                                                    </div>
-                                                    <div class="card__bd">
-                                                        <h4>Project name goes here</h4>
-                                                        <h5>Minneapolis, MN</h5>
-                                                    </div>
-                                                    <div class="card__media">
-                                                        <img class="isBlock" src="https://via.placeholder.com/400x320.png?text=400x320" alt="" />
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <?php } ?>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
