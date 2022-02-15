@@ -214,7 +214,6 @@ function create_post_type_projects() {
             'rewrite' => array(
                 'slug' => 'projects'
             ),
-            'taxonomies' => array('category'),
             'supports' => array('title', 'author', 'thumbnail')
         )
     );
