@@ -32,15 +32,33 @@ add_action(
     }
 );
 
+// disable block editor
+add_filter('use_block_editor_for_post', '__return_false', 10);
+
 /* ====================================================================================================
    Cleanup the Head
 ==================================================================================================== */
 
 
 /* ====================================================================================================
-   Disable Block Editor
+   Disable Rest API for non-admin users
+   https://developer.wordpress.org/rest-api/frequently-asked-questions/#can-i-disable-the-rest-api
 ==================================================================================================== */
-add_filter('use_block_editor_for_post', '__return_false', 10);
+add_filter( 'rest_authentication_errors', function( $result ) {
+    if ( true === $result || is_wp_error( $result ) ) {
+        return $result;
+    }
+
+    if ( ! is_user_logged_in() ) {
+        return new WP_Error(
+            'rest_not_logged_in',
+            __( 'You are not currently logged in.' ),
+            array( 'status' => 401 )
+        );
+    }
+
+    return $result;
+});
 
 /* ====================================================================================================
    Enqueue Scripts and Styles
