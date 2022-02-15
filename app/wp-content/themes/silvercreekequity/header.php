@@ -73,7 +73,7 @@
                                     </ul>
                                 </div>
                                 <div class="masthead__nav__legal">
-                                    <small class="txt txt--size-xxs txt--family-sans">
+                                    <small class="txt txt--legal">
                                         &copy; <?php echo date('Y'); ?> Silver Creek Equity. All Rights Reserved.
                                     </small>
                                 </div>

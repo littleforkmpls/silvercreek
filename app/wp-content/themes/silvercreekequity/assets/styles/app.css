@@ -983,6 +983,11 @@ a.hasSocialIcon:hover .socialIcon {
     line-height: 1.3;
 }
 
+.txt--legal {
+    font-family: var(--fontFamily-sans);
+    font-size: var(--fontSize-xxs);
+}
+
 @media (min-width: 860px) {
     .txt--hero {
         font-family: var(--fontFamily-serif);
@@ -1000,6 +1005,11 @@ a.hasSocialIcon:hover .socialIcon {
     .txt--body {
         font-size: var(--fontSize-lg);
     }
+
+    .txt--legal {
+        font-size: var(--fontSize-xs);
+    }
+
 }
 
 /* Mix'n'Match */

@@ -4,7 +4,7 @@
                     <div class="wrapper">
                         <div class="footer">
                             <div class="footer__legal">
-                                <small class="txt txt--size-xs txt--family-sans">
+                                <small class="txt txt--legal">
                                     &copy; <?php echo date('Y'); ?> Silver Creek Equity. All Rights Reserved.
                                 </small>
                             </div>
