@@ -228,7 +228,6 @@ function create_post_type_projects() {
                 'item_link_description' => __('A link to a project.'),
             ),
             'public' => true,
-            'show_in_rest' => false,
             'has_archive' => true,
             'menu_position' => 5,
             'menu_icon' => 'dashicons-bank',
