@@ -19,6 +19,7 @@
                             </div>
                             <div class="masthead__toggle">
                                 <a class="masthead__toggle__icon" href="#toggle" role="button" id="js-navToggleTrigger" aria-expanded="false">
+                                    <span class="isVisuallyHidden">Toggle Navigation</span>
                                     <span class="masthead__toggle__icon__bar masthead__toggle__icon__bar--top"></span>
                                     <span class="masthead__toggle__icon__bar masthead__toggle__icon__bar--bottom"></span>
                                 </a>
