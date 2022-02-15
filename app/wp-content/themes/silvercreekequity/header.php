@@ -35,7 +35,7 @@
                                             'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                                             'item_spacing'         => 'preserve',
                                             'depth'                => 1,
-                                            'theme_location'       => 'masthead-navigation'
+                                            'theme_location'       => 'primary-navigation'
                                         ));
                                     ?>
                                 </div>
