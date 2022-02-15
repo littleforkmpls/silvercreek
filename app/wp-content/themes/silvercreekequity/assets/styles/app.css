@@ -550,7 +550,7 @@ a:active {
     top: 0;
     left: 0;
     right: 0;
-    height: 420px;
+    height: 230px;
     background-color: var(--color-brand-peacock-gradLight);
     background-image: linear-gradient(90deg, var(--color-brand-peacock-gradLight) 0%, var(--color-brand-peacock-gradDark) 100%);
 }
@@ -633,6 +633,12 @@ a:active {
     margin: 0 -20px; /* undo wrapper to fake offscreen stuff */
 }
 
+@media (min-width: 1170px) {
+    .section__cards {
+        margin: 0 10px;
+    }
+}
+
 /* ---------------------------------------------------------------------
  Component - Feature
 ------------------------------------------------------------------------ */
@@ -667,6 +673,7 @@ a:active {
  Component - Collection
 ------------------------------------------------------------------------ */
 .collection {
+    position: relative; /* for shaders */
     overflow: hidden;
     height: 400px;
 }
@@ -693,11 +700,45 @@ a:active {
 
 @media (min-width: 860px) {
     .collection {
-        height: 440px;
+        height: 460px;
     }
 
     .collection__stage__list__item {
         height: 470px;
+    }
+}
+
+@media (min-width: 1170px) {
+    .collection__stage {
+        padding-top: 20px;
+    }
+
+    .collection__stage::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 10px;
+        background-image: linear-gradient(to right, rgba(0,0,0,0.15), transparent);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .collection__stage::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+        background-image: linear-gradient(to left, rgba(0,0,0,0.15), transparent);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .collection__stage__list {
+        padding: 0; /* reset */
     }
 }
 

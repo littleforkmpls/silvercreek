@@ -56,7 +56,7 @@
                             <div class="collection">
                                 <div class="collection__stage">
                                     <div class="collection__stage__list">
-                                        <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                        <?php for ($i = 1; $i <= 2; $i++) { ?>
                                         <div class="collection__stage__list__item">
                                             <a class="isInlineBlock" href="#">
                                                 <div class="card card--funded">
