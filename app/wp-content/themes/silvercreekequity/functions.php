@@ -35,6 +35,9 @@ add_action(
 // disable block editor
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
+// custom image sizes(s)
+add_image_size('project-card', 400, 320, true );
+
 /* ====================================================================================================
    Cleanup the Head
 ==================================================================================================== */

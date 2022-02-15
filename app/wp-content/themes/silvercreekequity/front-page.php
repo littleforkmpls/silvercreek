@@ -72,6 +72,7 @@
                                                     $project_title = get_the_title($featured_project->ID);
                                                     $project_location = get_field('project_location', $featured_project->ID);
                                                     $project_status = get_field('project_status', $featured_project->ID);
+                                                    $project_image = get_the_post_thumbnail_url($featured_project->ID, 'project-card');
                                                 ?>
                                                 <div class="collection__stage__list__item">
                                                     <a class="isInlineBlock" href="<?php echo esc_html($project_permalink); ?>">
@@ -84,7 +85,7 @@
                                                                 <h5><?php echo esc_html($project_location); ?></h5>
                                                             </div>
                                                             <div class="card__media">
-                                                                <img class="isBlock" src="https://via.placeholder.com/400x320.png?text=400x320" alt="" />
+                                                                <img class="isBlock" src="<?php echo $project_image; ?>" alt="" />
                                                             </div>
                                                         </div>
                                                     </a>
