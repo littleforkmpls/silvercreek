@@ -191,3 +191,52 @@ function custom_menus() {
     );
 }
 add_action( 'init', 'custom_menus' );
+
+/* ====================================================================================================
+ Custom Post Type - Galleries
+==================================================================================================== */
+add_action('init', 'create_post_type_projects');
+
+function create_post_type_projects() {
+    register_post_type('scequity_projects',
+        array(
+            'labels' => array(
+                'name' => __('Projects'),
+                'singular_name' => __('Project'),
+                'add_new_item' => __('Add New Project'),
+                'edit_item' => __('Edit Project'),
+                'new_item' => __('New Project'),
+                'view_item' => __('View Project'),
+                'view_items' => __('View Projects'),
+                'search_items' => __('Search Projects'),
+                'not_found' => __('No Projects Found'),
+                'not_found_in_trash' => __('No Projects Found in Trash'),
+                'all_items' => __('All Projects'),
+                'archives' => __('Project Archives'),
+                'attributes' => __('Project Attributes'),
+                'insert_into_item' => __('Insert into Project'),
+                'uploaded_to_this_item' => __('Uploaded to this Project'),
+                'filter_items_list' => __('Filter Projects list'),
+                'items_list_navigation' => __('Project list navigation'),
+                'items_list' => __('Projects list'),
+                'item_published' => __('Project published.'),
+                'item_published_privately' => __('Project published privately.'),
+                'item_reverted_to_draft' => __('Project reverted to draft.'),
+                'item_scheduled' => __('Project scheduled.'),
+                'item_updated' => __('Project updated.'),
+                'item_link' => __('Project Link'),
+                'item_link_description' => __('A link to a project.'),
+            ),
+            'public' => true,
+            'show_in_rest' => false,
+            'has_archive' => true,
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-bank',
+            'rewrite' => array(
+                'slug' => 'projects'
+            ),
+            'taxonomies' => array('category'),
+            'supports' => array('title', 'author', 'thumbnail')
+        )
+    );
+}
