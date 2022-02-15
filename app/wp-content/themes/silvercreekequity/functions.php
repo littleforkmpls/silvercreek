@@ -55,6 +55,23 @@ add_action('wp_print_styles', function (): void {
 });
 
 /* ====================================================================================================
+   WordPress 5.9 cleanup .... what were you thinking
+==================================================================================================== */
+add_action('after_setup_theme', function() {
+
+    // remove SVG and global styles
+    remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+
+    // remove wp_footer actions which add's global inline styles
+    remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
+
+    // remove render_block filters which adding unnecessary stuff
+    remove_filter('render_block', 'wp_render_duotone_support');
+    remove_filter('render_block', 'wp_restore_group_inner_container');
+    remove_filter('render_block', 'wp_render_layout_support_flag');
+});
+
+/* ====================================================================================================
    Disable Rest API for non-admin users
    https://developer.wordpress.org/rest-api/frequently-asked-questions/#can-i-disable-the-rest-api
 ==================================================================================================== */
