@@ -4,7 +4,9 @@
 <div class="site__main" role="main">
 
     <?php // hero ?>
-    <div class="tier tier--peacock-dark-media" style="background-image: url('<?php the_field('home_hero_background_image'); ?>');">
+    <?php $bg_image_id = get_field('home_hero_background_image'); ?>
+    <?php the_field('home_hero_background_image'); ?>
+    <div class="tier tier--peacock-dark-media" style="background-image: url('<?php echo wp_get_attachment_image($bg_image_id, 'large'); ?>');">
         <div class="wrapper">
             <div class="section">
 
