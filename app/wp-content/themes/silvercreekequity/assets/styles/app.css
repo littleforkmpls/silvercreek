@@ -769,11 +769,12 @@ a:active {
 .card {
     width: 260px;
     padding-bottom: 20px;
-    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
+    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 80%, var(--color-brand-light-gradDark) 100%);
     box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.3);
 }
 
 .card__label {
+    position: relative;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -783,18 +784,40 @@ a:active {
     text-indent: 30px; /* equalize border treatments */
 }
 
+.card__label::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -44px;
+    border-top: 15px solid transparent;
+    border-left: 15px solid var(--color-brand-light-gradDark);
+    border-bottom: 15px solid transparent;
+}
+
+/* completed variation */
 .card--completed .card__label {
     background-color: var(--color-brand-peacock-darkest);
     color: var(--color-brand-light);
     border-left-color: var(--color-brand-peacock-dark);
 }
 
+.card--completed .card__label::before {
+    border-left-color: var(--color-brand-peacock-darkest);
+}
+
+/* open variation */
 .card--open .card__label {
     background-color: var(--color-brand-peacock);
     color: var(--color-white);
     border-left-color: var(--color-brand-peacock-dark);
 }
 
+.card--open .card__label::before {
+    border-left-color: var(--color-brand-peacock);
+}
+
+/* card guts */
 .card__bd {
     padding: 40px 20px 20px 20px;
     background-color: var(--color-white);
