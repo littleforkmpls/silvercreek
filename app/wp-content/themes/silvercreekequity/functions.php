@@ -206,7 +206,7 @@ add_action(
 ==================================================================================================== */
 add_action(
     'init',
-    function create_post_type_projects() {
+    function() {
         register_post_type('scequity_projects',
             array(
                 'labels' => array(
