@@ -6,6 +6,7 @@
 *.swp
 Thumbs.db
 .nova
+.idea
 
 # wordpress specific
 /app/wp-config.php
