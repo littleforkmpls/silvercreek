@@ -39,7 +39,7 @@
             <div class="wrapper">
                 <div class="slab">
 
-                    <div class="section">
+                    <div class="section section--hasDivider">
                         <div class="section__hd">
                             <div class="title">
                                 <h2 class="txt txt--title">
@@ -98,10 +98,10 @@
                             </div>
                         </div>
                         <div class="section__ft">
-                            <!-- <a class="btn" href="">
-                                <span class="btn__txt">All Projects</span>
+                            <a class="btn" href="<?php echo get_post_type_archive_link('scequity_projects'); ?>">
+                                <span class="btn__txt"><?php the_field('featured_projects_cta_text'); ?></span>
                                 <span class="btn__icon"></span>
-                            </a> -->
+                            </a>
                         </div>
                     </div>
 

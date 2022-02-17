@@ -654,9 +654,28 @@ a:active {
     margin: 0 -20px; /* undo wrapper to fake offscreen stuff */
 }
 
+.section__ft {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.section--hasDivider::after {
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    text-align: center;
+    border-bottom: 1.5px solid var(--color-brand-peacock-dark);
+}
+
 @media (min-width: 1170px) {
     .section__cards {
         margin: 0 10px;
+    }
+    .section__ft {
+        padding-top: 40px;
+        padding-bottom: 30px;
+        text-align: center;
     }
 }
 
