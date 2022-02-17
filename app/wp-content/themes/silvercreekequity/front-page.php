@@ -120,10 +120,14 @@
                         <div class="section__bd">
                             <div class="feature">
                                 <div class="feature__hd">
-                                    <h3 class="txt txt--hdg">Our process creates low risk and high returns.</h3>
+                                    <h3 class="txt txt--hdg">
+                                        <?php the_field('home_process_headline'); ?>
+                                    </h3>
                                 </div>
                                 <div class="feature__bd">
-                                    <p class="txt txt--body">To give each project the best chance to succeed, we put our development experience to work and lean on the support of other experts in construction, design, project management and market study analysis.</p>
+                                    <p class="txt txt--body">
+                                        <?php the_field('home_process_blurb'); ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
