@@ -34,7 +34,7 @@
 
     <?php // main content ?>
     <div class="tier tier--main">
-        <div class="tier__ornament"></div>
+        <div class="tier__ornament tier__ornament--top"></div>
         <div class="tier__bd">
             <div class="wrapper">
                 <div class="slab">
@@ -77,13 +77,13 @@
                                                 ?>
                                                 <div class="collection__stage__list__item">
                                                     <a class="isInlineBlock" href="<?php echo esc_html($project_permalink); ?>">
-                                                        <div class="card card--<?php echo strtolower(esc_html($project_status)); ?>">
+                                                        <div class="card card--pro card--<?php echo strtolower(esc_html($project_status)); ?>">
                                                             <div class="card__label">
                                                                 <span class="txt txt--label">
                                                                     <?php echo esc_html($project_status); ?>
                                                                 </span>
                                                             </div>
-                                                            <div class="card__bd">
+                                                            <div class="card__bd card__bd--inset">
                                                                 <h4 class="txt txt--card-hdg txt--truncated">
                                                                     <?php echo esc_html($project_title); ?>
                                                                 </h4>
@@ -132,13 +132,44 @@
                             </div>
                         </div>
                         <div class="section__cards">
-
+                            <div class="collection">
+                                <div class="collection__stage">
+                                    <div class="collection__stage__list">
+                                        <?php if(have_rows('home_process_steps')): ?>
+                                            <?php while(have_rows('home_process_steps')) : the_row(); ?>
+                                                <?php
+                                                    $process_image_id = get_sub_field('home_process_step_image');
+                                                    $process_image = wp_get_attachment_image_url($process_image_id, 'project-card');
+                                                ?>
+                                                <div class="collection__stage__list__item">
+                                                    <div class="card">
+                                                        <div class="card__media">
+                                                            <img class="isBlock" src="<?php echo $process_image; ?>" alt="<?php the_sub_field('home_process_step_name'); ?>" />
+                                                        </div>
+                                                        <div class="card__bd card__bd--dark card__bd--center">
+                                                            <div class="card__bd_content">
+                                                                <div class="card__bd_content__hd">
+                                                                    <h4 class="txt txt--label"><?php the_sub_field('home_process_step_name'); ?></h4>
+                                                                </div>
+                                                                <div class="card__bd_content__bd">
+                                                                    <p class="txt txt--body2"><?php the_sub_field('home_process_step_description'); ?></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php endwhile; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
+        <div class="tier__ornament tier__ornament--bottom"></div>
     </div>
 
     <?php // contact form ?>

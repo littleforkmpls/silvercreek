@@ -568,12 +568,20 @@ a:active {
 
 .tier--main .tier__ornament {
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
     height: 380px;
     background-color: var(--color-brand-peacock-gradLight);
     background-image: linear-gradient(90deg, var(--color-brand-peacock-gradLight) 0%, var(--color-brand-peacock-gradDark) 100%);
+}
+
+.tier--main .tier__ornament--top {
+    top: 0;
+}
+
+
+.tier--main .tier__ornament--bottom {
+    bottom: 0;
 }
 
 .tier--main .tier__bd {
@@ -656,6 +664,7 @@ a:active {
 
 .section__ft {
     padding-top: 20px;
+    padding-bottom: 30px;
     text-align: center;
 }
 
@@ -672,9 +681,9 @@ a:active {
     .section__cards {
         margin: 0 10px;
     }
+
     .section__ft {
         padding-top: 40px;
-        padding-bottom: 30px;
         text-align: center;
     }
 }
@@ -786,10 +795,18 @@ a:active {
  Component - Card
 ------------------------------------------------------------------------ */
 .card {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
     width: 260px;
-    padding-bottom: 20px;
+    height: 365px;
+    overflow: hidden; /* in case content is larger than dimensions */
     background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 80%, var(--color-brand-light-gradDark) 100%);
     box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.3);
+}
+
+.card--pro {
+    padding-bottom: 20px;
 }
 
 .card__label {
@@ -838,13 +855,39 @@ a:active {
 
 /* card guts */
 .card__bd {
-    padding: 40px 20px 20px 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    flex: 1 1 auto;
+    padding: 20px;
     background-color: var(--color-white);
+}
+
+.card--pro .card__bd {
+    justify-content: flex-end;
+}
+
+.card__bd--dark {
+    background-color: var(--color-brand-dark);
+    color: var(--color-brand-light);
+}
+
+.card__bd--center {
+    text-align: center;
+}
+
+.card__bd_content__hd {
+    margin-bottom: 10px;
 }
 
 @media (min-width: 860px) {
     .card {
         width: 320px;
+        height: 420px;
+    }
+
+    .card__bd_content {
+        padding: 0 20px;
     }
 }
 
@@ -1061,6 +1104,12 @@ a.hasSocialIcon:hover .socialIcon {
 .txt--body {
     font-family: var(--fontFamily-serif);
     font-size: var(--fontSize-md);
+    line-height: 1.3;
+}
+
+.txt--body2 {
+    font-family: var(--fontFamily-sans);
+    font-size: var(--fontSize-sm);
     line-height: 1.3;
 }
 
