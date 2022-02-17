@@ -79,11 +79,17 @@
                                                     <a class="isInlineBlock" href="<?php echo esc_html($project_permalink); ?>">
                                                         <div class="card card--<?php echo strtolower(esc_html($project_status)); ?>">
                                                             <div class="card__label">
-                                                                <span class="txt txt--label"><?php echo esc_html($project_status); ?></span>
+                                                                <span class="txt txt--label">
+                                                                    <?php echo esc_html($project_status); ?>
+                                                                </span>
                                                             </div>
                                                             <div class="card__bd">
-                                                                <h4 class="txt txt--card-hdg txt--truncated"><?php echo esc_html($project_title); ?></h4>
-                                                                <h5 class="txt txt--card-hdg2 txt--truncated"><?php echo esc_html($project_location); ?></h5>
+                                                                <h4 class="txt txt--card-hdg txt--truncated">
+                                                                    <?php echo esc_html($project_title); ?>
+                                                                </h4>
+                                                                <h5 class="txt txt--card-hdg2 txt--truncated">
+                                                                    <?php echo esc_html($project_location); ?>
+                                                                </h5>
                                                             </div>
                                                             <div class="card__media">
                                                                 <img class="isBlock" src="<?php echo $project_image; ?>" alt="" />
@@ -108,7 +114,7 @@
                     <div class="section">
                         <div class="section__hd">
                             <div class="title">
-                                <h2 class="txt txt--title">Our Process</h2>
+                                <h2 class="txt txt--title"><?php the_field('home_process_section_label'); ?></h2>
                             </div>
                         </div>
                         <div class="section__bd">
