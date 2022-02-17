@@ -38,6 +38,7 @@
         <div class="tier__bd">
             <div class="wrapper">
                 <div class="slab">
+                    <div class="slab__ornament"></div>
 
                     <div class="section section--hasDivider">
                         <div class="section__hd">
@@ -173,7 +174,7 @@
     </div>
 
     <?php // contact form ?>
-    <div class="tier tier--peacock-gradient">
+    <div class="tier tier--peacock-dark">
         <div class="wrapper">
 
         </div>

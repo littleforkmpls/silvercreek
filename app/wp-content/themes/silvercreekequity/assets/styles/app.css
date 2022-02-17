@@ -581,7 +581,10 @@ a:active {
 
 
 .tier--main .tier__ornament--bottom {
+    height: 200px;
     bottom: 0;
+    background-image: none;
+    background-color: var(--color-brand-peacock-dark);
 }
 
 .tier--main .tier__bd {
@@ -591,6 +594,10 @@ a:active {
 .tier--peacock-gradient {
     background-color: var(--color-brand-peacock-gradLight);
     background-image: linear-gradient(90deg, var(--color-brand-peacock-gradLight) 0%, var(--color-brand-peacock-gradDark) 100%);
+}
+
+.tier--peacock-dark {
+    background-color: var(--color-brand-peacock-dark-gradDark);
 }
 
 .tier--peacock-dark-gradient {
@@ -716,6 +723,15 @@ a:active {
     background-color: var(--color-brand-light-gradDark);
     background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
     z-index: 20;
+}
+
+.slab__ornament {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 180px; /* matches height of tier__ornament--bottom minus tier--main padding bottom */
+    background-color: var(--color-brand-peacock-dark); /* matches color of tier--peacock-dark */
 }
 
 /* ---------------------------------------------------------------------
