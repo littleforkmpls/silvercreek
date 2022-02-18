@@ -200,6 +200,16 @@ add_action(
     }
 );
 
+/* ====================================================================================================
+   Gravity Forms
+==================================================================================================== */
+add_filter(
+    'gform_submit_button',
+    function($button, $form) {
+        return "<button class='btn' id='gform_submit_button_{$form['id']}'><span class='btn__txt'>{$form['button']['text']}</span><span class='btn__icon'></span></button>";
+    },
+    10, 2
+);
 
 /* ====================================================================================================
  Custom Post Type - Galleries
@@ -248,3 +258,4 @@ add_action(
         );
     }
 );
+

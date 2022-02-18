@@ -115,7 +115,9 @@
                     <div class="section">
                         <div class="section__hd">
                             <div class="title">
-                                <h2 class="txt txt--title"><?php the_field('home_process_section_label'); ?></h2>
+                                <h2 class="txt txt--title">
+                                    <?php the_field('home_process_section_label'); ?>
+                                </h2>
                             </div>
                         </div>
                         <div class="section__bd">
@@ -150,10 +152,14 @@
                                                         <div class="card__bd card__bd--dark card__bd--center">
                                                             <div class="card__bd_content">
                                                                 <div class="card__bd_content__hd">
-                                                                    <h4 class="txt txt--label"><?php the_sub_field('home_process_step_name'); ?></h4>
+                                                                    <h4 class="txt txt--label">
+                                                                        <?php the_sub_field('home_process_step_name'); ?>
+                                                                    </h4>
                                                                 </div>
                                                                 <div class="card__bd_content__bd">
-                                                                    <p class="txt txt--body2"><?php the_sub_field('home_process_step_description'); ?></p>
+                                                                    <p class="txt txt--body2">
+                                                                        <?php the_sub_field('home_process_step_description'); ?>
+                                                                    </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -176,7 +182,49 @@
     <?php // contact form ?>
     <div class="tier tier--peacock-dark">
         <div class="wrapper">
-
+            <div class="section">
+                <div class="section__hd">
+                    <div class="title title--inverted">
+                        <h2 class="txt txt--title txt--color-brand-light">
+                            Contact Us
+                        </h2>
+                    </div>
+                </div>
+                <div class="section__bd">
+                    <div class="feature">
+                        <div class="feature__hd">
+                            <h3 class="txt txt--hdg txt--color-brand-light">
+                                Ready to profit through partnership?
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="section__bd section__bd--noPush">
+                    <div class="slab">
+                        <div class="form">
+                            <div class="form__intro">
+                                <p class="txt txt--body">
+                                    If you’re looking to make a smart, long-term investment, we could have just the right project for you. Fill out this simple form and we’ll be in touch soon.
+                                </p>
+                            </div>
+                            <div class="form__embed">
+                                <?php
+                                    gravity_form(
+                                        1,
+                                        false, // display title
+                                        false, // display desc
+                                        false, // display inactive
+                                        '', // array of field values
+                                        true, // ajax
+                                        0, // tabindex
+                                        true // echo
+                                    );
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
