@@ -1,15 +1,24 @@
 <?php // 404 ERROR PAGE ?>
 
 <?php get_header(); ?>
-<div class="site__main" role="main">
+<div class="site__main site__main--fullscreen" role="main">
+    <div class="site__main__inner">
 
-    <div class="tier">
-        <div class="wrapper">
-            <div class="section">
-                <h1>404 Page</h1>
+        <div class="placard">
+            <div class="placard__inner">
+                <div class="placard__hd">
+                    <h1 class="txt txt--hero txt--color-white">
+                        Page Not Found
+                    </h1>
+                </div>
+                <div class="placard__bd">
+                    <p class="txt txt--body2 txt--color-white">
+                        The page you're looking for could not be found.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
+    </div>
 </div>
 <?php get_footer(); ?>
