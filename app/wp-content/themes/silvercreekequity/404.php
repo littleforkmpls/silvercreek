@@ -7,12 +7,12 @@
         <div class="placard">
             <div class="placard__inner">
                 <div class="placard__hd">
-                    <h1 class="txt txt--hero txt--color-white">
+                    <h1 class="txt txt--hero">
                         Page Not Found
                     </h1>
                 </div>
                 <div class="placard__bd">
-                    <p class="txt txt--body2 txt--color-white">
+                    <p class="txt txt--body2">
                         The page you're looking for could not be found.
                     </p>
                 </div>

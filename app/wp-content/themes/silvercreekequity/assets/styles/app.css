@@ -261,7 +261,6 @@ a:active {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    background-color: var(--color-brand-peacock);
 }
 
 .site__main__inner {
