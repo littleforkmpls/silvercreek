@@ -1119,6 +1119,29 @@ a:active {
     border-color: var(--color-alert);
 }
 
+.gform_footer .btn {
+    vertical-align: middle;
+}
+
+.gform_ajax_spinner {
+    box-sizing: border-box;
+    margin-left: 10px;
+    border: 3px dotted var(--color-brand-peacock);
+    animation: spinner 1.1s infinite linear;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 /* ---------------------------------------------------------------------
  Content - Social Icon
 ------------------------------------------------------------------------ */

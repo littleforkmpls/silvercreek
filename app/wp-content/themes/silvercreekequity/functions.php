@@ -203,6 +203,8 @@ add_action(
 /* ====================================================================================================
    Gravity Forms
 ==================================================================================================== */
+
+/* change submit button markup */
 add_filter(
     'gform_submit_button',
     function($button, $form) {
@@ -210,6 +212,13 @@ add_filter(
     },
     10, 2
 );
+
+/* use a transparent spinner for ajax submits - new spinner handled with CSS */
+add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
+function spinner_url( $image_src, $form ) {
+    return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+
+}
 
 /* ====================================================================================================
  Custom Post Type - Galleries
