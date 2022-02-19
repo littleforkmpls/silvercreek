@@ -3,34 +3,19 @@
 <?php get_header(); ?>
 <div class="site__main" role="main">
 
-    <?php // hero ?>
-    <?php $bg_image_id = get_field('home_hero_background_image'); ?>
-    <div class="tier tier--peacock-dark-media" style="background-image: url('<?php echo wp_get_attachment_image_url($bg_image_id, 'large'); ?>');">
-        <div class="wrapper">
-            <div class="section">
+<?php
+    if(have_rows('page_components')):
+        while (have_rows('page_components')) : the_row();
+            if(get_row_layout() == 'hero'):
+                get_template_part('includes/component-hero');
+            elseif(get_row_layout() == 'featured_projects'):
 
-                <div class="hero">
-                    <div class="hero__hd">
-                        <h1 class="txt txt--hero">
-                            <?php the_field('home_hero_headline'); ?>
-                        </h1>
-                    </div>
-                    <div class="hero__bd">
-                        <p class="txt txt--heroSub">
-                            <?php the_field('home_hero_blurb'); ?>
-                        </p>
-                    </div>
-                    <div class="hero__cta">
-                        <a class="btn btn--light" href="<?php the_field('home_hero_cta_link'); ?>">
-                            <span class="btn__txt"><?php the_field('home_hero_cta_text'); ?></span>
-                            <span class="btn__icon"></span>
-                        </a>
-                    </div>
-                </div>
+            elseif(get_row_layout() == 'process'):
 
-            </div>
-        </div>
-    </div>
+            endif;
+        endwhile;
+    endif;
+?>
 
     <?php // main content ?>
     <div class="tier tier--main">
