@@ -47,7 +47,7 @@
                         <div class="collection__stage__list__item">
                             <div class="card">
                                 <div class="card__media">
-                                    <img class="isBlock" src="<?php echo $process_slider_steps_step_image_url; ?>" alt="<?php echo $process_slider_steps_step_name; ?>" />
+                                    <img class="isBlock" width="400" height="320" src="<?php echo $process_slider_steps_step_image_url; ?>" alt="<?php echo $process_slider_steps_step_name; ?>" />
                                 </div>
                                 <div class="card__bd card__bd--dark card__bd--center">
                                     <div class="card__bd_content">
