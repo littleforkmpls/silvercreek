@@ -1,4 +1,4 @@
-<?php // featured projects slider component ?>
+<?php // Component: Featured Projects Slider ?>
 
 <?php
     $featured_projects_slider_section_label = get_sub_field('featured_projects_slider_section_label');

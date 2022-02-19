@@ -1,4 +1,4 @@
-<?php // hero component ?>
+<?php // Component: Hero ?>
 
 <?php
     $hero_bg_image_id = get_sub_field('hero_background_image');
