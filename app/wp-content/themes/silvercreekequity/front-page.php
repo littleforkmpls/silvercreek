@@ -22,6 +22,7 @@
             <div class="wrapper">
                 <div class="slab">
                     <div class="slab__ornament"></div>
+                    <div class="slab__content">
 
                         <?php
                             // loop through components and display all except hero
@@ -36,6 +37,7 @@
                             endif;
                         ?>
 
+                    </div>
                 </div>
             </div>
         </div>
