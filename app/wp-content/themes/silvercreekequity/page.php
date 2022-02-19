@@ -3,6 +3,11 @@
 <?php get_header(); ?>
 <div class="site__main" role="main">
 
+    <?php // page title for SEO & accessibility always present in the h1 ?>
+    <h1 class="isVisuallyHidden">
+        <?php the_title(); ?>
+    </h1>
+
     <?php
         // loop through components and display hero
         if(have_rows('page_components')):
