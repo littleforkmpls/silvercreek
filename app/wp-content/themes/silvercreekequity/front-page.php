@@ -14,7 +14,6 @@
         endif;
     ?>
 
-
     <?php // main content ?>
     <div class="tier tier--main">
         <div class="tier__ornament tier__ornament--top"></div>
