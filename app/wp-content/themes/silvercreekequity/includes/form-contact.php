@@ -2,7 +2,7 @@
     <div class="section__hd">
         <div class="title title--inverted">
             <h2 class="txt txt--title txt--color-brand-light">
-                Contact Us
+                <?php the_field('contact_form_section_label', 'option'); ?>
             </h2>
         </div>
     </div>
@@ -10,7 +10,7 @@
         <div class="feature">
             <div class="feature__hd">
                 <h3 class="txt txt--hdg txt--color-brand-light">
-                    Ready to profit through partnership?
+                    <?php the_field('contact_form_headline', 'option'); ?>
                 </h3>
             </div>
         </div>
@@ -20,7 +20,7 @@
             <div class="form">
                 <div class="form__intro">
                     <p class="txt txt--body">
-                        If you’re looking to make a smart, long-term investment, we could have just the right project for you. Fill out this simple form and we’ll be in touch soon.
+                        <?php the_field('contact_form_blurb', 'option'); ?>
                     </p>
                 </div>
                 <div class="form__embed">
