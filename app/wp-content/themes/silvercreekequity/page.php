@@ -14,6 +14,7 @@
         endif;
     ?>
 
+    <?php // main content ?>
     <div class="tier">
         <div class="wrapper">
 
