@@ -8,12 +8,12 @@
             <div class="placard__inner">
                 <div class="placard__hd">
                     <h1 class="txt txt--hero">
-                        Page Not Found
+                        <?php the_field('404_page_headline', 'option'); ?>
                     </h1>
                 </div>
                 <div class="placard__bd">
                     <p class="txt txt--body2">
-                        The page you're looking for could not be found.
+                        <?php the_field('404_page_blurb', 'option'); ?>
                     </p>
                 </div>
             </div>
