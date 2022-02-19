@@ -13,7 +13,7 @@
                 </div>
                 <div class="placard__bd">
                     <div class="txt txt--body2">
-                        <?php the_field('page_content'); ?>
+                        <?php the_field('message'); ?>
                     </div>
                 </div>
             </div>
