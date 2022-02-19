@@ -255,6 +255,7 @@ a:active {
 
 .site__main {
     flex: 1;
+    border-top: 10px solid var(--color-brand-peacock-dark);
 }
 
 .site__main--fullscreen {
