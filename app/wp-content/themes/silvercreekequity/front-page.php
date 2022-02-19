@@ -3,16 +3,7 @@
 <?php get_header(); ?>
 <div class="site__main" role="main">
 
-    <?php
-        // loop through components and display hero
-        if(have_rows('page_components')):
-            while (have_rows('page_components')) : the_row();
-                if(get_row_layout() == 'hero'):
-                    get_template_part('includes/component-hero');
-                endif;
-            endwhile;
-        endif;
-    ?>
+    <?php // homepage hero injected in header.php ?>
 
     <?php // main content ?>
     <div class="tier tier--main">

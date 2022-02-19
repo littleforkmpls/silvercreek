@@ -8,6 +8,22 @@
     </head>
     <body>
         <div class="site">
+
+            <?php if (is_front_page()) : ?>
+            <div class="site__prefix">
+                <?php
+                    // loop through components and display hero
+                    if(have_rows('page_components')):
+                        while (have_rows('page_components')) : the_row();
+                            if(get_row_layout() == 'hero'):
+                                get_template_part('includes/component-hero');
+                            endif;
+                        endwhile;
+                    endif;
+                ?>
+            </div>
+            <?php endif; ?>
+
             <div class="site__masthead" role="banner">
                 <div class="tier tier--peacock-dark-gradient">
                     <div class="wrapper">
