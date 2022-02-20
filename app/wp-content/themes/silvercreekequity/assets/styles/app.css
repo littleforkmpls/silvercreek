@@ -643,9 +643,34 @@ a:active {
  Component - Hero
 ------------------------------------------------------------------------ */
 .hero {
+    position: relative;
     padding: 50px 0;
     color: var(--color-brand-light);
     text-align: center;
+}
+
+.hero--hasTitle {
+    padding-top: 100px;
+}
+
+.hero__title {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+}
+
+.hero__title__inner {
+    padding-bottom: 20px; /* push pseudo element */
+}
+
+.hero__title::after {
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    text-align: center;
+    border-bottom: 1.5px solid var(--color-brand-grey);
 }
 
 .hero__bd {
@@ -657,6 +682,10 @@ a:active {
 @media (min-width: 860px) {
     .hero {
         padding: 120px 0;
+    }
+
+    .hero--hasTitle {
+        padding-top: 120px;
     }
 
     .hero__bd {
@@ -1230,6 +1259,7 @@ a.hasSocialIcon:hover .socialIcon {
 .txt--color-black { color: var(--color-black); }
 .txt--color-brand-peacock { color: var(--color-brand-peacock); }
 .txt--color-brand-light { color: var(--color-brand-light); }
+.txt--color-brand-grey { color: var(--color-brand-grey); }
 .txt--color-brand-dark { color: var(--color-brand-dark); }
 
 .txt--family-serif { font-family: var(--fontFamily-serif); }
