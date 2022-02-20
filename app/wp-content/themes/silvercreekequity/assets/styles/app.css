@@ -778,7 +778,7 @@ a:active {
 .section--isLightGradientFadeToWhite {
     background-color: var(--color-brand-light-gradDark);
     background-image:
-        linear-gradient(0deg, var(--color-white) 0%, var(--color-transparent) 15%, var(--color-transparent) 100%),
+        linear-gradient(0deg, var(--color-white) 0%, var(--color-white) 15%, var(--color-transparent) 100%),
         linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
 }
 
