@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="section__bd">
-        <div class="feature">
+        <div class="feature feature--tight">
             <div class="feature__hd">
                 <h3 class="txt txt--hdg txt--color-brand-light">
                     <?php the_field('contact_form_headline', 'option'); ?>

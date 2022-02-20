@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="section__bd">
-        <div class="feature">
+        <div class="feature feature--isSpacious">
             <?php if ($process_slider_headline): ?>
             <div class="feature__hd">
                 <h3 class="txt txt--hdg">

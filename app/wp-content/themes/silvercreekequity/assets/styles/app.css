@@ -753,6 +753,10 @@ a:active {
     text-align: center;
 }
 
+.feature--isSpacious {
+    padding: 20px;
+}
+
 .feature__hd {
     margin-bottom: 20px;
 }
@@ -760,6 +764,10 @@ a:active {
 @media (min-width: 860px) {
     .feature {
         padding: 0; /* rely on max-width */
+    }
+
+    .feature--isSpacious {
+        padding: 20px 0;
     }
 }
 

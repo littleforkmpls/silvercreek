@@ -42,6 +42,8 @@
                                         get_template_part('includes/component-featured-projects-slider');
                                     elseif(get_row_layout() == 'process_slider'):
                                         get_template_part('includes/component-process-slider');
+                                    elseif(get_row_layout() == 'lede'):
+                                        get_template_part('includes/component-lede');
                                     endif;
                                 endwhile;
                             endif;
