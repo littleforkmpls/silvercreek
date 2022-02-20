@@ -53,6 +53,8 @@
                                         get_template_part('includes/component-lede');
                                     elseif(get_row_layout() == 'team'):
                                         get_template_part('includes/component-team');
+                                    elseif(get_row_layout() == 'cta'):
+                                        get_template_part('includes/component-cta');
                                     endif;
                                 endwhile;
                             endif;

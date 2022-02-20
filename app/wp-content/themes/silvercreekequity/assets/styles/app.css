@@ -802,6 +802,10 @@ a:active {
     margin-bottom: 20px;
 }
 
+.feature__ft {
+    padding-top: 30px;
+}
+
 @media (min-width: 860px) {
     .feature {
         padding: 0; /* rely on max-width */
