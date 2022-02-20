@@ -31,7 +31,10 @@
         <div class="tier__bd">
             <div class="wrapper">
                 <div class="slab">
-                    <div class="slab__ornament"></div>
+                    <?php if(is_front_page()): ?>
+                        <div class="slab__ornament"></div>
+                    <?php endif; ?>
+
                     <div class="slab__content">
 
                         <?php
@@ -44,6 +47,8 @@
                                         get_template_part('includes/component-process-slider');
                                     elseif(get_row_layout() == 'lede'):
                                         get_template_part('includes/component-lede');
+                                    elseif(get_row_layout() == 'team'):
+                                        get_template_part('includes/component-team');
                                     endif;
                                 endwhile;
                             endif;
@@ -53,7 +58,9 @@
                 </div>
             </div>
         </div>
-        <div class="tier__ornament tier__ornament--bottom"></div>
+        <?php if(is_front_page()): ?>
+            <div class="tier__ornament tier__ornament--bottom"></div>
+        <?php endif; ?>
     </div>
 
     <?php // contact form ?>
