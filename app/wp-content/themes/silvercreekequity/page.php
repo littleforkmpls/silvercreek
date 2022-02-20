@@ -1,4 +1,4 @@
-<?php // HOME PAGE ?>
+<?php // PAGEES: HOME, ABOUT, GENERAL, ETC ?>
 
 <?php get_header(); ?>
 <div class="site__main" role="main">
