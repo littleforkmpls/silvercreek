@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section section--noDivider">
     <div class="section__hd">
         <div class="title title--inverted">
             <h2 class="txt txt--title txt--color-brand-light">
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="section__bd section__bd--noPush">
-        <div class="slab">
+        <div class="slab slab--isLight">
             <div class="form">
                 <div class="form__intro">
                     <p class="txt txt--body">

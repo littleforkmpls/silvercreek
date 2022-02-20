@@ -31,7 +31,11 @@
         <div class="tier__bd">
             <div class="wrapper">
                 <div class="slab">
-                    <?php if(is_front_page()): ?>
+                    <?php
+                        $last_row_index = count(get_field('page_components')) - 1;
+                        $last_component_name = get_field('page_components')[$last_row_index]['acf_fc_layout'];
+                    ?>
+                    <?php if(is_front_page() && $last_component_name == 'process_slider'): ?>
                         <div class="slab__ornament"></div>
                     <?php endif; ?>
 
@@ -58,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <?php if(is_front_page()): ?>
+        <?php if(is_front_page() && $last_component_name == 'process_slider'): ?>
             <div class="tier__ornament tier__ornament--bottom"></div>
         <?php endif; ?>
     </div>

@@ -5,7 +5,7 @@
 
     <div class="tier">
         <div class="wrapper">
-            <div class="section">
+            <div class="section section--noDivider">
                 <h1>Post Page</h1>
             </div>
         </div>

@@ -5,7 +5,7 @@
 
     <div class="tier">
         <div class="wrapper">
-            <div class="section">
+            <div class="section section--noDivider">
                 <h1>Archive Page</h1>
             </div>
         </div>

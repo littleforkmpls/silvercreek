@@ -1,13 +1,21 @@
 <?php // Component: Process Slider ?>
 
 <?php
-    $process_slider_section_label = get_sub_field('process_slider_section_label');
-    $process_slider_headline      = get_sub_field('process_slider_headline');
-    $process_slider_blurb         = get_sub_field('process_slider_blurb');
-    $process_slider_steps         = get_sub_field('process_slider_steps');
+    $process_slider_section_label       = get_sub_field('process_slider_section_label');
+    $process_slider_headline            = get_sub_field('process_slider_headline');
+    $process_slider_blurb               = get_sub_field('process_slider_blurb');
+    $process_slider_steps               = get_sub_field('process_slider_steps');
+    $process_slider_background_style    = get_sub_field('process_slider_background_style');
+    $process_slider_hide_divider        = get_sub_field('process_slider_hide_divider');
+
+    $section_class = 'section--' .  $process_slider_background_style;
+
+    if ($process_slider_hide_divider) {
+        $section_class .= ' section--noDivider';
+    }
 ?>
 
-<div class="section">
+<div class="section <?php echo $section_class; ?>">
     <div class="section__hd">
         <div class="title">
             <h2 class="txt txt--title">

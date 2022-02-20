@@ -1,14 +1,18 @@
 <?php // Component: Featured Projects Slider ?>
 
 <?php
-    $featured_projects_slider_section_label = get_sub_field('featured_projects_slider_section_label');
-    $featured_projects_slider_headline      = get_sub_field('featured_projects_slider_headline');
-    $featured_projects_slider_blurb         = get_sub_field('featured_projects_slider_blurb');
-    $featured_projects_slider_projects      = get_sub_field('featured_projects_slider_projects');
-    $featured_projects_slider_button_text   = get_sub_field('featured_projects_slider_button_text');
+    $featured_projects_slider_section_label     = get_sub_field('featured_projects_slider_section_label');
+    $featured_projects_slider_headline          = get_sub_field('featured_projects_slider_headline');
+    $featured_projects_slider_blurb             = get_sub_field('featured_projects_slider_blurb');
+    $featured_projects_slider_projects          = get_sub_field('featured_projects_slider_projects');
+    $featured_projects_slider_button_text       = get_sub_field('featured_projects_slider_button_text');
+    $featured_projects_slider_background_style  = get_sub_field('featured_projects_slider_background_style');
+    $featured_projects_slider_hide_divider      = get_sub_field('featured_projects_slider_hide_divider');
+
+    $bg_style_class = 'section--' .  $featured_projects_slider_background_style;
 ?>
 
-<div class="section section--hasDivider">
+<div class="section <?php echo $bg_style_class; ?>">
     <div class="section__hd">
         <div class="title">
             <h2 class="txt txt--title">

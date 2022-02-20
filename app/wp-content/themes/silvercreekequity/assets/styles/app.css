@@ -723,13 +723,18 @@ a:active {
     text-align: center;
 }
 
-.section--hasDivider::after {
+.section::after {
     content: " ";
     display: block;
     margin: 0 auto;
     width: 50px;
     text-align: center;
     border-bottom: 1.5px solid var(--color-brand-peacock-dark);
+}
+
+.section--noDivider::after {
+    content: none !important;
+    display: none !important;
 }
 
 @media (min-width: 1170px) {
@@ -741,6 +746,28 @@ a:active {
         padding-top: 40px;
         text-align: center;
     }
+}
+
+/* configurable section colors for components */
+.section--isTransparent {
+    background-color: var(--color-transparent);
+}
+
+.section--isWhite {
+    background-color: var(--color-white);
+}
+
+.section--isGreen {
+    background-color: var(--color-brand-peacock);
+}
+
+.section--isGreenGradient {
+    background-color: var(--color-brand-peacock-dark-gradLight);
+    background-image: linear-gradient(110deg, var(--color-brand-peacock-dark-gradLight) 0%, var(--color-brand-peacock-dark-gradLight) 30%, var(--color-brand-peacock-dark-gradDark) 100%);
+}
+.section--isLightGradient {
+    background-color: var(--color-brand-light-gradDark);
+    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
 }
 
 /* ---------------------------------------------------------------------
@@ -776,9 +803,12 @@ a:active {
 ------------------------------------------------------------------------ */
 .slab {
     position: relative;
-    background-color: var(--color-brand-light-gradDark);
-    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
     z-index: 20;
+}
+
+.slab--isLight {
+    background-color: var(--color-brand-light);
+    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
 }
 
 .slab__ornament {

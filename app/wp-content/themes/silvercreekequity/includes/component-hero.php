@@ -23,7 +23,7 @@
 
 <div class="tier tier--peacock-dark-media" style="background-image: url('<?php echo $hero_bg_image ?>');">
     <div class="wrapper">
-        <div class="section">
+        <div class="section section--noDivider">
 
             <div class="hero <?php echo $hero_class; ?>">
                 <?php if ($hero_show_page_title): ?>
