@@ -1098,6 +1098,7 @@ a:active {
     letter-spacing: 1px;
     cursor: pointer;
     white-space: nowrap;
+    transition: all 0.24s ease-in-out;
 }
 
 .btn::before {
@@ -1110,6 +1111,7 @@ a:active {
     border-top: 17px solid transparent;
     border-right: 18px solid var(--color-brand-peacock-dark);
     border-bottom: 17px solid transparent;
+    transition: all 0.24s ease-in-out;
 }
 
 .btn::after {
@@ -1122,6 +1124,7 @@ a:active {
     border-top: 17px solid transparent;
     border-left: 18px solid var(--color-brand-peacock-dark);
     border-bottom: 17px solid transparent;
+    transition: all 0.24s ease-in-out;
 }
 
 .btn__icon {
@@ -1151,6 +1154,30 @@ a:active {
 
 .btn--light .btn__icon {
     background-color: var(--color-brand-dark);
+}
+
+.btn:hover {
+    background-color: var(--color-brand-peacock);
+}
+
+.btn:hover::before {
+    border-right-color: var(--color-brand-peacock);
+}
+
+.btn:hover::after {
+    border-left-color: var(--color-brand-peacock);
+}
+
+.btn--light:hover {
+    background-color: var(--color-white);
+}
+
+.btn--light:hover::before {
+    border-right-color: var(--color-white);
+}
+
+.btn--light:hover::after {
+    border-left-color: var(--color-white);
 }
 
 /* ---------------------------------------------------------------------
