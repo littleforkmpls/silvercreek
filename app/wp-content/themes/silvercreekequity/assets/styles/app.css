@@ -495,7 +495,7 @@ a:active {
         font-size: var(--fontSize-xs);
     }
 
-    .masthead__nav__secondary__list li:last-child a {
+    .masthead__nav__secondary__list li.portalLink a {
         margin-left: 20px;
         padding: 2px 16px;
         height: 24px;
@@ -504,6 +504,10 @@ a:active {
         color: var(--color-brand-dark);
         text-transform: uppercase;
         letter-spacing: 1px;
+    }
+
+    .masthead__nav__secondary__list li:only-child {
+        padding-right: 20px;
     }
 }
 

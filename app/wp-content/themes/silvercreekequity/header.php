@@ -46,9 +46,11 @@
                                         <li>
                                             <a href="tel:+1-<?php echo trim(preg_replace('/[^0-9] -/', '', get_field('global_phone_number', 'option'))); ?>"><?php the_field('global_phone_number', 'option'); ?></a>
                                         </li>
-                                        <li>
+                                        <?php if (get_field('global_portal_link', 'option') && get_field('global_portal_link_text', 'option')) : ?>
+                                        <li class="portalLink">
                                             <a href="<?php the_field('global_portal_link', 'option'); ?>"><?php the_field('global_portal_link_text', 'option'); ?></a>
                                         </li>
+                                        <?php endif; ?>
                                     </ul>
                                 </div>
                                 <?php
