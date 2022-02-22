@@ -113,7 +113,7 @@ template {
     --color-charcoal: #0a0a0a;
     --color-alert: #ff0000;
     --color-alert-bg: #fff9f9;
-    --color-brand-peacock: #1B8172;
+    --color-brand-peacock: #1b8172;
     --color-brand-peacock-dark: #32645c;
     --color-brand-peacock-darkest: #254544;
     --color-brand-light: #d9d9d9;
@@ -1019,6 +1019,109 @@ a:active {
 
     .card__bd_content {
         padding: 0 20px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+ Component - Yearbook
+------------------------------------------------------------------------ */
+.yearbook {
+    padding-bottom: 20px;
+}
+
+.yearbook__item {
+    padding: 20px 0;
+}
+
+/* ---------------------------------------------------------------------
+ Component - Frame
+------------------------------------------------------------------------ */
+.frame__media {
+    padding: 20px 20px 0 20px;
+    background-color: var(--color-brand-light-gradLight);
+    background-image: linear-gradient(to right, var(--color-brand-light-gradDark), var(--color-brand-light-gradLight));
+    text-align: center;
+}
+
+.frame__media > img {
+    display: inline-block;
+}
+
+.frame__content__hd {
+    padding: 10px 20px 4px 20px;
+    background-color: var(--color-brand-light);
+    background-image: linear-gradient(to right, var(--color-brand-light-gradDark), var(--color-brand-light-gradLight));
+    text-align: center;
+}
+
+.frame__content__subhd {
+    padding: 0 20px 20px 20px;
+    background-color: var(--color-brand-light);
+    background-image: linear-gradient(to right, var(--color-brand-light-gradDark), var(--color-brand-light-gradLight));
+    text-align: center;
+    border-bottom: 20px solid;
+    border-image: linear-gradient(to left, var(--color-brand-peacock-dark) 50%, var(--color-brand-dark) 50%) 2;
+}
+
+.frame__content__bd {
+    padding: 20px 20px 0 20px;
+}
+
+@media (min-width: 860px) {
+    .frame {
+        position: relative;
+        padding: 20px;
+    }
+
+    .frame::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 140px;
+        background-color: var(--color-brand-light);
+        background-image: linear-gradient(to right, var(--color-brand-light-gradDark), var(--color-brand-light-gradLight));
+        border-bottom: 20px solid;
+        border-image: linear-gradient(to right, var(--color-brand-dark) calc(calc(calc(100% - 270px) / 2) + 270px), var(--color-brand-peacock-dark) calc(calc(calc(100% - 270px) / 2) + 270px)) 2;
+    }
+
+    .frame__media {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 250px;
+        padding: 0;
+        background-color: transparent;
+        background-image: none;
+        text-align: initial;
+        z-index: 1;
+    }
+
+    .frame__content {
+        position: relative;
+        padding: 0 20px 0 290px;
+        z-index: 1;
+    }
+
+    .frame__content__hd {
+        padding: 30px 0 0 0;
+        background-color: transparent;
+        background-image: none;
+        text-align: center;
+    }
+
+    .frame__content__subhd {
+        padding: 0 0 80px 0;
+        background-color: transparent;
+        background-image: none;
+        text-align: center;
+        border-bottom: none;
+        border-image: none;
+    }
+
+    .frame__content__bd {
+        padding: 0;
     }
 }
 
