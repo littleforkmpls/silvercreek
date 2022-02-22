@@ -32,8 +32,10 @@
             <div class="wrapper">
                 <div class="slab">
                     <?php
-                        $last_row_index = count(get_field('page_components')) - 1;
-                        $last_component_name = get_field('page_components')[$last_row_index]['acf_fc_layout'];
+                        if(have_rows('page_components')):
+                            $last_row_index = count(get_field('page_components')) - 1;
+                            $last_component_name = get_field('page_components')[$last_row_index]['acf_fc_layout'];
+                        endif;
                     ?>
                     <?php if(is_front_page() && $last_component_name == 'process_slider'): ?>
                         <div class="slab__ornament"></div>
