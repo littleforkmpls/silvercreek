@@ -51,13 +51,13 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="masthead__nav__social">
-                                    <?php
-                                        $linkedIn_url = get_field('socialmedia_linkedin_url', 'option');
-                                        $facebook_url = get_field('socialmedia_facebook_url', 'option');
-                                        $twitter_url = get_field('socialmedia_twitter_url', 'option');
-                                    ?>
-                                    <?php if ($linkedIn_url || $facebook_url || $twitter_url) : ?>
+                                <?php
+                                    $linkedIn_url = get_field('socialmedia_linkedin_url', 'option');
+                                    $facebook_url = get_field('socialmedia_facebook_url', 'option');
+                                    $twitter_url = get_field('socialmedia_twitter_url', 'option');
+                                ?>
+                                <?php if ($linkedIn_url || $facebook_url || $twitter_url) : ?>
+                                    <div class="masthead__nav__social">
                                         <ul class="masthead__nav__social__list">
                                             <?php if ($linkedIn_url) : ?>
                                             <li>
@@ -84,8 +84,8 @@
                                             </li>
                                             <?php endif; ?>
                                         </ul>
-                                    <?php endif; ?>
-                                </div>
+                                    </div>
+                                <?php endif; ?>
                                 <div class="masthead__nav__legal">
                                     <small class="txt txt--legal">
                                         &copy; <?php echo date('Y'); ?> <?php the_field('global_copyright_text', 'option'); ?>

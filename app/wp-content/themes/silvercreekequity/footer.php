@@ -3,13 +3,13 @@
                 <div class="tier tier--peacock-dark-gradient">
                     <div class="wrapper">
                         <div class="footer">
-                            <div class="footer__social">
-                                <?php
-                                    $linkedIn_url = get_field('socialmedia_linkedin_url', 'option');
-                                    $facebook_url = get_field('socialmedia_facebook_url', 'option');
-                                    $twitter_url = get_field('socialmedia_twitter_url', 'option');
-                                ?>
-                                <?php if ($linkedIn_url || $facebook_url || $twitter_url) : ?>
+                            <?php
+                                $linkedIn_url = get_field('socialmedia_linkedin_url', 'option');
+                                $facebook_url = get_field('socialmedia_facebook_url', 'option');
+                                $twitter_url = get_field('socialmedia_twitter_url', 'option');
+                            ?>
+                            <?php if ($linkedIn_url || $facebook_url || $twitter_url) : ?>
+                                <div class="footer__social">
                                     <ul class="footer__social__list">
                                         <?php if ($linkedIn_url) : ?>
                                         <li>
@@ -36,8 +36,8 @@
                                         </li>
                                         <?php endif; ?>
                                     </ul>
-                                <?php endif; ?>
-                            </div>
+                                </div>
+                            <?php endif; ?>
                             <div class="footer__legal">
                                 <small class="txt txt--legal">
                                     &copy; <?php echo date('Y'); ?> <?php the_field('global_copyright_text', 'option'); ?>
