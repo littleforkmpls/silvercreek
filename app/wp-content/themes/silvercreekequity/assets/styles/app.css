@@ -795,7 +795,7 @@ a:active {
 }
 
 .feature--isSpacious {
-    padding: 20px;
+    padding: 20px 30px;
 }
 
 .feature__hd {
@@ -1064,7 +1064,7 @@ a:active {
 }
 
 .frame__content__bd {
-    padding: 20px 20px 0 20px;
+    padding: 20px 5px 0 5px;
 }
 
 @media (min-width: 860px) {
@@ -1083,14 +1083,14 @@ a:active {
         background-color: var(--color-brand-light);
         background-image: linear-gradient(to right, var(--color-brand-light-gradDark), var(--color-brand-light-gradLight));
         border-bottom: 20px solid;
-        border-image: linear-gradient(to right, var(--color-brand-dark) calc(calc(calc(100% - 270px) / 2) + 270px), var(--color-brand-peacock-dark) calc(calc(calc(100% - 270px) / 2) + 270px)) 2;
+        border-image: linear-gradient(to right, var(--color-brand-dark) calc(calc(calc(100% - 320px) / 2) + 320px), var(--color-brand-peacock-dark) calc(calc(calc(100% - 320px) / 2) + 320px)) 2;
     }
 
     .frame__media {
         position: absolute;
         top: 20px;
         left: 20px;
-        width: 250px;
+        width: 300px;
         padding: 0;
         background-color: transparent;
         background-image: none;
@@ -1100,7 +1100,7 @@ a:active {
 
     .frame__content {
         position: relative;
-        padding: 0 20px 0 290px;
+        padding: 0 20px 0 330px;
         z-index: 1;
     }
 
@@ -1122,6 +1122,20 @@ a:active {
 
     .frame__content__bd {
         padding: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+    .frame::after {
+        border-image: linear-gradient(to right, var(--color-brand-dark) calc(calc(calc(100% - 420px) / 2) + 420px), var(--color-brand-peacock-dark) calc(calc(calc(100% - 420px) / 2) + 420px)) 2;
+    }
+
+    .frame__media {
+        width: 400px;
+    }
+
+    .frame__content {
+        padding-left: 430px;
     }
 }
 

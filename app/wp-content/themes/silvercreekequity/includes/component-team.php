@@ -56,7 +56,7 @@
                 <div class="yearbook__item">
                     <div class="frame">
                         <div class="frame__media">
-                            <img class="isBlock" width="250" height="300" src="<?php echo $team_member_image_url; ?>" alt="<?php echo $team_member_name; ?>" />
+                            <img class="isBlock" width="500" height="333" src="<?php echo $team_member_image_url; ?>" alt="<?php echo $team_member_name; ?>" />
                         </div>
                         <div class="frame__content">
                             <div class="frame__content__hd">

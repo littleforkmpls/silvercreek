@@ -45,7 +45,7 @@ add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // custom image sizes(s)
 add_image_size('project-card', 400, 320, true );
-add_image_size('bio-headshot', 500, 600, true );
+add_image_size('bio-headshot', 500, 333, true );
 
 /* ====================================================================================================
    Cleanup the Head
