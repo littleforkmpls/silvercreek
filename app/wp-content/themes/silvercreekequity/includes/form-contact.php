@@ -1,4 +1,5 @@
 <div class="section section--noDivider">
+    <?php if(!is_page('contact')): ?>
     <div class="section__hd">
         <div class="title title--inverted">
             <h2 class="txt txt--title txt--color-brand-light">
@@ -15,6 +16,7 @@
             </div>
         </div>
     </div>
+    <?php endif; ?>
     <div class="section__bd section__bd--noPush">
         <div class="slab slab--isLight">
             <div class="form">

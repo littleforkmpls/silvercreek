@@ -26,50 +26,57 @@
     ?>
 
     <?php // main content ?>
-    <div class="tier tier--main">
-        <div class="tier__ornament tier__ornament--top"></div>
-        <div class="tier__bd">
-            <div class="wrapper">
-                <div class="slab">
-                    <?php
-                        if(have_rows('page_components')):
-                            $last_row_index = count(get_field('page_components')) - 1;
-                            $last_component_name = get_field('page_components')[$last_row_index]['acf_fc_layout'];
-                        endif;
-                    ?>
-                    <?php if(is_front_page() && $last_component_name == 'process_slider'): ?>
-                        <div class="slab__ornament"></div>
-                    <?php endif; ?>
+    <?php if(have_rows('page_components')): ?>
+    <?php
+        $total_rows = count(get_field('page_components'));
+        $last_row_index = $total_rows - 1;
+        $last_component_name = get_field('page_components')[$last_row_index]['acf_fc_layout'];
+    ?>
+    <?php
+        // prevent the entire tier from rendering in the event only a hero component is present
+        // like on the contact page
+        if($total_rows !== 1 && $last_component_name = 'hero'):
+    ?>
+        <div class="tier tier--main">
+            <div class="tier__ornament tier__ornament--top"></div>
+            <?php if(is_front_page() && $last_component_name == 'process_slider'): ?>
+                <div class="tier__ornament tier__ornament--bottom"></div>
+            <?php endif; ?>
+            <div class="tier__bd">
+                <div class="wrapper">
+                    <div class="slab">
+                        <?php if(is_front_page() && $last_component_name == 'process_slider'): ?>
+                            <div class="slab__ornament"></div>
+                        <?php endif; ?>
 
-                    <div class="slab__content">
+                        <div class="slab__content">
 
-                        <?php
-                            // loop through components and display all except hero
-                            if(have_rows('page_components')):
-                                while (have_rows('page_components')) : the_row();
-                                    if(get_row_layout() == 'featured_projects_slider'):
-                                        get_template_part('includes/component-featured-projects-slider');
-                                    elseif(get_row_layout() == 'process_slider'):
-                                        get_template_part('includes/component-process-slider');
-                                    elseif(get_row_layout() == 'lede'):
-                                        get_template_part('includes/component-lede');
-                                    elseif(get_row_layout() == 'team'):
-                                        get_template_part('includes/component-team');
-                                    elseif(get_row_layout() == 'cta'):
-                                        get_template_part('includes/component-cta');
-                                    endif;
-                                endwhile;
-                            endif;
-                        ?>
+                            <?php
+                                // loop through components and display all except hero
+                                if(have_rows('page_components')):
+                                    while (have_rows('page_components')) : the_row();
+                                        if(get_row_layout() == 'featured_projects_slider'):
+                                            get_template_part('includes/component-featured-projects-slider');
+                                        elseif(get_row_layout() == 'process_slider'):
+                                            get_template_part('includes/component-process-slider');
+                                        elseif(get_row_layout() == 'lede'):
+                                            get_template_part('includes/component-lede');
+                                        elseif(get_row_layout() == 'team'):
+                                            get_template_part('includes/component-team');
+                                        elseif(get_row_layout() == 'cta'):
+                                            get_template_part('includes/component-cta');
+                                        endif;
+                                    endwhile;
+                                endif;
+                            ?>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php if(is_front_page() && $last_component_name == 'process_slider'): ?>
-            <div class="tier__ornament tier__ornament--bottom"></div>
-        <?php endif; ?>
-    </div>
+    <?php endif; ?>
+    <?php endif; ?>
 
     <?php // contact form ?>
     <div class="tier tier--peacock-dark">
