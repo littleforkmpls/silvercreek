@@ -65,6 +65,8 @@
                                             get_template_part('includes/component-team');
                                         elseif(get_row_layout() == 'cta'):
                                             get_template_part('includes/component-cta');
+                                        elseif(get_row_layout() == 'project_archive'):
+                                            get_template_part('includes/component-project-achive');
                                         endif;
                                     endwhile;
                                 endif;

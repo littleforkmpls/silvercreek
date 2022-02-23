@@ -52,19 +52,19 @@
                                 $project_image = get_the_post_thumbnail_url($featured_project->ID, 'project-card');
                             ?>
                             <div class="collection__stage__list__item">
-                                <a class="isInlineBlock" href="<?php echo esc_html($project_permalink); ?>">
-                                    <div class="card card--pro card--<?php echo strtolower(esc_html($project_status)); ?>">
+                                <a class="isInlineBlock" href="<?php echo $project_permalink; ?>">
+                                    <div class="card card--pro card--<?php echo strtolower($project_status); ?>">
                                         <div class="card__label">
                                             <span class="txt txt--label">
-                                                <?php echo esc_html($project_status); ?>
+                                                <?php echo $project_status; ?>
                                             </span>
                                         </div>
                                         <div class="card__bd card__bd--inset">
                                             <h4 class="txt txt--card-hdg txt--truncated">
-                                                <?php echo esc_html($project_title); ?>
+                                                <?php echo $project_title; ?>
                                             </h4>
                                             <h5 class="txt txt--card-hdg2 txt--truncated">
-                                                <?php echo esc_html($project_location); ?>
+                                                <?php echo $project_location; ?>
                                             </h5>
                                         </div>
                                         <div class="card__media">
