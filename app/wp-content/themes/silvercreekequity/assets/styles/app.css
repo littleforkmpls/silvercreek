@@ -460,15 +460,20 @@ a:active {
 
     .masthead__nav__primary__list li {
         display: inline-block;
+        padding: 0 5px;
     }
 
     .masthead__nav__primary__list a {
         display: block;
         padding: 0 10px;
         height: 28px;
-        line-height: 28px;
+        line-height: 25px;
         font-family: var(--fontFamily-serif);
         font-size: var(--fontSize-md);
+    }
+
+    .masthead__nav__primary__list .current-menu-item a {
+        box-shadow: 0 0 0 2px var(--color-brand-peacock-dark);
     }
 
     .masthead__nav__secondary {
@@ -527,7 +532,7 @@ a:active {
     .masthead__nav__primary__list a {
         padding: 0 12px;
         height: 35px;
-        line-height: 35px;
+        line-height: 31px;
         font-size: var(--fontSize-lg);
     }
 
