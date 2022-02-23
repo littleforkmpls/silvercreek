@@ -595,6 +595,10 @@ a:active {
 ------------------------------------------------------------------------ */
 .tier {}
 
+.tier--white {
+    background-color: var(--color-white);
+}
+
 .tier--main {
     position: relative;
     padding: 20px 0;
@@ -758,6 +762,10 @@ a:active {
 .section--noDivider::after {
     content: none !important;
     display: none !important;
+}
+
+.section--contactForm {
+    padding: 20px 0;
 }
 
 @media (min-width: 1170px) {

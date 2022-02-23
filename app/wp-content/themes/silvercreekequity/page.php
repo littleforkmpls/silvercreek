@@ -35,7 +35,7 @@
     <?php
         // prevent the entire tier from rendering in the event only a hero component is present
         // like on the contact page
-        if($total_rows !== 1 && $last_component_name = 'hero'):
+        if($total_rows !== 1 && $last_component_name !== 'hero'):
     ?>
         <div class="tier tier--main">
             <div class="tier__ornament tier__ornament--top"></div>
@@ -79,11 +79,7 @@
     <?php endif; ?>
 
     <?php // contact form ?>
-    <div class="tier tier--peacock-dark">
-        <div class="wrapper">
-            <?php get_template_part('includes/form-contact'); ?>
-        </div>
-    </div>
+    <?php get_template_part('includes/form-contact'); ?>
 
 </div>
 <?php get_footer(); ?>
