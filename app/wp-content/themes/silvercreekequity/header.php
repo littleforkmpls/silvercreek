@@ -28,6 +28,16 @@
                             <div class="masthead__nav" id="js-navToggleTarget" aria-hidden="true">
                                 <div class="masthead__nav__primary">
                                     <?php
+
+                                        if (get_field('global_portal_link', 'option') && get_field('global_portal_link_text', 'option')):
+
+                                            function add_last_nav_item($items) {
+                                                return $items .= '<li class="isVisibleForMobile"><a href="'. get_field('global_portal_link', 'option') .'">'. get_field('global_portal_link_text', 'option') .'</a></li>';
+                                            }
+                                            add_filter('wp_nav_menu_primary-navigation_items','add_last_nav_item');
+
+                                        endif;
+
                                         wp_nav_menu(array(
                                             'container'            => false,
                                             'menu_class'           => 'masthead__nav__primary__list',

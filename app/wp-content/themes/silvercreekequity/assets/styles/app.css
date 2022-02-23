@@ -472,6 +472,10 @@ a:active {
         font-size: var(--fontSize-md);
     }
 
+    .masthead__nav__primary__list .isVisibleForMobile a {
+        display: none;
+    }
+
     .masthead__nav__primary__list .current-menu-item a {
         box-shadow: 0 0 0 2px var(--color-brand-peacock-dark);
     }
