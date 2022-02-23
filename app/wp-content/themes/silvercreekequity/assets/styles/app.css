@@ -1465,6 +1465,7 @@ a.hasSocialIcon:hover .socialIcon {
 
     .txt--body {
         font-size: var(--fontSize-lg);
+        line-height: 1.5;
     }
 
     .txt--legal {
