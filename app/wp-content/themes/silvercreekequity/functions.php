@@ -257,7 +257,7 @@ add_action(
                     'item_link_description' => __('A link to a project.'),
                 ),
                 'public' => true,
-                'has_archive' => true,
+                'has_archive' => false,
                 'menu_position' => 5,
                 'menu_icon' => 'dashicons-bank',
                 'rewrite' => array(
