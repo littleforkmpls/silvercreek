@@ -12,15 +12,15 @@
 
                         <div class="section section--noDivider">
                             <div class="section__bd section__bd--noPush">
-                                <div class="feature feature--isSpacious">
+                                <div class="feature">
                                     <div class="note">
                                         <div class="note__hd">
-                                            <h1>
+                                            <h1 class="txt txt--hdg">
                                                 <?php the_title(); ?>
                                             </h1>
                                         </div>
                                         <div class="note__subhd">
-                                            <h2>
+                                            <h2 class="txt txt--body">
                                                 <?php the_field('project_location'); ?>
                                             </h2>
                                         </div>
