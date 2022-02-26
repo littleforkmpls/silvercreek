@@ -617,6 +617,10 @@ a:active {
     top: 0;
 }
 
+.tier--main .tier__ornament--light {
+    background-color: var(--color-brand-light-gradLight);
+    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
+}
 
 .tier--main .tier__ornament--bottom {
     height: 200px;
@@ -1194,6 +1198,33 @@ a:active {
 
 .title--inverted::before {
     background-color: var(--color-brand-light);
+}
+
+/* ---------------------------------------------------------------------
+ Component - Tag
+------------------------------------------------------------------------ */
+.tag {
+    display: inline-block;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.tag--funded {
+    background-color: var(--color-brand-grey);
+    color: var(--color-brand-dark);
+}
+
+.tag--completed {
+    background-color: var(--color-brand-peacock-dark);
+    background-image: linear-gradient(to right, var(--color-brand-peacock-gradLight), var(--color-brand-peacock-gradDark));
+    color: var(--color-brand-light);
+}
+
+.tag--open {
+    background-color: var(--color-brand-peacock);
+    color: var(--color-white);
 }
 
 /* ---------------------------------------------------------------------
