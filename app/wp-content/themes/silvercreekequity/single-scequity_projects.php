@@ -11,7 +11,7 @@
                     <div class="slab__content">
 
                         <div class="section section--noDivider">
-                            <div class="section__bd">
+                            <div class="section__bd section__bd--noPush">
                                 <div class="feature feature--isSpacious">
                                     <div class="note">
                                         <div class="note__hd">
