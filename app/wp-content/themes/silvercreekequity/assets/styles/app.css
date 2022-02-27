@@ -1222,7 +1222,8 @@ a:active {
     display: none;
 }
 
-.gallery__stage__item.isActive {
+.gallery__stage__item.isActive,
+.gallery__stage__item:only-child {
     display: block;
 }
 
