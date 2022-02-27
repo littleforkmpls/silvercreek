@@ -31,9 +31,14 @@ document.addEventListener("DOMContentLoaded", function() {
     /** Gallery */
     if (gallery) {
 
-        // locate thumbnails
+        // locate triggers and items
         let galleryTriggers = document.querySelectorAll('#js-gallery .gallery__thumbs__item a');
         let galleryItems = document.querySelectorAll('#js-gallery .gallery__stage__item');
+
+        // stop if there are no triggers or items found
+        if (galleryTriggers.length < 1 || galleryItems.length < 1) {
+            return;
+        }
 
         // enable the first gallery item;
         galleryTriggers[0].classList.add('isActive');
