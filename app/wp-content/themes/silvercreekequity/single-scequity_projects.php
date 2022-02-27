@@ -12,7 +12,7 @@
 
                         <div class="section section--noDivider">
                             <div class="section__bd section__bd--noPush">
-                                <div class="feature">
+                                <div class="feature feature--inset">
                                     <div class="note">
                                         <div class="note__hd">
                                             <h1 class="txt txt--hdg">
@@ -32,7 +32,7 @@
                                             </div>
                                         </div>
                                         <div class="note__bd">
-                                            <div>
+                                            <div class="txt txt--body">
                                                 <?php the_field('project_description'); ?>
                                             </div>
                                         </div>
@@ -41,24 +41,81 @@
                             </div>
                         </div>
 
+                        <?php
+                            if(have_rows('gallery_items')):
+
+                            $total_gallery_items = count(get_field('gallery_items'));
+                        ?>
                         <div class="section">
                             <div class="section__bd">
-                                <div class="gallery">
-                                    <div>
-                                        <?php
-                                        // <iframe id="iframe-310470" frameBorder="0" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation allow-top-navigation" src="javascript: window.frameElement.getAttribute(&quot;srcdoc&quot;);" srcDoc="&lt;script&gt;window.onmessage = function(event) {event.source.postMessage({iframeId: event.data, scrollHeight: document.body.getBoundingClientRect().height || document.body.scrollHeight}, event.origin);};&lt;/script&gt;&lt;body style=&#x27;margin: 0&#x27;&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://share.earthcam.net/embed/timelapse/tJ90CoLmq7TzrY396Yd88BvxsbjvXoLki_rh0irqyFk!&quot;&gt;&lt;/script&gt;&lt;/body&gt;" style="width:100%;height:undefinedpx;overflow:visible;transition:height 1.5s ease;-webkit-transition:height 1.5s ease;-moz-transition:height .25s ease"></iframe>
-                                        // <iframe id="iframe-510471" frameBorder="0" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation allow-top-navigation" src="javascript: window.frameElement.getAttribute(&quot;srcdoc&quot;);" srcDoc="&lt;script&gt;window.onmessage = function(event) {event.source.postMessage({iframeId: event.data, scrollHeight: document.body.getBoundingClientRect().height || document.body.scrollHeight}, event.origin);};&lt;/script&gt;&lt;body style=&#x27;margin: 0&#x27;&gt;&lt;iframe title=&quot;Timber Pines&quot; src=&quot;https://www.senserasystems.com/public/embed/SP2021929768&quot; width=&quot;1200&quot; height=&quot;700&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/body&gt;" style="width:100%;height:undefinedpx;overflow:visible;transition:height 1.5s ease;-webkit-transition:height 1.5s ease;-moz-transition:height .25s ease"></iframe>
-                                        ?>
+                                <div class="feature feature--inset">
+
+                                    <div id="js-gallery" class="gallery">
+                                        <div class="gallery__stage">
+                                            <?php while (have_rows('gallery_items')) : the_row(); ?>
+                                                <?php if(get_row_layout() == 'gallery_items_image'): ?>
+                                                    <div class="gallery__stage__item gallery__stage__item--image" data-index="<?php echo get_row_index(); ?>">
+                                                        <div>
+                                                            <img class="isInlineBlock" src="<?php echo wp_get_attachment_image_url(get_sub_field('gallery_items_image_file'), 'large'); ?>" alt="" />
+                                                        </div>
+                                                    </div>
+                                                <?php elseif(get_row_layout() == 'gallery_items_youtube_video'): ?>
+                                                    <div class="gallery__stage__item gallery__stage__item--video" data-index="<?php echo get_row_index(); ?>">
+                                                        <div class="hasVideo">
+                                                            <iframe src="https://www.youtube.com/embed/<?php echo get_sub_field('gallery_items_youtube_video_id'); ?>" frameborder="0" allowfullscreen></iframe>
+                                                        </div>
+                                                    </div>
+                                                <?php elseif(get_row_layout() == 'gallery_items_iframe'): ?>
+                                                    <div class="gallery__stage__item gallery__stage__item--iframe" data-index="<?php echo get_row_index(); ?>">
+                                                        <div class="hasVideo">
+                                                            <iframe src="<?php echo get_sub_field('gallery_items_iframe_source'); ?>" frameborder="0" allowfullscreen="" /></iframe>
+                                                        </div>
+                                                    </div>
+                                                <?php endif; ?>
+                                            <?php endwhile; ?>
+                                        </div>
+                                        <?php if($total_gallery_items > 1): ?>
+                                            <div class="gallery__thumbs">
+                                                <?php while (have_rows('gallery_items')) : the_row(); ?>
+                                                    <?php if(get_row_layout() == 'gallery_items_image'): ?>
+                                                        <div class="gallery__thumbs__item gallery__thumbs__item--image">
+                                                            <a data-index="<?php echo get_row_index(); ?>" href="<?php echo wp_get_attachment_image_url(get_sub_field('gallery_items_image_file'), 'large'); ?>">
+                                                                <img class="isBlock" width="60" height="60" src="<?php echo wp_get_attachment_image_url(get_sub_field('gallery_items_image_file'), 'thumbnail'); ?>" alt="View larger image" />
+                                                            </a>
+                                                        </div>
+                                                    <?php elseif(get_row_layout() == 'gallery_items_youtube_video'): ?>
+                                                        <div class="gallery__thumbs__item gallery__thumbs__item--video">
+                                                            <a data-index="<?php echo get_row_index(); ?>" href="https://www.youtube.com/embed/<?php echo get_sub_field('gallery_items_youtube_video_id'); ?>">
+                                                                <img class="isBlock" width="60" height="60" src="<?php bloginfo('template_url'); ?>/assets/images/gallery-thumbnail-video.png" alt="View video" />
+                                                            </a>
+                                                        </div>
+                                                    <?php elseif(get_row_layout() == 'gallery_items_iframe'): ?>
+                                                        <div class="gallery__thumbs__item gallery__thumbs__item--iframe">
+                                                            <a data-index="<?php echo get_row_index(); ?>" href="<?php echo get_sub_field('gallery_items_iframe_source'); ?>">
+                                                                <img class="isBlock" width="60" height="60" src="<?php bloginfo('template_url'); ?>/assets/images/gallery-thumbnail-iframe.png" alt="View iframe" />
+                                                            </a>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                <?php endwhile; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="gallery__meta">
+
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
+                        <?php endif; ?>
 
+                        <!--
                         <div class="section">
                             <div class="section__cards">
 
                             </div>
                         </div>
+                        -->
 
                     </div>
                 </div>
