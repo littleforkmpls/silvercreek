@@ -170,7 +170,7 @@
                                 </div>
                             </div>
                             <div class="section__ft">
-                                <a class="btn" href="<?php echo get_post_type_archive_link('scequity_projects'); ?>">
+                                <a class="btn" href="<?php echo get_page_link(142); ?>">
                                     <span class="btn__txt">All Projects</span>
                                     <span class="btn__icon"></span>
                                 </a>
