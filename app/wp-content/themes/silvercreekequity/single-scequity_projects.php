@@ -32,7 +32,7 @@
                                             </div>
                                         </div>
                                         <div class="note__bd">
-                                            <div class="txt txt--body">
+                                            <div class="txt txt--body txt--highlightLinks">
                                                 <?php the_field('project_description'); ?>
                                             </div>
                                         </div>

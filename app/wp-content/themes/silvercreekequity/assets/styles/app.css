@@ -1642,6 +1642,11 @@ a.hasSocialIcon:hover .socialIcon {
     text-overflow: ellipsis;
 }
 
+.txt--highlightLinks a {
+    color: var(--color-brand-peacock);
+    text-decoration: underline;
+}
+
 /* ---------------------------------------------------------------------
  Gravity Forms
 ------------------------------------------------------------------------ */
