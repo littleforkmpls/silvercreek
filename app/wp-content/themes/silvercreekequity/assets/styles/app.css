@@ -1228,7 +1228,7 @@ a:active {
 }
 
 .gallery__stage__item--iframe {
-    // set background color since sensare embeds are transparent
+    /* set background color since sensara embeds are transparent */
     background-color: var(--color-brand-light);
 }
 
