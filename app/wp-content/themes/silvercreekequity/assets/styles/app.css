@@ -1260,6 +1260,15 @@ a:active {
     padding-top: 20px;
 }
 
+.gallery__meta__caption__item {
+    display: none;
+}
+
+.gallery__meta__caption__item.isActive,
+.gallery__meta__caption__item:only-child {
+    display: inline;
+}
+
 @media (min-width: 780px) {
     .gallery__thumbs__item {
         width: 60px;

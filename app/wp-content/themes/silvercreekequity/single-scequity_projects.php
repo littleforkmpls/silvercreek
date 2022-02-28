@@ -100,15 +100,25 @@
                                             </div>
                                         <?php endif; ?>
                                         <div class="gallery__meta">
-                                            <?php if($total_gallery_items > 1): ?>
                                             <div class="gallery__meta__count">
                                                 <span class="txt txt--size-md txt--color-brand-peacock">
                                                     Item <span id="js-galleryCurrentIndex">1</span>/<?php echo $total_gallery_items; ?>
                                                 </span>
                                             </div>
-                                            <?php endif; ?>
                                             <div class="gallery__meta__caption">
-
+                                                <?php while (have_rows('gallery_items')) : the_row(); ?>
+                                                    <span class="gallery__meta__caption__item" data-index="<?php echo get_row_index(); ?>">
+                                                        <span class="txt txt--size-md txt--color-brand-dark">
+                                                        <?php if(get_row_layout() == 'gallery_items_image'): ?>
+                                                            <?php the_sub_field('gallery_items_image_caption'); ?>
+                                                        <?php elseif(get_row_layout() == 'gallery_items_youtube_video'): ?>
+                                                            <?php the_sub_field('gallery_items_youtube_caption'); ?>
+                                                        <?php elseif(get_row_layout() == 'gallery_items_iframe'): ?>
+                                                            <?php the_sub_field('gallery_items_iframe_caption'); ?>
+                                                        <?php endif; ?>
+                                                        </span>
+                                                    </span>
+                                                <?php endwhile; ?>
                                             </div>
                                         </div>
                                     </div>

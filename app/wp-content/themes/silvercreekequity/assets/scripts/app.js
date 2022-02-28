@@ -33,16 +33,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // locate triggers and items
         let galleryTriggers = document.querySelectorAll('#js-gallery .gallery__thumbs__item a');
-        let galleryItems = document.querySelectorAll('#js-gallery .gallery__stage__item');
+        let galleryItems    = document.querySelectorAll('#js-gallery .gallery__stage__item');
+        let galleryCaptions = document.querySelectorAll('#js-gallery .gallery__meta__caption__item');
 
-        // stop if there are no triggers or items found
-        if (galleryTriggers.length < 1 || galleryItems.length < 1) {
+        // stop if there are no triggers or items or captions found
+        if (galleryTriggers.length < 1 || galleryItems.length < 1 || galleryCaptions.length < 1) {
             return;
         }
 
         // enable the first gallery item;
         galleryTriggers[0].classList.add('isActive');
         galleryItems[0].classList.add('isActive');
+        galleryCaptions[0].classList.add('isActive');
 
         // add listeners to triggers
         for (const galleryTrigger of galleryTriggers) {
@@ -59,11 +61,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // remove and reset the active class to the correct thumbnail
                 document.querySelector('#js-gallery .gallery__thumbs__item a.isActive').classList.remove('isActive');
+                document.querySelector('#js-gallery .gallery__meta__caption__item.isActive').classList.remove('isActive');
                 this.classList.add('isActive');
 
                 // remove and reset the active class to the current item
                 document.querySelector('#js-gallery .gallery__stage__item.isActive').classList.remove('isActive');
                 document.querySelector('#js-gallery .gallery__stage__item[data-index="'+ targetIndex +'"]').classList.add('isActive');
+                document.querySelector('#js-gallery .gallery__meta__caption__item[data-index="'+ targetIndex +'"]').classList.add('isActive');
 
                 // update the gallery counter
                 document.querySelector('#js-galleryCurrentIndex').innerHTML = targetIndex;
