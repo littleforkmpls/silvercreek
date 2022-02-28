@@ -100,7 +100,16 @@
                                             </div>
                                         <?php endif; ?>
                                         <div class="gallery__meta">
+                                            <?php if($total_gallery_items > 1): ?>
+                                            <div class="gallery__meta__count">
+                                                <span class="txt txt--size-md txt--color-brand-peacock">
+                                                    Item <span id="js-galleryCurrentIndex">1</span>/<?php echo $total_gallery_items; ?>
+                                                </span>
+                                            </div>
+                                            <?php endif; ?>
+                                            <div class="gallery__meta__caption">
 
+                                            </div>
                                         </div>
                                     </div>
 

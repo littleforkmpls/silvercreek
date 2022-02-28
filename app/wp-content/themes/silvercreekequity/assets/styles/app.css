@@ -1256,6 +1256,10 @@ a:active {
     padding-left: 10px;
 }
 
+.gallery__meta {
+    padding-top: 20px;
+}
+
 @media (min-width: 780px) {
     .gallery__thumbs__item {
         width: 60px;

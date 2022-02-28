@@ -64,6 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 // remove and reset the active class to the current item
                 document.querySelector('#js-gallery .gallery__stage__item.isActive').classList.remove('isActive');
                 document.querySelector('#js-gallery .gallery__stage__item[data-index="'+ targetIndex +'"]').classList.add('isActive');
+
+                // update the gallery counter
+                document.querySelector('#js-galleryCurrentIndex').innerHTML = targetIndex;
+
             });
         }
     }
