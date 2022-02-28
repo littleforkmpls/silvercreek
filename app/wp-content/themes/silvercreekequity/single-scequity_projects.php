@@ -128,13 +128,55 @@
                         </div>
                         <?php endif; ?>
 
-                        <!--
-                        <div class="section">
+                        <?php if (get_field('project_related_projects')) : ?>
+                        <div class="section section--isTransparent">
                             <div class="section__cards">
-
+                                <div class="collection">
+                                    <div class="collection__stage">
+                                        <div class="collection__stage__list">
+                                            <?php foreach(get_field('project_related_projects') as $related_project) : ?>
+                                                <?php
+                                                    $project_permalink = get_permalink($related_project->ID);
+                                                    $project_title = get_the_title($related_project->ID);
+                                                    $project_location = get_field('project_location', $related_project->ID);
+                                                    $project_status = get_field('project_status', $related_project->ID);
+                                                    $project_image = get_the_post_thumbnail_url($related_project->ID, 'project-card');
+                                                ?>
+                                                <div class="collection__stage__list__item">
+                                                    <a class="isInlineBlock" href="<?php echo $project_permalink; ?>">
+                                                        <div class="card card--pro card--<?php echo strtolower($project_status); ?>">
+                                                            <div class="card__label">
+                                                                <span class="txt txt--label">
+                                                                    <?php echo $project_status; ?>
+                                                                </span>
+                                                            </div>
+                                                            <div class="card__bd card__bd--inset">
+                                                                <h4 class="txt txt--card-hdg txt--truncated">
+                                                                    <?php echo $project_title; ?>
+                                                                </h4>
+                                                                <h5 class="txt txt--card-hdg2 txt--truncated">
+                                                                    <?php echo $project_location; ?>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="card__media">
+                                                                <img class="isBlock" width="400" height="320" src="<?php echo $project_image; ?>" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section__ft">
+                                <a class="btn" href="<?php echo get_post_type_archive_link('scequity_projects'); ?>">
+                                    <span class="btn__txt">All Projects</span>
+                                    <span class="btn__icon"></span>
+                                </a>
                             </div>
                         </div>
-                        -->
+                        <?php endif; ?>
 
                     </div>
                 </div>
