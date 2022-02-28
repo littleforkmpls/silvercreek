@@ -61,8 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.querySelector('#js-gallery .gallery__thumbs__item a.isActive').classList.remove('isActive');
                 this.classList.add('isActive');
 
-                console.log('#js-gallery .gallery__stage__item[data-index="'+ targetIndex +'"]');
-
                 // remove and reset the active class to the current item
                 document.querySelector('#js-gallery .gallery__stage__item.isActive').classList.remove('isActive');
                 document.querySelector('#js-gallery .gallery__stage__item[data-index="'+ targetIndex +'"]').classList.add('isActive');
