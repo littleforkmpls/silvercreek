@@ -67,6 +67,8 @@
                                             get_template_part('includes/component-cta');
                                         elseif(get_row_layout() == 'project_archive'):
                                             get_template_part('includes/component-project-archive');
+                                        elseif(get_row_layout() == 'spacer'):
+                                            get_template_part('includes/component-spacer');
                                         endif;
                                     endwhile;
                                 endif;

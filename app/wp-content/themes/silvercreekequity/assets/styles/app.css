@@ -779,6 +779,11 @@ a:active {
     padding: 20px 0;
 }
 
+.section--spacer {
+    line-height: 0;
+    font-size: 0;
+}
+
 @media (min-width: 1170px) {
     .section__cards {
         margin: 0 10px;
