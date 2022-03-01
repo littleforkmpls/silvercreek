@@ -5,7 +5,7 @@
     $cta_button_text        = get_sub_field('cta_button_text');
     $cta_button_link        = get_sub_field('cta_button_link');
     $cta_background_style   = get_sub_field('cta_background_style');
-    $cta_hide_divider      = get_sub_field('lede_hide_divider');
+    $cta_hide_divider       = get_sub_field('cta_hide_divider');
 
     $section_class = 'section--' .  $cta_background_style;
 
