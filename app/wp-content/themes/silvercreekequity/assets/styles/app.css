@@ -1226,12 +1226,16 @@ a:active {
     display: none;
     /* set background color since sensara embeds are transparent */
     /* set background color for non 16/9 images */
-    background-color: var(--color-brand-light);
+    background-color: var(--color-brand-peacock-darkest);
 }
 
 .gallery__stage__item.isActive,
 .gallery__stage__item:only-child {
     display: block;
+}
+
+.gallery__stage__item--iframe {
+    background-color: var(--color-brand-light);
 }
 
 .gallery__thumbs {
@@ -1759,3 +1763,4 @@ a.hasSocialIcon:hover .socialIcon {
         transform: rotate(360deg);
     }
 }
+f
