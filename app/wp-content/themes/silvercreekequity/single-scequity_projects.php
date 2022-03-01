@@ -55,7 +55,7 @@
                                             <?php while (have_rows('gallery_items')) : the_row(); ?>
                                                 <?php if(get_row_layout() == 'gallery_items_image'): ?>
                                                     <div class="gallery__stage__item gallery__stage__item--image" data-index="<?php echo get_row_index(); ?>">
-                                                        <div>
+                                                        <div class="hasVideo">
                                                             <img class="isInlineBlock" src="<?php echo wp_get_attachment_image_url(get_sub_field('gallery_items_image_file'), 'large'); ?>" alt="" />
                                                         </div>
                                                     </div>
