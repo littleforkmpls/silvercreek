@@ -4,7 +4,6 @@
 <div class="site__main" role="main">
 
     <div class="tier tier--main">
-        <div class="tier__ornament tier__ornament--top tier__ornament--light"></div>
         <div class="tier__bd">
             <div class="wrapper">
                 <div class="slab">
