@@ -1692,7 +1692,7 @@ a.hasSocialIcon:hover .socialIcon {
     box-sizing: border-box;
     width: 100%;
     padding: 8px 12px;
-    border: 1px solid var(--color-brand-grey);
+    border: none;
     background-color: var(--color-white);
     font-family: var(--fontFamily-sans);
     font-size: var(--fontSize-sm);
@@ -1707,7 +1707,7 @@ a.hasSocialIcon:hover .socialIcon {
     width: 100%;
     height: 200px;
     padding: 8px 12px;
-    border: 1px solid var(--color-brand-grey);
+    border: none;
     background-color: var(--color-white);
     font-family: var(--fontFamily-sans);
     font-size: var(--fontSize-sm);
@@ -1743,7 +1743,7 @@ a.hasSocialIcon:hover .socialIcon {
 .gform_fields input[type=email][aria-invalid=true],
 .gform_fields input[type=tel][aria-invalid=true],
 .gform_fields textarea[aria-invalid=true] {
-    border-color: var(--color-alert);
+    border: 1px solid var(--color-alert);
 }
 
 .gform_footer .btn {
