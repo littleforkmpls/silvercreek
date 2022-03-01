@@ -1,20 +1,23 @@
 <?php
-    $cf_tier_class = 'tier--peacock-dark';
-    $cf_title_class = 'title--inverted';
-    $cf_headline_class = 'txt--color-brand-light';
-    $cf_tier_class = 'tier--white';
-    $cf_title_class = '';
-    $cf_headline_class = '';
+    if (is_front_page()):
+        $cf_tier_class = 'tier--peacock-dark';
+        $cf_title_class = 'title--inverted';
+        $cf_headline_class = 'txt--color-brand-light';
+    else:
+        $cf_tier_class = 'tier--white';
+        $cf_title_class = '';
+        $cf_headline_class = '';
+    endif;
 ?>
 
-<div class="tier tier--white">
+<div class="tier <?php echo $cf_tier_class; ?>">
     <div class="wrapper">
 
         <div class="section section--noDivider section--contactForm">
             <?php if(!is_page('contact')): ?>
             <div class="section__hd">
-                <div class="title">
-                    <h2 class="txt txt--title">
+                <div class="title <?php echo $cf_title_class; ?>">
+                    <h2 class="txt txt--title <?php echo $cf_headline_class; ?>">
                         <?php the_field('contact_form_section_label', 'option'); ?>
                     </h2>
                 </div>
@@ -22,7 +25,7 @@
             <div class="section__bd">
                 <div class="feature feature--tight">
                     <div class="feature__hd">
-                        <h3 class="txt txt--hdg">
+                        <h3 class="txt txt--hdg <?php echo $cf_headline_class; ?>">
                             <?php the_field('contact_form_headline', 'option'); ?>
                         </h3>
                     </div>
