@@ -54,19 +54,19 @@
                                             <?php while (have_rows('gallery_items')) : the_row(); ?>
                                                 <?php if(get_row_layout() == 'gallery_items_image'): ?>
                                                     <div class="gallery__stage__item gallery__stage__item--image" data-index="<?php echo get_row_index(); ?>">
-                                                        <div class="hasVideo">
+                                                        <div class="has16x9Media">
                                                             <img class="isInlineBlock" src="<?php echo wp_get_attachment_image_url(get_sub_field('gallery_items_image_file'), 'large'); ?>" alt="" />
                                                         </div>
                                                     </div>
                                                 <?php elseif(get_row_layout() == 'gallery_items_youtube_video'): ?>
                                                     <div class="gallery__stage__item gallery__stage__item--video" data-index="<?php echo get_row_index(); ?>">
-                                                        <div class="hasVideo">
+                                                        <div class="has16x9Media">
                                                             <iframe src="https://www.youtube.com/embed/<?php echo get_sub_field('gallery_items_youtube_video_id'); ?>" frameborder="0" allowfullscreen></iframe>
                                                         </div>
                                                     </div>
                                                 <?php elseif(get_row_layout() == 'gallery_items_iframe'): ?>
                                                     <div class="gallery__stage__item gallery__stage__item--iframe" data-index="<?php echo get_row_index(); ?>">
-                                                        <div class="hasVideo">
+                                                        <div class="has16x9Media">
                                                             <iframe src="<?php echo get_sub_field('gallery_items_iframe_source'); ?>" frameborder="0" allowfullscreen="" /></iframe>
                                                         </div>
                                                     </div>

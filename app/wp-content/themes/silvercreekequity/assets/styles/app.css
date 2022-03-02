@@ -224,16 +224,16 @@ a:active {
 /* ---------------------------------------------------------------------
  Helper - Video
 ------------------------------------------------------------------------ */
-.hasVideo {
+.has16x9Media {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
 }
 
-.hasVideo iframe,
-.hasVideo object,
-.hasVideo embed,
-.hasVideo img {
+.has16x9Media iframe,
+.has16x9Media object,
+.has16x9Media embed,
+.has16x9Media img {
     position: absolute;
     top: 0;
     left: 0;
@@ -241,7 +241,7 @@ a:active {
     height: 100%;
 }
 
-.hasVideo img {
+.has16x9Media img {
     object-fit: scale-down;
 }
 
