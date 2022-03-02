@@ -41,7 +41,7 @@
     <div class="tier tier--white">
         <div class="wrapper">
             <div class="mat">
-                <div class="feature feature--inset">
+                <div class="region region--inset">
 
                     <?php
                         if(have_rows('gallery_items')):

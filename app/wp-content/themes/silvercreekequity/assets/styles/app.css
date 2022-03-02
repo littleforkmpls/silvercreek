@@ -841,6 +841,12 @@ a:active {
 /* ---------------------------------------------------------------------
  Component - Region
 ------------------------------------------------------------------------ */
+.region {}
+
+.region--inset {
+    padding: 0 10px;
+}
+
 .region__bd {
     margin-bottom: 20px;
 }
@@ -854,10 +860,20 @@ a:active {
     text-align: center;
 }
 
+@media (min-width: 860px) {
+    .region--inset {
+        padding: 0 50px;
+    }
+}
+
 @media (min-width: 1170px) {
     .region__bd--hasCards {
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    .region--inset {
+        padding: 0 70px;
     }
 }
 
@@ -1316,6 +1332,7 @@ a:active {
 }
 
 .gallery__meta {
+    text-align: center;
     padding-top: 20px;
 }
 
