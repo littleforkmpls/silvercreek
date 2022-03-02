@@ -269,6 +269,8 @@ a:active {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    border-top: none;
+    background-image: linear-gradient(to right, var(--color-brand-peacock-gradLight), var(--color-brand-peacock-gradDark));
 }
 
 .site__main__inner {
@@ -894,10 +896,28 @@ a:active {
 ------------------------------------------------------------------------ */
 .placard {
     padding: 40px;
+    color: var(--color-brand-light);
 }
 
-.placard__hd {
-    margin-bottom: 40px;
+.placard__title {
+    margin-bottom: 60px;
+}
+
+.placard__title__inner {
+    padding-bottom: 20px; /* push the underline */
+}
+
+.placard__title::after {
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    text-align: center;
+    border-bottom: 1.5px solid var(--color-brand-grey);
+}
+
+.placard__bd {
+    padding: 30px 0 50px;
 }
 
 /* ---------------------------------------------------------------------
