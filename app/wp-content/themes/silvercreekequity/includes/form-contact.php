@@ -1,5 +1,5 @@
 <?php
-    if (is_front_page()):
+    if (is_front_page() || is_page(12)):
         $cf_tier_class = 'tier--peacock-dark';
         $cf_title_class = 'title--inverted';
         $cf_headline_class = 'txt--color-brand-light';
