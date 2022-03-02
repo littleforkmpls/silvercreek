@@ -603,10 +603,6 @@ a:active {
 ------------------------------------------------------------------------ */
 .tier {}
 
-.tier--white {
-    background-color: var(--color-white);
-}
-
 .tier--main {
     position: relative;
     padding: 20px 0;
@@ -642,6 +638,14 @@ a:active {
     background-color: var(--color-white);
 }
 
+.tier--white {
+    background-color: var(--color-white);
+}
+
+.tier--light-gradient {
+    background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
+}
+
 .tier--peacock-gradient {
     background-color: var(--color-brand-peacock-gradLight);
     background-image: linear-gradient(90deg, var(--color-brand-peacock-gradLight) 0%, var(--color-brand-peacock-gradDark) 100%);
@@ -662,6 +666,13 @@ a:active {
     background-size: cover;
     background-position: center center;
     background-blend-mode: multiply;
+}
+
+/* ---------------------------------------------------------------------
+ Layout - Mat
+------------------------------------------------------------------------ */
+.mat {
+    padding: 40px 0;
 }
 
 /* ---------------------------------------------------------------------
@@ -827,7 +838,16 @@ a:active {
         linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 100%);
 }
 
+/* ---------------------------------------------------------------------
+ Component - Region
+------------------------------------------------------------------------ */
+.region__bd {
+    margin-bottom: 20px;
+}
 
+.region__ft {
+    text-align: center;
+}
 
 /* ---------------------------------------------------------------------
  Component - Feature
@@ -1249,9 +1269,6 @@ a:active {
 
 .gallery__stage__item {
     display: none;
-    /* set background color since sensara embeds are transparent */
-    /* set background color for non 16/9 images */
-    background-color: var(--color-brand-peacock-darkest);
 }
 
 .gallery__stage__item.isActive,
@@ -1260,6 +1277,7 @@ a:active {
 }
 
 .gallery__stage__item--iframe {
+    /* set background color since sensara embeds are transparent */
     background-color: var(--color-brand-light);
 }
 
@@ -1469,6 +1487,20 @@ a:active {
     border-left-color: var(--color-brand-light);
 }
 
+.btn--inverted {
+    background-color: var(--color-brand-peacock);
+    color: var(--color-brand-light);
+    border-color: var(--color-brand-light);
+}
+
+.btn--inverted::before {
+    border-right-color: var(--color-brand-peacock);
+}
+
+.btn--inverted::after {
+    border-left-color: var(--color-brand-peacock);
+}
+
 .btn--light .btn__icon {
     background-color: var(--color-brand-dark);
 }
@@ -1495,6 +1527,18 @@ a:active {
 
 .btn--light:hover::after {
     border-left-color: var(--color-white);
+}
+
+.btn--inverted:hover {
+    background-color: var(--color-brand-peacock-dark);
+}
+
+.btn--inverted:hover::before {
+    border-right-color: var(--color-brand-peacock-dark);
+}
+
+.btn--inverted:hover::after {
+    border-left-color: var(--color-brand-peacock-dark);
 }
 
 /* ---------------------------------------------------------------------
