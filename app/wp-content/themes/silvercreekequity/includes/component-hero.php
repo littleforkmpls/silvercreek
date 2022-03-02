@@ -30,7 +30,7 @@
                     <div class="hero__title">
                         <div class="hero__title__inner">
                             <?php // not using a heading - it's already included in page templates ?>
-                            <div class="txt txt--label">
+                            <div class="txt txt--label txt--color-brand-grey">
                                 <?php the_title(); ?>
                             </div>
                         </div>
