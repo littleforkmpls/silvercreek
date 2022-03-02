@@ -132,7 +132,7 @@
 
                 <?php if (get_field('project_related_projects')) : ?>
                     <div class="region">
-                        <div class="region__bd">
+                        <div class="region__bd region__bd--hasCards">
                             <div class="collection">
                                 <div class="collection__stage">
                                     <div class="collection__stage__list">

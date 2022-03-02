@@ -845,8 +845,20 @@ a:active {
     margin-bottom: 20px;
 }
 
+.region__bd--hasCards {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
 .region__ft {
     text-align: center;
+}
+
+@media (min-width: 1170px) {
+    .region__bd--hasCards {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 /* ---------------------------------------------------------------------
