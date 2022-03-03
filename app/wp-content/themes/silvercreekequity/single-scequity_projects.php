@@ -140,7 +140,7 @@
         </div>
     </div>
 
-    <div class="tier tier--peacock-gradient">
+    <div class="tier tier--light-gradient">
         <div class="wrapper">
             <div class="mat">
 
@@ -186,7 +186,7 @@
                             </div>
                         </div>
                         <div class="region__ft">
-                            <a class="btn btn--inverted" href="<?php echo get_page_link(142); ?>">
+                            <a class="btn" href="<?php echo get_page_link(142); ?>">
                                 <span class="btn__txt">All Projects</span>
                                 <span class="btn__icon"></span>
                             </a>

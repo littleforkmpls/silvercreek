@@ -13,19 +13,12 @@
     } else {
         $hero_bg_image = '';
     }
-
-    if ($hero_show_page_title) {
-        $hero_class = 'hero--hasTitle';
-    } else {
-        $hero_class = '';
-    }
 ?>
 
 <div class="tier tier--peacock-dark-media" style="background-image: url('<?php echo $hero_bg_image ?>');">
     <div class="wrapper">
-        <div class="section section--noDivider">
 
-            <div class="hero <?php echo $hero_class; ?>">
+            <div class="hero">
                 <?php if ($hero_show_page_title): ?>
                     <div class="hero__title">
                         <div class="hero__title__inner">
@@ -60,6 +53,5 @@
                 <?php endif; ?>
             </div>
 
-        </div>
     </div>
 </div>
