@@ -47,7 +47,7 @@
                 <?php if($process_slider_steps): ?>
                     <div class="region__bd region__bd--hasCards">
                         <div class="collection">
-                            <div class="collection__stage">
+                            <div class="collection__stage collection__stage--fixed">
                                 <div class="collection__stage__list">
                                     <?php while(have_rows('process_slider_steps')) : the_row(); ?>
                                         <?php
