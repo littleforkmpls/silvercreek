@@ -1073,6 +1073,22 @@ a:active {
     border-bottom: 15px solid transparent;
 }
 
+.card__label::after {
+    content: " ";
+    position: absolute;
+    top: 7px;
+    right: -40px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-brand-light);
+    -webkit-mask-image: url("../images/arrow-right.svg");
+    -webkit-mask-position: center;
+    -webkit-mask-size: 16px;
+    mask-image: url("../images/arrow-right.svg");
+    mask-position: center;
+    mask-size: 16px;
+}
+
 /* completed variation */
 .card--completed .card__label {
     background-color: var(--color-brand-peacock-darkest);
