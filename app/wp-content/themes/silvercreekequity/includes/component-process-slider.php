@@ -62,8 +62,8 @@
                                                     <img class="isBlock" width="400" height="320" src="<?php echo $process_slider_steps_step_image_url; ?>" alt="<?php echo $process_slider_steps_step_name; ?>" />
                                                 </div>
                                                 <div class="card__bd card__bd--dark card__bd--center">
-                                                    <div class="card__bd_content">
-                                                        <div class="card__bd_content__hd">
+                                                    <div class="card__bd__content">
+                                                        <div class="card__bd__content__hd">
                                                             <h4 class="txt txt--label">
                                                                 <?php echo $process_slider_steps_step_name; ?>
                                                             </h4>
