@@ -8,9 +8,9 @@
     $featured_projects_slider_button_text       = get_sub_field('featured_projects_slider_button_text');
 ?>
 
-<div class="tier tier--white">
+<div class="tier tier--peacock-gradient tier--topPad">
     <div class="wrapper">
-        <div class="mat">
+        <div class="slab slab--special">
 
             <div class="region">
                 <?php if ($featured_projects_slider_section_label): ?>
@@ -23,7 +23,7 @@
                     </div>
                 <?php endif; ?>
                 <?php if ($featured_projects_slider_headline || $featured_projects_slider_blurb): ?>
-                    <div class="region__intro">
+                    <div class="region__intro region__intro--noPush">
                         <div class="feature feature--hasDivider">
                             <?php if ($featured_projects_slider_headline): ?>
                             <div class="feature__hd">
@@ -42,6 +42,17 @@
                         </div>
                     </div>
                 <?php endif; ?>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="tier tier--white">
+    <div class="wrapper">
+        <div class="mat">
+
+            <div class="region">
                 <?php if($featured_projects_slider_projects): ?>
                     <div class="region__bd region__bd--hasCards">
                         <div class="collection">
