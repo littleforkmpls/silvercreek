@@ -937,7 +937,7 @@ a:active {
 
     .collection__stage--fixed .collection__stage__list {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around; /* not space-between becauase it clips card shadows */
     }
 
     .collection__stage--fixed .collection__stage__list__item {
