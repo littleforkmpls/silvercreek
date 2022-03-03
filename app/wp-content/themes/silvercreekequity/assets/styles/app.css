@@ -897,16 +897,6 @@ a:active {
     padding-left: 20px;
 }
 
-@media (min-width: 860px) {
-    .collection {
-        height: 460px;
-    }
-
-    .collection__stage__list__item {
-        height: 470px;
-    }
-}
-
 @media (min-width: 1170px) {
     .collection__stage {
         padding-top: 20px;
@@ -1044,17 +1034,6 @@ a:active {
 
 .card__bd_content__hd {
     margin-bottom: 10px;
-}
-
-@media (min-width: 860px) {
-    .card {
-        width: 320px;
-        height: 420px;
-    }
-
-    .card__bd_content {
-        padding: 0 20px;
-    }
 }
 
 /* ---------------------------------------------------------------------
