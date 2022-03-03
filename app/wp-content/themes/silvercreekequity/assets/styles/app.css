@@ -971,9 +971,6 @@ a:active {
     line-height: 30px;
     text-align: center;
     color: var(--color-brand-dark);
-    border-left: 20px solid var(--color-brand-grey);
-    border-right: 50px solid var(--color-brand-dark);
-    text-indent: 30px; /* equalize border treatments */
 }
 
 .card__label::before {
@@ -981,7 +978,7 @@ a:active {
     position: absolute;
     top: 0;
     bottom: 0;
-    right: -44px;
+    right: 35px;
     border-top: 15px solid transparent;
     border-left: 15px solid var(--color-brand-light-gradDark);
     border-bottom: 15px solid transparent;
@@ -991,7 +988,7 @@ a:active {
     content: " ";
     position: absolute;
     top: 7px;
-    right: -40px;
+    right: 10px;
     width: 16px;
     height: 16px;
     background-color: var(--color-brand-light);
@@ -1003,11 +1000,33 @@ a:active {
     mask-size: 16px;
 }
 
+/* funded variation */
+.card--funded .card__label {
+    background-image:
+        linear-gradient(
+            to right,
+            var(--color-brand-grey) 0,
+            var(--color-brand-grey) 20px,
+            var(--color-transparent) 20px,
+            var(--color-transparent) calc(100% - 50px),
+            var(--color-brand-dark) calc(100% - 50px),
+            var(--color-brand-dark) 100%
+        );
+}
+
 /* completed variation */
 .card--completed .card__label {
-    background-color: var(--color-brand-peacock-darkest);
+    background-image:
+        linear-gradient(
+            to right,
+            var(--color-brand-peacock) 0,
+            var(--color-brand-peacock) 20px,
+            var(--color-brand-peacock-darkest) 20px,
+            var(--color-brand-peacock-darkest) calc(100% - 50px),
+            var(--color-brand-dark) calc(100% - 50px),
+            var(--color-brand-dark) 100%
+        );
     color: var(--color-brand-light);
-    border-left-color: var(--color-brand-peacock-dark);
 }
 
 .card--completed .card__label::before {
@@ -1016,9 +1035,16 @@ a:active {
 
 /* open variation */
 .card--open .card__label {
-    background-color: var(--color-brand-peacock);
-    color: var(--color-white);
-    border-left-color: var(--color-brand-peacock-dark);
+    background-image:
+        linear-gradient(
+            to right,
+            var(--color-brand-peacock-dark) 0,
+            var(--color-brand-peacock-dark) 20px,
+            var(--color-brand-peacock) 20px,
+            var(--color-brand-peacock) calc(100% - 50px),
+            var(--color-brand-dark) calc(100% - 50px),
+            var(--color-brand-dark) 100%
+        );    color: var(--color-white);
 }
 
 .card--open .card__label::before {
