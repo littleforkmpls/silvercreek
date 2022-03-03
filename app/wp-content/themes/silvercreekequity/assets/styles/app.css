@@ -763,10 +763,6 @@ a:active {
     text-align: center;
 }
 
-.feature--isSpacious {
-    padding: 20px 30px;
-}
-
 .feature--inset {
     padding: 0 30px;
 }
@@ -786,10 +782,6 @@ a:active {
 @media (min-width: 860px) {
     .feature {
         padding: 0; /* rely on max-width */
-    }
-
-    .feature--isSpacious {
-        padding: 20px 0;
     }
 
     .feature--inset {
