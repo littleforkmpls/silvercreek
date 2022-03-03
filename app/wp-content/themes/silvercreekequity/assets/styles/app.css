@@ -260,9 +260,12 @@ a:active {
     z-index: 99999;
 }
 
+.site__hero {
+    border-top: 10px solid var(--color-brand-peacock-dark);
+}
+
 .site__main {
     flex: 1;
-    border-top: 10px solid var(--color-brand-peacock-dark);
 }
 
 .site__main--fullscreen {
@@ -276,6 +279,14 @@ a:active {
 .site__main__inner {
     flex: 1;
     text-align: center;
+}
+
+@media (min-width: 780px) {
+    .site__hero--home { order: 5 !important; } /* shuffle order for homepage */
+    .site__masthead { order: 10; }
+    .site__hero { order: 20; }
+    .site__main { order: 30; }
+    .site__footer { order: 40; }
 }
 
 /* ---------------------------------------------------------------------
