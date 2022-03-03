@@ -767,6 +767,19 @@ a:active {
     padding: 0 30px;
 }
 
+.feature--hasDivider > *:last-child {
+    margin-bottom: 40px !important;
+}
+
+.feature--hasDivider::after {
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    text-align: center;
+    border-bottom: 1.5px solid var(--color-brand-peacock-dark);
+}
+
 .feature__hd {
     margin-bottom: 20px;
 }

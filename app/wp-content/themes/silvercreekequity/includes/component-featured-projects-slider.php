@@ -24,7 +24,7 @@
                 <?php endif; ?>
                 <?php if ($featured_projects_slider_headline || $featured_projects_slider_blurb): ?>
                     <div class="region__intro">
-                        <div class="feature">
+                        <div class="feature feature--hasDivider">
                             <?php if ($featured_projects_slider_headline): ?>
                             <div class="feature__hd">
                                 <h3 class="txt txt--hdg">
