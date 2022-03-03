@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+/*jshint esversion: 6 */
 
+document.addEventListener("DOMContentLoaded", function() {
 
     /* Constants */
     const body              = document.querySelector('body');
@@ -41,6 +42,10 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
+        // define prev & next buttons
+        let galleryControlNext = document.querySelector('#js-gallery-next');
+        let galleryControlPrev = document.querySelector('#js-gallery-prev');
+
         // enable the first gallery item;
         galleryTriggers[0].classList.add('isActive');
         galleryItems[0].classList.add('isActive');
@@ -52,27 +57,72 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 e.preventDefault();
 
-                let targetIndex = this.getAttribute('data-index');
+                let selectedIndex = this.getAttribute('data-index');
 
                 // stop if the user clicked currently active item
                 if (this.classList.contains('isActive')) {
                     return;
                 }
 
-                // remove and reset the active class to the correct thumbnail
-                document.querySelector('#js-gallery .gallery__thumbs__item a.isActive').classList.remove('isActive');
-                document.querySelector('#js-gallery .gallery__meta__caption__item.isActive').classList.remove('isActive');
-                this.classList.add('isActive');
-
-                // remove and reset the active class to the current item
-                document.querySelector('#js-gallery .gallery__stage__item.isActive').classList.remove('isActive');
-                document.querySelector('#js-gallery .gallery__stage__item[data-index="'+ targetIndex +'"]').classList.add('isActive');
-                document.querySelector('#js-gallery .gallery__meta__caption__item[data-index="'+ targetIndex +'"]').classList.add('isActive');
-
-                // update the gallery counter
-                document.querySelector('#js-galleryCurrentIndex').innerHTML = targetIndex;
+                // change the item
+                changeGalleryItem(selectedIndex);
 
             });
         }
+
+        // next button
+        galleryControlNext.addEventListener('click', function(e) {
+            let currentIndex = parseInt(document.querySelector('#js-gallery .gallery__thumbs__item a.isActive').getAttribute('data-index'));
+            let nextIndex;
+
+            // set the next index
+            if (currentIndex == galleryItems.length) {
+                nextIndex = 1;
+            } else {
+                nextIndex = currentIndex + 1;
+            }
+
+            // change the item
+            changeGalleryItem(nextIndex);
+
+        });
+
+        // prev button
+        galleryControlPrev.addEventListener('click', function(e) {
+            let currentIndex = parseInt(document.querySelector('#js-gallery .gallery__thumbs__item a.isActive').getAttribute('data-index'));
+            let prevIndex;
+
+            // set the prev index
+            if (currentIndex == 1) {
+                prevIndex = galleryItems.length;
+            } else {
+                prevIndex = currentIndex - 1;
+            }
+
+            // change the item
+            changeGalleryItem(prevIndex);
+
+        });
+
+        // change the gallery item
+        const changeGalleryItem = (targetIndex) => {
+
+            // remove and reset the active class to the correct thumbnail
+            document.querySelector('#js-gallery .gallery__thumbs__item a.isActive').classList.remove('isActive');
+            document.querySelector('#js-gallery .gallery__thumbs__item a[data-index="'+ targetIndex +'"]').classList.add('isActive');
+
+            // remove and reset the active class to the current item
+            document.querySelector('#js-gallery .gallery__stage__item.isActive').classList.remove('isActive');
+            document.querySelector('#js-gallery .gallery__stage__item[data-index="'+ targetIndex +'"]').classList.add('isActive');
+
+            // remove and reset the active class on the gallery captions
+            document.querySelector('#js-gallery .gallery__meta__caption__item.isActive').classList.remove('isActive');
+            document.querySelector('#js-gallery .gallery__meta__caption__item[data-index="'+ targetIndex +'"]').classList.add('isActive');
+
+            // update the gallery counter
+            document.querySelector('#js-galleryCurrentIndex').innerHTML = targetIndex;
+
+        };
+
     }
 });

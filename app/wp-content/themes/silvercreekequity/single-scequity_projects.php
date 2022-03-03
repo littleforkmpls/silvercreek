@@ -41,7 +41,7 @@
     <div class="tier tier--white">
         <div class="wrapper">
             <div class="mat">
-                <div class="region region--inset">
+                <div class="region">
 
                     <?php
                         if(have_rows('gallery_items')):
@@ -49,6 +49,20 @@
                     ?>
                         <div id="js-gallery" class="gallery">
                             <div class="gallery__stage">
+                                <?php if($total_gallery_items > 1): ?>
+                                    <div class="gallery__stage__controls">
+                                        <div class="gallery__stage__controls__item gallery__stage__controls__item--prev">
+                                            <button id="js-gallery-prev" class="gallery__stage__controls__item__btn">
+                                                <span class="isVisuallyHidden">Previous</span>
+                                            </button>
+                                        </div>
+                                        <div class="gallery__stage__controls__item gallery__stage__controls__item--next">
+                                            <button id="js-gallery-next" class="gallery__stage__controls__item__btn">
+                                                <span class="isVisuallyHidden">Next</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
                                 <?php while (have_rows('gallery_items')) : the_row(); ?>
                                     <?php if(get_row_layout() == 'gallery_items_image'): ?>
                                         <div class="gallery__stage__item gallery__stage__item--image" data-index="<?php echo get_row_index(); ?>">

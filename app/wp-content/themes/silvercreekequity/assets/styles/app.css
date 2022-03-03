@@ -843,10 +843,6 @@ a:active {
 ------------------------------------------------------------------------ */
 .region {}
 
-.region--inset {
-    padding: 0 10px;
-}
-
 .region__bd {
     margin-bottom: 20px;
 }
@@ -870,10 +866,6 @@ a:active {
     .region__bd--hasCards {
         margin-left: 10px;
         margin-right: 10px;
-    }
-
-    .region--inset {
-        padding: 0 70px;
     }
 }
 
@@ -1290,7 +1282,11 @@ a:active {
 .gallery {}
 
 .gallery__stage {
-    padding-bottom: 20px;
+    position: relative;
+}
+
+.gallery__stage__controls {
+    display: none;
 }
 
 .gallery__stage__item {
@@ -1311,6 +1307,7 @@ a:active {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .gallery__thumbs__item {
@@ -1352,8 +1349,48 @@ a:active {
         padding-bottom: 15px;
     }
 
-    .gallery__thumbs__item + .gallery__thumbs__item {
-        padding-left: 15px;
+    .gallery__stage {
+        margin: 0 80px;
+    }
+
+    .gallery__stage__controls {
+        display: block;
+    }
+
+    .gallery__stage__controls__item {
+        position: absolute;
+        top: calc(50% - 20px); /* subtract half the height of the control */
+    }
+
+    .gallery__stage__controls__item--prev {
+        left: -70px;
+    }
+
+    .gallery__stage__controls__item--next {
+        right: -70px;
+    }
+
+    .gallery__stage__controls__item__btn {
+        all: unset;
+        display: block;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        -webkit-mask-position: center;
+        -webkit-mask-size: 40px;
+        mask-position: center;
+        mask-size: auto 40px;
+        background-color: var(--color-brand-grey);
+    }
+
+    .gallery__stage__controls__item--prev .gallery__stage__controls__item__btn {
+        -webkit-mask-image: url("../images/arrow-left.svg");
+        mask-image: url("../images/arrow-left.svg");
+    }
+
+    .gallery__stage__controls__item--next .gallery__stage__controls__item__btn {
+        -webkit-mask-image: url("../images/arrow-right.svg");
+        mask-image: url("../images/arrow-right.svg");
     }
 }
 
