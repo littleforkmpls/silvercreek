@@ -767,8 +767,8 @@ a:active {
 
 @media (min-width: 1170px) {
     .region__bd--hasCards {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
