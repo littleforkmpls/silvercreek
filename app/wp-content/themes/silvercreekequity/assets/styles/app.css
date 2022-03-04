@@ -614,8 +614,8 @@ a:active {
 ------------------------------------------------------------------------ */
 .tier {}
 
-.tier--topPad {
-    padding-top: 20px;
+.tier--stripe {
+    height: 20px;
 }
 
 .tier--white {

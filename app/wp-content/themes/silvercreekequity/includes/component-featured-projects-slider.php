@@ -8,7 +8,9 @@
     $featured_projects_slider_button_text       = get_sub_field('featured_projects_slider_button_text');
 ?>
 
-<div class="tier tier--peacock-gradient tier--topPad">
+<div class="tier tier--peacock-gradient tier--stripe"></div>
+
+<div class="tier tier--white">
     <div class="wrapper">
         <div class="slab slab--special">
 
