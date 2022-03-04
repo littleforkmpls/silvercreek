@@ -12,7 +12,7 @@
 
 <div class="tier tier--white">
     <div class="wrapper">
-        <div class="slab slab--special">
+        <div class="mat">
 
             <div class="region">
                 <?php if ($featured_projects_slider_section_label): ?>
@@ -51,24 +51,25 @@
 </div>
 
 <div class="tier tier--white">
-    <div class="wrapper">
-        <div class="mat">
+    <div class="mat mat--noTop">
 
-            <div class="region">
-                <?php if($featured_projects_slider_projects): ?>
-                    <div class="region__bd region__bd--hasCards">
-                        <div class="collection">
-                            <div class="collection__stage">
-                                <div class="collection__stage__list">
-                                    <?php foreach($featured_projects_slider_projects as $featured_project) : ?>
-                                        <?php
-                                            $project_permalink = get_permalink($featured_project->ID);
-                                            $project_title = get_the_title($featured_project->ID);
-                                            $project_location = get_field('project_location', $featured_project->ID);
-                                            $project_status = get_field('project_status', $featured_project->ID);
-                                            $project_image = get_the_post_thumbnail_url($featured_project->ID, 'project-card');
-                                        ?>
-                                        <div class="collection__stage__list__item">
+        <div class="region">
+            <?php if($featured_projects_slider_projects): ?>
+                <div class="region__bd region__bd--push">
+
+                    <div class="scroller">
+                        <div class="scroller__stage">
+                            <div class="scroller__stage__list">
+                                <?php foreach($featured_projects_slider_projects as $featured_project): ?>
+                                    <?php
+                                        $project_permalink = get_permalink($featured_project->ID);
+                                        $project_title = get_the_title($featured_project->ID);
+                                        $project_location = get_field('project_location', $featured_project->ID);
+                                        $project_status = get_field('project_status', $featured_project->ID);
+                                        $project_image = get_the_post_thumbnail_url($featured_project->ID, 'project-card');
+                                    ?>
+                                    <div class="scroller__stage__list__item">
+                                        <div class="scroller__stage__list__item__view">
                                             <a class="isInlineBlock" href="<?php echo $project_permalink; ?>">
                                                 <div class="card card--pro card--<?php echo strtolower($project_status); ?>">
                                                     <div class="card__label">
@@ -90,22 +91,22 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    <?php endforeach; ?>
-                                </div>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
-                <?php endif; ?>
-                <?php if($featured_projects_slider_button_text): ?>
-                    <div class="region__ft">
-                        <a class="btn" href="<?php echo get_page_link(142); ?>">
-                            <span class="btn__txt"><?php echo $featured_projects_slider_button_text; ?></span>
-                            <span class="btn__icon"></span>
-                        </a>
-                    </div>
-                <?php endif; ?>
-            </div>
-
+                </div>
+            <?php endif; ?>
+            <?php if($featured_projects_slider_button_text): ?>
+                <div class="region__ft">
+                    <a class="btn" href="<?php echo get_page_link(142); ?>">
+                        <span class="btn__txt"><?php echo $featured_projects_slider_button_text; ?></span>
+                        <span class="btn__icon"></span>
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
+
     </div>
 </div>

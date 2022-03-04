@@ -25,7 +25,7 @@
                     </div>
                 <?php endif; ?>
                 <?php if ($process_slider_headline || $process_slider_blurb): ?>
-                    <div class="region__intro">
+                    <div class="region__intro region__intro--noPush">
                         <div class="feature">
                             <?php if ($process_slider_headline): ?>
                             <div class="feature__hd">
@@ -44,19 +44,30 @@
                         </div>
                     </div>
                 <?php endif; ?>
-                <?php if($process_slider_steps): ?>
-                    <div class="region__bd region__bd--hasCards">
-                        <div class="collection">
-                            <div class="collection__stage collection__stage--fixed">
-                                <div class="collection__stage__list">
-                                    <?php while(have_rows('process_slider_steps')) : the_row(); ?>
-                                        <?php
-                                            $process_slider_steps_step_name        = get_sub_field('process_slider_steps_step_name');
-                                            $process_slider_steps_step_description = get_sub_field('process_slider_steps_step_description');
-                                            $process_slider_steps_step_image_id    = get_sub_field('process_slider_steps_step_image');
-                                            $process_slider_steps_step_image_url   = wp_get_attachment_image_url($process_slider_steps_step_image_id, 'project-card');
-                                        ?>
-                                        <div class="collection__stage__list__item">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="tier tier--light-gradient">
+    <div class="mat mat--noTop">
+
+        <div class="region">
+            <?php if($process_slider_steps): ?>
+                <div class="region__bd">
+                    <div class="scroller">
+                        <div class="scroller__stage">
+                            <div class="scroller__stage__list">
+                                <?php while(have_rows('process_slider_steps')) : the_row(); ?>
+                                    <?php
+                                        $process_slider_steps_step_name        = get_sub_field('process_slider_steps_step_name');
+                                        $process_slider_steps_step_description = get_sub_field('process_slider_steps_step_description');
+                                        $process_slider_steps_step_image_id    = get_sub_field('process_slider_steps_step_image');
+                                        $process_slider_steps_step_image_url   = wp_get_attachment_image_url($process_slider_steps_step_image_id, 'project-card');
+                                    ?>
+                                    <div class="scroller__stage__list__item">
+                                        <div class="scroller__stage__list__item__view">
                                             <div class="card">
                                                 <div class="card__media">
                                                     <img class="isBlock" width="400" height="320" src="<?php echo $process_slider_steps_step_image_url; ?>" alt="<?php echo $process_slider_steps_step_name; ?>" />
@@ -77,35 +88,35 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php endwhile; ?>
-                                </div>
+                                    </div>
+                                <?php endwhile; ?>
                             </div>
                         </div>
                     </div>
-                <?php endif; ?>
-                <?php if ($process_slider_cta_blurb || $process_slider_cta_button_text): ?>
-                    <div class="region__cta">
-                        <div class="feature">
-                            <?php if ($process_slider_cta_blurb): ?>
-                                <div class="feature__bd">
-                                    <div class="txt txt--body txt--size-xl">
-                                        <?php echo $process_slider_cta_blurb; ?>
-                                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if ($process_slider_cta_blurb || $process_slider_cta_button_text): ?>
+                <div class="region__cta">
+                    <div class="feature">
+                        <?php if ($process_slider_cta_blurb): ?>
+                            <div class="feature__bd">
+                                <div class="txt txt--body txt--size-xl">
+                                    <?php echo $process_slider_cta_blurb; ?>
                                 </div>
-                            <?php endif; ?>
-                            <?php if ($process_slider_cta_button_text && $process_slider_cta_button_link): ?>
-                                <div class="feature__ft">
-                                    <a class="btn" href="<?php echo $process_slider_cta_button_link; ?>">
-                                        <span class="btn__txt"><?php echo $process_slider_cta_button_text; ?></span>
-                                        <span class="btn__icon"></span>
-                                    </a>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($process_slider_cta_button_text && $process_slider_cta_button_link): ?>
+                            <div class="feature__ft">
+                                <a class="btn" href="<?php echo $process_slider_cta_button_link; ?>">
+                                    <span class="btn__txt"><?php echo $process_slider_cta_button_text; ?></span>
+                                    <span class="btn__icon"></span>
+                                </a>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
-            </div>
-
+                </div>
+            <?php endif; ?>
         </div>
+
     </div>
 </div>

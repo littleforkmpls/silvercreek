@@ -655,6 +655,10 @@ a:active {
     padding: 40px 0;
 }
 
+.mat--noTop {
+    padding-top: 0 !important;
+}
+
 .mat--sm {
     padding: 20px 0;
 }
@@ -730,6 +734,10 @@ a:active {
     padding-bottom: 40px; /* matches padding-top from .mat so title is evenly spaced */
 }
 
+.region__title--noPush {
+    padding-bottom: 20px;
+}
+
 .region__intro {
     padding-bottom: 40px;
 }
@@ -742,9 +750,8 @@ a:active {
     margin-bottom: 20px;
 }
 
-.region__bd--hasCards {
-    margin-left: -20px;
-    margin-right: -20px;
+.region__bd--push {
+    margin-bottom: 40px;
 }
 
 .region__bd--hasTeam {
@@ -762,13 +769,6 @@ a:active {
 @media (min-width: 860px) {
     .region--inset {
         padding: 0 50px;
-    }
-}
-
-@media (min-width: 1170px) {
-    .region__bd--hasCards {
-        margin-left: 0;
-        margin-right: 0;
     }
 }
 
@@ -869,82 +869,33 @@ a:active {
 }
 
 /* ---------------------------------------------------------------------
- Component - Collection
+ Component - Scroller
 ------------------------------------------------------------------------ */
-.collection {
-    position: relative; /* for shaders */
+.scroller {
     overflow: hidden;
-    height: 400px;
+    height: 420px;
 }
 
-.collection__stage {
+.scroller__stage {
     overflow-x: scroll;
     overscroll-behavior-x: contain;
 }
 
-.collection__stage__list {
-    display: inline-flex;
-    padding: 0 20px; /* add back the wrapper removed in .section__cards */
+.scroller__stage__list {
+    width: 100%;
     vertical-align: top;
-}
-
-.collection__stage__list__item {
-    height: 430px; /* hide the scrollbar - bigger than .collection */
+    display: inline-flex;
+    padding-left: max(20px,calc(calc(100% - 1130px) / 2));
     padding-right: 20px;
 }
 
-.collection__stage__list__item:first-child {
-    padding-left: 20px;
+.scroller__stage__list__item {
+    display: inline-block;
 }
 
-@media (min-width: 1170px) {
-    .collection__stage__list {
-        padding: 0; /* reset l+r padding */
-    }
-
-    .collection__stage:not(.collection__stage--fixed) {
-        padding-top: 20px;
-    }
-
-    .collection__stage:not(.collection__stage--fixed)::before {
-        content: " ";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 30px;
-        background-image: linear-gradient(to right, rgba(0,0,0,0.15), transparent);
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-    }
-
-    .collection__stage:not(.collection__stage--fixed)::after {
-        content: " ";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 30px;
-        background-image: linear-gradient(to left, rgba(0,0,0,0.15), transparent);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-
-    .collection__stage--fixed {
-        overflow-x: auto;
-        overscroll-behavior-x: auto;
-    }
-
-    .collection__stage--fixed .collection__stage__list {
-        display: flex;
-        justify-content: space-around; /* not space-between becauase it clips card shadows */
-    }
-
-    .collection__stage--fixed .collection__stage__list__item {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
+.scroller__stage__list__item__view {
+    height: 430px; /* hide the scrollbar */
+    margin-right: 20px;
 }
 
 /* ---------------------------------------------------------------------
@@ -954,8 +905,8 @@ a:active {
     box-sizing: border-box;
     display: flex;
     flex-flow: column nowrap;
-    width: 260px;
-    height: 365px;
+    width: 320px;
+    height: 400px;
     overflow: hidden; /* in case content is larger than dimensions */
     background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 80%, var(--color-brand-light-gradDark) 100%);
     box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.3);
