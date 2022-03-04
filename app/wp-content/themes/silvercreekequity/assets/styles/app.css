@@ -882,6 +882,7 @@ a:active {
 .scroller {
     overflow: hidden;
     height: 420px;
+    min-height: 420px;
 }
 
 .scroller__stage {

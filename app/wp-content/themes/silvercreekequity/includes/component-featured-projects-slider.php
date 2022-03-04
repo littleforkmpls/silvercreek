@@ -56,7 +56,7 @@
         <div class="region">
             <?php if($featured_projects_slider_projects): ?>
                 <?php $total_slider_steps = count($featured_projects_slider_projects); ?>
-                <div class="region__bd region__bd--push">
+                <div class="region__bd region__bd--hasCards">
 
                     <div class="scroller" data-items="<?php echo $total_slider_steps; ?>">
                         <div class="scroller__stage">
