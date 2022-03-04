@@ -910,6 +910,38 @@ a:active {
     margin-right: max(20px,calc(calc(100vw - 1130px) / 2));
 }
 
+@media (min-width: 1540px) {
+    .scroller--process {
+        overflow: initial;
+        height: initial;
+    }
+
+    .scroller--process .scroller__stage {
+        overflow: initial;
+        overscroll-behavior-x: initial;
+    }
+
+    .scroller--process .scroller__stage__list {
+        width: 100%;
+        padding: 0;
+        vertical-align: initial;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .scroller--process .scroller__stage__list__item + .scroller__stage__list__item {
+        padding-left: 20px;
+    }
+
+    .scroller--process .scroller__stage__list__item__view {
+        height: auto;
+        margin-right: 0 !important;
+    }
+}
+
 /* ---------------------------------------------------------------------
  Component - Card
 ------------------------------------------------------------------------ */
