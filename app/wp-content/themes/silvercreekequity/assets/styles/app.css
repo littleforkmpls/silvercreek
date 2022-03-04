@@ -886,7 +886,7 @@ a:active {
     vertical-align: top;
     display: inline-flex;
     padding-left: max(20px,calc(calc(100vw - 1130px) / 2));
-    padding-right: 20px;
+    padding-right: 0;
 }
 
 .scroller__stage__list__item {
@@ -896,6 +896,10 @@ a:active {
 .scroller__stage__list__item__view {
     height: 440px; /* hide the scrollbar */
     margin-right: 20px;
+}
+
+.scroller__stage__list__item:last-child .scroller__stage__list__item__view {
+    margin-right: max(20px,calc(calc(100vw - 1130px) / 2));
 }
 
 /* ---------------------------------------------------------------------
