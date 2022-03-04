@@ -911,17 +911,17 @@ a:active {
 }
 
 @media (min-width: 1540px) {
-    .scroller--process {
+    .scroller--4up {
         overflow: initial;
         height: initial;
     }
 
-    .scroller--process .scroller__stage {
+    .scroller--4up .scroller__stage {
         overflow: initial;
         overscroll-behavior-x: initial;
     }
 
-    .scroller--process .scroller__stage__list {
+    .scroller--4up .scroller__stage__list {
         width: 100%;
         padding: 0;
         vertical-align: initial;
@@ -932,11 +932,11 @@ a:active {
         justify-content: center;
     }
 
-    .scroller--process .scroller__stage__list__item + .scroller__stage__list__item {
+    .scroller--4up .scroller__stage__list__item + .scroller__stage__list__item {
         padding-left: 20px;
     }
 
-    .scroller--process .scroller__stage__list__item__view {
+    .scroller--4up .scroller__stage__list__item__view {
         height: auto;
         margin-right: 0 !important;
     }

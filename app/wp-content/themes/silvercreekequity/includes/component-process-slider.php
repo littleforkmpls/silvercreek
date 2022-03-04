@@ -56,7 +56,7 @@
         <div class="region">
             <?php if($process_slider_steps): ?>
                 <div class="region__bd">
-                    <div class="scroller scroller--process">
+                    <div class="scroller scroller--4up">
                         <div class="scroller__stage">
                             <div class="scroller__stage__list">
                                 <?php while(have_rows('process_slider_steps')) : the_row(); ?>
