@@ -8,9 +8,15 @@
     $process_slider_cta_blurb           = get_sub_field('process_slider_cta_blurb');
     $process_slider_cta_button_text     = get_sub_field('process_slider_cta_button_text');
     $process_slider_cta_button_link     = get_sub_field('process_slider_cta_button_link');
+
+    if (is_front_page()) {
+        $tier_class = 'tier--white';
+    } else {
+        $tier_class = 'tier--light-gradient';
+    }
 ?>
 
-<div class="tier tier--light-gradient">
+<div class="tier <?php echo $tier_class; ?>">
     <div class="wrapper">
         <div class="mat">
 
@@ -50,7 +56,7 @@
     </div>
 </div>
 
-<div class="tier tier--light-gradient">
+<div class="tier <?php echo $tier_class; ?>">
     <div class="mat mat--noTop">
 
         <div class="region">

@@ -10,7 +10,7 @@
 
 <div class="tier tier--peacock-gradient tier--stripe"></div>
 
-<div class="tier tier--white">
+<div class="tier tier--light-gradient">
     <div class="wrapper">
         <div class="mat">
 
@@ -50,7 +50,7 @@
     </div>
 </div>
 
-<div class="tier tier--white">
+<div class="tier tier--light-gradient">
     <div class="mat mat--noTop">
 
         <div class="region">
