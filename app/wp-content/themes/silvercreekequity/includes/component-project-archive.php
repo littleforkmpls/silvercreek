@@ -35,8 +35,9 @@
     <div class="mat mat--noTop">
 
         <?php if ($pa_loop->have_posts()): ?>
+            <?php $total_slider_steps = $pa_loop->found_posts; ?>
             <div class="region__bd region__bd--hasCards">
-                <div class="scroller">
+                <div class="scroller" data-items="<?php echo $total_slider_steps; ?>">
                     <div class="scroller__stage">
                         <div class="scroller__stage__list">
                             <?php while ($pa_loop->have_posts()): $pa_loop->the_post(); ?>

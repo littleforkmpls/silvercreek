@@ -144,9 +144,10 @@
         <div class="mat">
 
             <?php if (get_field('project_related_projects')) : ?>
+                <?php $total_slider_steps = count(get_field('project_related_projects')); ?>
                 <div class="region">
                     <div class="region__bd region__bd--hasCards">
-                        <div class="scroller">
+                        <div class="scroller" data-items="<?php echo $total_slider_steps; ?>">
                             <div class="scroller__stage">
                                 <div class="scroller__stage__list">
                                     <?php foreach(get_field('project_related_projects') as $related_project) : ?>

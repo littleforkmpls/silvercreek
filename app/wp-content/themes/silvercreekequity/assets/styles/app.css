@@ -910,18 +910,19 @@ a:active {
     margin-right: max(20px,calc(calc(100vw - 1130px) / 2));
 }
 
-@media (min-width: 1540px) {
-    .scroller--4up {
+/* end scrolling pattern at 700px for 2up items */
+@media (min-width: 700px) {
+    .scroller[data-items="2"] {
         overflow: initial;
         height: initial;
     }
 
-    .scroller--4up .scroller__stage {
+    .scroller[data-items="2"] .scroller__stage {
         overflow: initial;
         overscroll-behavior-x: initial;
     }
 
-    .scroller--4up .scroller__stage__list {
+    .scroller[data-items="2"] .scroller__stage__list {
         width: 100%;
         padding: 0;
         vertical-align: initial;
@@ -932,11 +933,143 @@ a:active {
         justify-content: center;
     }
 
-    .scroller--4up .scroller__stage__list__item + .scroller__stage__list__item {
+    .scroller[data-items="2"] .scroller__stage__list__item + .scroller__stage__list__item {
         padding-left: 20px;
     }
 
-    .scroller--4up .scroller__stage__list__item__view {
+    .scroller[data-items="2"] .scroller__stage__list__item__view {
+        height: auto;
+        margin-right: 0 !important;
+    }
+}
+
+/* end scrolling pattern at 1040px for 3up items */
+@media (min-width: 1040px) {
+    .scroller[data-items="3"] {
+        overflow: initial;
+        height: initial;
+    }
+
+    .scroller[data-items="3"] .scroller__stage {
+        overflow: initial;
+        overscroll-behavior-x: initial;
+    }
+
+    .scroller[data-items="3"] .scroller__stage__list {
+        width: 100%;
+        padding: 0;
+        vertical-align: initial;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .scroller[data-items="3"] .scroller__stage__list__item + .scroller__stage__list__item {
+        padding-left: 20px;
+    }
+
+    .scroller[data-items="3"] .scroller__stage__list__item__view {
+        height: auto;
+        margin-right: 0 !important;
+    }
+}
+
+/* end scrolling pattern at 1380px for 4up items */
+@media (min-width: 1380px) {
+    .scroller[data-items="4"] {
+        overflow: initial;
+        height: initial;
+    }
+
+    .scroller[data-items="4"] .scroller__stage {
+        overflow: initial;
+        overscroll-behavior-x: initial;
+    }
+
+    .scroller[data-items="4"] .scroller__stage__list {
+        width: 100%;
+        padding: 0;
+        vertical-align: initial;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .scroller[data-items="4"] .scroller__stage__list__item + .scroller__stage__list__item {
+        padding-left: 20px;
+    }
+
+    .scroller[data-items="4"] .scroller__stage__list__item__view {
+        height: auto;
+        margin-right: 0 !important;
+    }
+}
+
+/* end scrolling pattern at 1740px for 5up items */
+@media (min-width: 1740px) {
+    .scroller[data-items="5"] {
+        overflow: initial;
+        height: initial;
+    }
+
+    .scroller[data-items="5"] .scroller__stage {
+        overflow: initial;
+        overscroll-behavior-x: initial;
+    }
+
+    .scroller[data-items="5"] .scroller__stage__list {
+        width: 100%;
+        padding: 0;
+        vertical-align: initial;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .scroller[data-items="5"] .scroller__stage__list__item + .scroller__stage__list__item {
+        padding-left: 20px;
+    }
+
+    .scroller[data-items="5"] .scroller__stage__list__item__view {
+        height: auto;
+        margin-right: 0 !important;
+    }
+}
+
+/* end scrolling pattern at 2080px for 6up items */
+@media (min-width: 2080px) {
+    .scroller[data-items="6"] {
+        overflow: initial;
+        height: initial;
+    }
+
+    .scroller[data-items="6"] .scroller__stage {
+        overflow: initial;
+        overscroll-behavior-x: initial;
+    }
+
+    .scroller[data-items="6"] .scroller__stage__list {
+        width: 100%;
+        padding: 0;
+        vertical-align: initial;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .scroller[data-items="6"] .scroller__stage__list__item + .scroller__stage__list__item {
+        padding-left: 20px;
+    }
+
+    .scroller[data-items="6"] .scroller__stage__list__item__view {
         height: auto;
         margin-right: 0 !important;
     }

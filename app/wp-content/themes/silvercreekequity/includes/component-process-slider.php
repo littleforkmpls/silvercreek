@@ -55,8 +55,9 @@
 
         <div class="region">
             <?php if($process_slider_steps): ?>
+                <?php $total_slider_steps = count($process_slider_steps); ?>
                 <div class="region__bd">
-                    <div class="scroller scroller--4up">
+                    <div class="scroller" data-items="<?php echo $total_slider_steps; ?>">
                         <div class="scroller__stage">
                             <div class="scroller__stage__list">
                                 <?php while(have_rows('process_slider_steps')) : the_row(); ?>
