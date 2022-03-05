@@ -2,13 +2,18 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    /* Constants */
+    /** ******************* */
+    /** Constants           */
+    /** ******************* */
     const body              = document.querySelector('body');
     const navToggleTrigger  = document.querySelector("#js-navToggleTrigger");
     const navToggleTarget   = document.querySelector("#js-navToggleTarget");
     const gallery           = document.querySelector('#js-gallery');
+    const scrollers         = document.querySelectorAll('.scroller');
 
-    /** Small Screen Navigation */
+    /** ******************* */
+    /** Navigation          */
+    /** ******************* */
     navToggleTrigger.onclick = function (e) {
 
         e.preventDefault();
@@ -29,7 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
         navToggleTarget.classList.toggle('isVisible');
     };
 
-    /** Gallery */
+    /** ******************* */
+    /** Gallery             */
+    /** ******************* */
     if (gallery) {
 
         // locate triggers and items
@@ -123,6 +130,61 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('#js-galleryCurrentIndex').innerHTML = targetIndex;
 
         };
-
     }
+
+    /** ******************* */
+    /** Scroller Clicker    */
+    /** ******************* */
+    if (scrollers.length > 0) {
+
+        let scrollDistance  = 340;
+        let clickerButtons  = document.querySelectorAll('.clicker button');
+
+        // add listeners to clickers
+        for (const clickerButton of clickerButtons) {
+            clickerButton.addEventListener('click', function(e) {
+
+                e.preventDefault();
+
+                // set values for all the stuff we need
+                let scrollDirection             = this.getAttribute('data-direction');
+                let scrollerID                  = this.getAttribute('data-scroller-id');
+                let scrollerStage               = document.querySelector('.scroller[data-scroller-id="'+ scrollerID +'"] .scroller__stage')
+                let scrollerStageScrollPosition = scrollerStage.scrollLeft; // current position
+
+                if (scrollDirection == 'left') {
+
+                    // figure out the new position
+                    let newScrollPosition = scrollerStageScrollPosition - scrollDistance;
+
+                    // round the newScrollPosition UP to the nearest multiple of the scroll distance (340)
+                    let fixedScrollPosition = Math.ceil(newScrollPosition / scrollDistance) * scrollDistance;
+
+                    // scroll it
+                    scrollerStage.scrollTo({
+                        left: fixedScrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
+
+                if (scrollDirection == 'right') {
+
+                    // figure out the new position
+                    let newScrollPosition = scrollerStageScrollPosition + scrollDistance;
+
+                    // round the newScrollPosition DOWN to the nearest multiple of the scroll distance (340)
+                    let fixedScrollPosition = Math.floor(newScrollPosition / scrollDistance) * scrollDistance;
+
+                    // scroll it
+                    scrollerStage.scrollTo({
+                        left: fixedScrollPosition,
+                        behavior: 'smooth'
+                    });
+
+                }
+
+            });
+        }
+    }
+
 });
