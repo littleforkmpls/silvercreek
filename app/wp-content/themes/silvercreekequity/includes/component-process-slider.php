@@ -63,40 +63,58 @@
             <?php if($process_slider_steps): ?>
                 <?php $total_slider_steps = count($process_slider_steps); ?>
                 <div class="region__bd">
-                    <div class="scroller" data-items="<?php echo $total_slider_steps; ?>">
-                        <div class="scroller__stage">
-                            <div class="scroller__stage__list">
-                                <?php while(have_rows('process_slider_steps')) : the_row(); ?>
-                                    <?php
-                                        $process_slider_steps_step_name        = get_sub_field('process_slider_steps_step_name');
-                                        $process_slider_steps_step_description = get_sub_field('process_slider_steps_step_description');
-                                        $process_slider_steps_step_image_id    = get_sub_field('process_slider_steps_step_image');
-                                        $process_slider_steps_step_image_url   = wp_get_attachment_image_url($process_slider_steps_step_image_id, 'project-card');
-                                    ?>
-                                    <div class="scroller__stage__list__item">
-                                        <div class="scroller__stage__list__item__view">
-                                            <div class="card">
-                                                <div class="card__media">
-                                                    <img class="isBlock" width="400" height="320" src="<?php echo $process_slider_steps_step_image_url; ?>" alt="<?php echo $process_slider_steps_step_name; ?>" />
-                                                </div>
-                                                <div class="card__bd card__bd--dark card__bd--center">
-                                                    <div class="card__bd__content">
-                                                        <div class="card__bd__content__hd">
-                                                            <h4 class="txt txt--label">
-                                                                <?php echo $process_slider_steps_step_name; ?>
-                                                            </h4>
+                    <div class="panel <?php if (!$process_slider_cta_blurb || !$process_slider_cta_button_text): ?>panel--alone<?php endif;?>">
+                        <div class="panel__component">
+                            <div class="scroller" data-items="<?php echo $total_slider_steps; ?>" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
+                                <div class="scroller__stage">
+                                    <div class="scroller__stage__list">
+                                        <?php while(have_rows('process_slider_steps')) : the_row(); ?>
+                                            <?php
+                                                $process_slider_steps_step_name        = get_sub_field('process_slider_steps_step_name');
+                                                $process_slider_steps_step_description = get_sub_field('process_slider_steps_step_description');
+                                                $process_slider_steps_step_image_id    = get_sub_field('process_slider_steps_step_image');
+                                                $process_slider_steps_step_image_url   = wp_get_attachment_image_url($process_slider_steps_step_image_id, 'project-card');
+                                            ?>
+                                            <div class="scroller__stage__list__item">
+                                                <div class="scroller__stage__list__item__view">
+                                                    <div class="card">
+                                                        <div class="card__media">
+                                                            <img class="isBlock" width="400" height="320" src="<?php echo $process_slider_steps_step_image_url; ?>" alt="<?php echo $process_slider_steps_step_name; ?>" />
                                                         </div>
-                                                        <div class="card__bd_content__bd">
-                                                            <p class="txt txt--body2">
-                                                                <?php echo $process_slider_steps_step_description; ?>
-                                                            </p>
+                                                        <div class="card__bd card__bd--dark card__bd--center">
+                                                            <div class="card__bd__content">
+                                                                <div class="card__bd__content__hd">
+                                                                    <h4 class="txt txt--label">
+                                                                        <?php echo $process_slider_steps_step_name; ?>
+                                                                    </h4>
+                                                                </div>
+                                                                <div class="card__bd_content__bd">
+                                                                    <p class="txt txt--body2">
+                                                                        <?php echo $process_slider_steps_step_description; ?>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        <?php endwhile; ?>
                                     </div>
-                                <?php endwhile; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel__controls <?php if (!$process_slider_cta_blurb || !$process_slider_cta_button_text): ?>panel__controls--alone<?php endif;?>" data-items="<?php echo $total_slider_steps; ?>">
+                            <div class="clicker">
+                                <div class="clicker__item clicker__item--left">
+                                    <button data-direction="left" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
+                                        <span class="isVisuallyHidden">Scroll Left</span>
+                                    </button>
+                                </div>
+                                <div class="clicker__item clicker__item--right">
+                                    <button data-direction="right" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
+                                        <span class="isVisuallyHidden">Scroll Right</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

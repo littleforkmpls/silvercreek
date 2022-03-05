@@ -772,6 +772,13 @@ a:active {
 
 .region__cta {
     padding-top: 10px;
+    padding: 0 20px;
+}
+
+@media (min-width: 780px) {
+    .region__cta {
+        padding: 0 80px;
+    }
 }
 
 @media (min-width: 860px) {
