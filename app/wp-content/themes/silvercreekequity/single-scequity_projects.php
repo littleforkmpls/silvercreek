@@ -147,42 +147,60 @@
                 <?php $total_slider_steps = count(get_field('project_related_projects')); ?>
                 <div class="region">
                     <div class="region__bd region__bd--hasCards">
-                        <div class="scroller" data-items="<?php echo $total_slider_steps; ?>">
-                            <div class="scroller__stage">
-                                <div class="scroller__stage__list">
-                                    <?php foreach(get_field('project_related_projects') as $related_project) : ?>
-                                        <?php
-                                            $project_permalink = get_permalink($related_project->ID);
-                                            $project_title = get_the_title($related_project->ID);
-                                            $project_location = get_field('project_location', $related_project->ID);
-                                            $project_status = get_field('project_status', $related_project->ID);
-                                            $project_image = get_the_post_thumbnail_url($related_project->ID, 'project-card');
-                                        ?>
-                                        <div class="scroller__stage__list__item">
-                                            <div class="scroller__stage__list__item__view">
-                                                <a class="isInlineBlock" href="<?php echo $project_permalink; ?>">
-                                                    <div class="card card--pro card--<?php echo strtolower($project_status); ?>">
-                                                        <div class="card__label">
-                                                            <span class="txt txt--label">
-                                                                <?php echo $project_status; ?>
-                                                            </span>
-                                                        </div>
-                                                        <div class="card__bd card__bd--inset">
-                                                            <h4 class="txt txt--card-hdg txt--truncated">
-                                                                <?php echo $project_title; ?>
-                                                            </h4>
-                                                            <h5 class="txt txt--card-hdg2 txt--truncated">
-                                                                <?php echo $project_location; ?>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="card__media">
-                                                            <img class="isBlock" width="400" height="320" src="<?php echo $project_image; ?>" alt="" />
-                                                        </div>
+                        <div class="panel">
+                            <div class="panel__component">
+                                <div class="scroller" data-items="<?php echo $total_slider_steps; ?>" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
+                                    <div class="scroller__stage">
+                                        <div class="scroller__stage__list">
+                                            <?php foreach(get_field('project_related_projects') as $related_project) : ?>
+                                                <?php
+                                                    $project_permalink = get_permalink($related_project->ID);
+                                                    $project_title = get_the_title($related_project->ID);
+                                                    $project_location = get_field('project_location', $related_project->ID);
+                                                    $project_status = get_field('project_status', $related_project->ID);
+                                                    $project_image = get_the_post_thumbnail_url($related_project->ID, 'project-card');
+                                                ?>
+                                                <div class="scroller__stage__list__item">
+                                                    <div class="scroller__stage__list__item__view">
+                                                        <a class="isInlineBlock" href="<?php echo $project_permalink; ?>">
+                                                            <div class="card card--pro card--<?php echo strtolower($project_status); ?>">
+                                                                <div class="card__label">
+                                                                    <span class="txt txt--label">
+                                                                        <?php echo $project_status; ?>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="card__bd card__bd--inset">
+                                                                    <h4 class="txt txt--card-hdg txt--truncated">
+                                                                        <?php echo $project_title; ?>
+                                                                    </h4>
+                                                                    <h5 class="txt txt--card-hdg2 txt--truncated">
+                                                                        <?php echo $project_location; ?>
+                                                                    </h5>
+                                                                </div>
+                                                                <div class="card__media">
+                                                                    <img class="isBlock" width="400" height="320" src="<?php echo $project_image; ?>" alt="" />
+                                                                </div>
+                                                            </div>
+                                                        </a>
                                                     </div>
-                                                </a>
-                                            </div>
+                                                </div>
+                                            <?php endforeach; ?>
                                         </div>
-                                    <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel__controls" data-items="<?php echo $total_slider_steps; ?>">
+                                <div class="clicker">
+                                    <div class="clicker__item clicker__item--left">
+                                        <button data-direction="left" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
+                                            <span class="isVisuallyHidden">Scroll Left</span>
+                                        </button>
+                                    </div>
+                                    <div class="clicker__item clicker__item--right">
+                                        <button data-direction="right" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
+                                            <span class="isVisuallyHidden">Scroll Right</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

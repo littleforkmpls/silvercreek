@@ -942,6 +942,11 @@ a:active {
         height: auto;
         margin-right: 0 !important;
     }
+
+    /* hide controls too */
+    .panel__controls[data-items="2"] {
+        display: none !important;
+    }
 }
 
 /* end scrolling pattern at 1040px for 3up items */
@@ -974,6 +979,11 @@ a:active {
     .scroller[data-items="3"] .scroller__stage__list__item__view {
         height: auto;
         margin-right: 0 !important;
+    }
+
+    /* hide controls too */
+    .panel__controls[data-items="3"] {
+        display: none !important;
     }
 }
 
@@ -1008,6 +1018,11 @@ a:active {
         height: auto;
         margin-right: 0 !important;
     }
+
+    /* hide controls too */
+    .panel__controls[data-items="4"] {
+        display: none !important;
+    }
 }
 
 /* end scrolling pattern at 1740px for 5up items */
@@ -1041,6 +1056,11 @@ a:active {
         height: auto;
         margin-right: 0 !important;
     }
+
+    /* hide controls too */
+    .panel__controls[data-items="5"] {
+        display: none !important;
+    }
 }
 
 /* end scrolling pattern at 2080px for 6up items */
@@ -1073,6 +1093,11 @@ a:active {
     .scroller[data-items="6"] .scroller__stage__list__item__view {
         height: auto;
         margin-right: 0 !important;
+    }
+
+    /* hide controls too */
+    .panel__controls[data-items="6"] {
+        display: none !important;
     }
 }
 
@@ -1122,7 +1147,6 @@ a:active {
 @media (min-width: 780px) {
     .panel {
         position: relative;
-        padding-bottom: 60px; /* make room for stuff */
     }
 
     .panel__controls {
@@ -1130,6 +1154,15 @@ a:active {
         position: absolute;
         left: max(20px,calc(calc(100vw - 1130px) / 2));
         right: max(20px,calc(calc(100vw - 1130px) / 2));;
+        bottom: -60px;
+    }
+
+    /* for when there's just arrows and nothing else below scroller */
+    .panel--alone {
+        padding-bottom: 60px;
+    }
+
+    .panel__controls--alone {
         bottom: 0;
     }
 }

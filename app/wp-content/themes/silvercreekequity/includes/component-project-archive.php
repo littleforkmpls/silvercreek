@@ -37,7 +37,7 @@
         <?php if ($pa_loop->have_posts()): ?>
             <?php $total_slider_steps = $pa_loop->found_posts; ?>
             <div class="region__bd region__bd--hasCards">
-                <div class="panel">
+                <div class="panel panel--alone">
                     <div class="panel__component">
                         <div class="scroller" data-items="<?php echo $total_slider_steps; ?>" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
                             <div class="scroller__stage">
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel__controls">
+                    <div class="panel__controls panel__controls--alone" data-items="<?php echo $total_slider_steps; ?>">
                         <div class="clicker">
                             <div class="clicker__item clicker__item--left">
                                 <button data-direction="left" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
