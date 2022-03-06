@@ -11,6 +11,14 @@
 }
 
 @font-face {
+    font-family: "EBGaramond-Regular";
+    src: url('../fonts/eb-garamond/book.woff') format('woff');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "FreightSansPro-Medium";
     src: url("../fonts/freight-sans-pro/medium.woff2") format("woff2"),
          url('../fonts/freight-sans-pro/medium.woff') format('woff');
@@ -130,7 +138,8 @@ template {
     --color-brand-peacock-dark-gradDark: #00181a;
     --fontFamily-sans: "FreightSansPro-Medium", Helvetica, Arial, sans-serif;
     --fontFamily-sans-bold: "FreightSansPro-SemiBold", Helvetica, Arial, sans-serif;
-    --fontFamily-serif: "Bodoni72-Book", Georgia, Times, Times New Roman, serif;
+    --fontFamily-serif-headline: "Bodoni72-Book", Georgia, Times, Times New Roman, serif;
+    --fontFamily-serif: "EBGaramond-Regular", Georgia, Times, Times New Roman, serif;
     --fontSize-xxs: 14px;
     --fontSize-xs: 15px;
     --fontSize-sm: 16px;
@@ -1574,7 +1583,7 @@ a:active {
 .title {
     position: relative;
     height: 40px;
-    line-height: 35px;
+    line-height: 40px;
     text-align: center;
 }
 
@@ -1837,7 +1846,7 @@ a.hasSocialIcon:hover .socialIcon {
 
 /* Treatments */
 .txt--hero {
-    font-family: var(--fontFamily-serif);
+    font-family: var(--fontFamily-serif-headline);
     font-size: var(--fontSize-xxxl);
     line-height: 1.1;
 }
@@ -1906,7 +1915,7 @@ a.hasSocialIcon:hover .socialIcon {
 
 @media (min-width: 860px) {
     .txt--hero {
-        font-family: var(--fontFamily-serif);
+        font-family: var(--fontFamily-serif-headline);
         font-size: var(--fontSize-mega);
     }
 
