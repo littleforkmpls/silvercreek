@@ -1861,7 +1861,7 @@ a.hasSocialIcon:hover .socialIcon {
     font-family: var(--fontFamily-serif);
     font-size: var(--fontSize-lg);
     line-height: inherit; /* set in .title */
-    color: var(--color-brand-peacock-dark);
+    color: var(--color-brand-dark);
 }
 
 .txt--hdg {
