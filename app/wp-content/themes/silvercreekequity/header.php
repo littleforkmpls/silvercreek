@@ -38,15 +38,20 @@
                             <div class="masthead__nav" id="js-navToggleTarget" aria-hidden="true">
                                 <div class="masthead__nav__primary">
                                     <?php
+                                        function add_last_nav_item($items) {
 
-                                        if (get_field('global_portal_link', 'option') && get_field('global_portal_link_text', 'option')):
+                                            if (get_field('global_portal_link', 'option') && get_field('global_portal_link_text', 'option')):
+                                                $items .= '<li class="isVisibleForMobile"><a href="'. get_field('global_portal_link', 'option') .'">'. get_field('global_portal_link_text', 'option') .'</a></li>';
+                                            endif;
 
-                                            function add_last_nav_item($items) {
-                                                return $items .= '<li class="isVisibleForMobile"><a href="'. get_field('global_portal_link', 'option') .'">'. get_field('global_portal_link_text', 'option') .'</a></li>';
-                                            }
-                                            add_filter('wp_nav_menu_primary-navigation_items','add_last_nav_item');
+                                            if (get_field('global_phone_number', 'option')):
+                                                $items .= '<li class="isVisibleForMobile"><a href="tel:+1-'. trim(preg_replace('/[^0-9] -/', '', get_field('global_phone_number', 'option'))) .'">'. get_field('global_phone_number', 'option') .'</a></li>';
+                                            endif;
 
-                                        endif;
+                                            return $items;
+                                        }
+
+                                        add_filter('wp_nav_menu_primary-navigation_items','add_last_nav_item');
 
                                         wp_nav_menu(array(
                                             'container'            => false,
