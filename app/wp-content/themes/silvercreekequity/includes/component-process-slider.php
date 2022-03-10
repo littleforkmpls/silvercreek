@@ -79,7 +79,7 @@
                                                 <div class="scroller__stage__list__item__view">
                                                     <div class="card">
                                                         <div class="card__media">
-                                                            <img class="isBlock" width="400" height="320" src="<?php echo $process_slider_steps_step_image_url; ?>" alt="<?php echo $process_slider_steps_step_name; ?>" />
+                                                            <img class="isBlock" loading="lazy" width="400" height="320" src="<?php echo $process_slider_steps_step_image_url; ?>" alt="<?php echo $process_slider_steps_step_name; ?>" />
                                                         </div>
                                                         <div class="card__bd card__bd--process card__bd--dark card__bd--center">
                                                             <div class="card__bd__content">

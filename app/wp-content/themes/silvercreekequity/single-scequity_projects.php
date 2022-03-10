@@ -178,7 +178,7 @@
                                                                     </h5>
                                                                 </div>
                                                                 <div class="card__media">
-                                                                    <img class="isBlock" width="400" height="320" src="<?php echo $project_image; ?>" alt="" />
+                                                                    <img class="isBlock" loading="lazy" width="400" height="320" src="<?php echo $project_image; ?>" alt="" />
                                                                 </div>
                                                             </div>
                                                         </a>
