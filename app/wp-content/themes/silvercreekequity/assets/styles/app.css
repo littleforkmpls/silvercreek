@@ -676,6 +676,10 @@ textarea:focus {
     padding-top: 0 !important;
 }
 
+.mat--noBottom {
+    padding-bottom: 0 !important;
+}
+
 .mat--sm {
     padding: 20px 0;
 }
@@ -1128,40 +1132,6 @@ textarea:focus {
 /* this is probably wide enough for 95% of monitors. ¯\_(ツ)_/¯ */
 
 /* ---------------------------------------------------------------------
- Component - Clicker for wide screens
------------------------------------------------------------------------- */
-@media (min-width: 780px) {
-    .clicker {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-    }
-
-    .clicker__item button {
-        all: unset;
-        display: block;
-        height: 40px;
-        width: 40px;
-        cursor: pointer;
-        -webkit-mask-position: center;
-        -webkit-mask-size: 40px;
-        mask-position: center;
-        mask-size: auto 40px;
-        background-color: var(--color-brand-grey);
-    }
-
-    .clicker__item--left button {
-        -webkit-mask-image: url("../images/arrow-left-skinny.svg");
-        mask-image: url("../images/arrow-left-skinny.svg");
-    }
-
-    .clicker__item--right button {
-        -webkit-mask-image: url("../images/arrow-right-skinny.svg");
-        mask-image: url("../images/arrow-right-skinny.svg");
-    }
-}
-
-/* ---------------------------------------------------------------------
  Component - Panel (used to layout scroller & clicker)
 ------------------------------------------------------------------------ */
 .panel__controls {
@@ -1174,20 +1144,68 @@ textarea:focus {
     }
 
     .panel__controls {
-        display: initial;
+        display: block;
+        opacity: 0;
+        transition: opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .panel:hover .panel__controls {
+        opacity: 1;
+    }
+
+    .panel__controls__item {
+        background: rgba(255,255,255,0.9);
+        border-radius: 50%;
+        box-shadow: 0 0 15px -5px rgba(0,0,0,0.3);
         position: absolute;
-        left: max(20px,calc(calc(100vw - 1130px) / 2));
-        right: max(20px,calc(calc(100vw - 1130px) / 2));;
-        bottom: -60px;
+        top: calc(50% - 40px); /* half minus half of .clicker height */
     }
 
-    /* for when there's just arrows and nothing else below scroller */
-    .panel--alone {
-        padding-bottom: 60px;
+    .panel__controls__item--left {
+        left: 30px;
     }
 
-    .panel__controls--alone {
-        bottom: 0;
+    .panel__controls__item--right {
+        right: 30px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+ Component - Clicker for wide screens
+------------------------------------------------------------------------ */
+@media (min-width: 780px) {
+    .clicker {
+        position: relative;
+    }
+
+    .clicker button {
+        all: unset;
+        display: block;
+        height: 24px;
+        width: 24px;
+        padding: 8px;
+        cursor: pointer;
+        -webkit-mask-position: center;
+        -webkit-mask-size: 24px;
+        -webkit-mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: auto 24px;
+        mask-repeat: no-repeat;
+        background-color: var(--color-brand-grey);
+    }
+
+    .clicker--left button {
+        -webkit-mask-image: url("../images/arrow-left-simple.svg");
+        -webkit-mask-position: calc(50% + 2px) center;
+        mask-image: url("../images/arrow-left-simple.svg");
+        mask-position: calc(50% + 2px) center;
+    }
+
+    .clicker--right button {
+        -webkit-mask-image: url("../images/arrow-right-simple.svg");
+        -webkit-mask-position: calc(50% - 2px) center;
+        mask-image: url("../images/arrow-right-simple.svg");
+        mask-position: calc(50% - 2px) center;
     }
 }
 

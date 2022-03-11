@@ -57,13 +57,13 @@
 </div>
 
 <div class="tier <?php echo $tier_class; ?>">
-    <div class="mat mat--noTop">
+    <div class="mat mat--noTop <?php if (!$process_slider_cta_blurb || !$process_slider_cta_button_text): ?>mat--noBottom<?php endif; ?>">
 
         <div class="region">
             <?php if($process_slider_steps): ?>
                 <?php $total_slider_steps = count($process_slider_steps); ?>
                 <div class="region__bd">
-                    <div class="panel <?php if (!$process_slider_cta_blurb || !$process_slider_cta_button_text): ?>panel--alone<?php endif;?>">
+                    <div class="panel">
                         <div class="panel__component">
                             <div class="scroller" data-items="<?php echo $total_slider_steps; ?>" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
                                 <div class="scroller__stage">
@@ -103,14 +103,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel__controls <?php if (!$process_slider_cta_blurb || !$process_slider_cta_button_text): ?>panel__controls--alone<?php endif;?>" data-items="<?php echo $total_slider_steps; ?>">
-                            <div class="clicker">
-                                <div class="clicker__item clicker__item--left">
+                        <div class="panel__controls" data-items="<?php echo $total_slider_steps; ?>">
+                            <div class="panel__controls__item panel__controls__item--left">
+                                <div class="clicker clicker--left">
                                     <button data-direction="left" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
                                         <span class="isVisuallyHidden">Scroll Left</span>
                                     </button>
                                 </div>
-                                <div class="clicker__item clicker__item--right">
+                            </div>
+                            <div class="panel__controls__item panel__controls__item--right">
+                                <div class="clicker clicker--right">
                                     <button data-direction="right" data-scroller-id="scroller-<?php echo get_row_index(); ?>">
                                         <span class="isVisuallyHidden">Scroll Right</span>
                                     </button>
