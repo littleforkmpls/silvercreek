@@ -424,7 +424,7 @@ textarea:focus {
         opacity: 1;
     }
 
-    /* toggle Styles */
+    /* toggle styles */
     .masthead__toggle {
         width: calc(100% - 240px);
     }
