@@ -1232,6 +1232,7 @@ textarea:focus {
     transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* change to .card--pro:hover to remove hover style from process cards */
 .card:hover {
     transform: scale(1.02);
     box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.2);
