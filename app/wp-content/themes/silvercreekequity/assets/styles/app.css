@@ -911,9 +911,11 @@ textarea:focus {
     overflow: hidden;
     height: 420px;
     min-height: 420px;
+    padding-bottom: 5px; /* prevent hover zoom cards from clipping */
 }
 
 .scroller__stage {
+    padding: 5px 0; /* prevent hover zoom cards from clipping */
     overflow-x: scroll;
     overscroll-behavior-x: contain;
 }
@@ -1146,19 +1148,17 @@ textarea:focus {
     .panel__controls {
         display: block;
         opacity: 0;
-        transition: opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    .panel:hover .panel__controls {
-        opacity: 1;
+        transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
     .panel__controls__item {
-        background: rgba(255,255,255,0.9);
+        background: rgba(255,255,255,0.96);
         border-radius: 50%;
         box-shadow: 0 0 15px -5px rgba(0,0,0,0.3);
         position: absolute;
         top: calc(50% - 40px); /* half minus half of .clicker height */
+        transform: scale(0.8);
+        transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
     .panel__controls__item--left {
@@ -1167,6 +1167,14 @@ textarea:focus {
 
     .panel__controls__item--right {
         right: 30px;
+    }
+
+    .panel:hover .panel__controls {
+        opacity: 1;
+    }
+
+    .panel:hover .panel__controls__item {
+        transform: scale(1);
     }
 }
 
@@ -1221,6 +1229,12 @@ textarea:focus {
     overflow: hidden; /* in case content is larger than dimensions */
     background-image: linear-gradient(90deg, var(--color-brand-light-gradLight) 0%, var(--color-brand-light-gradDark) 80%, var(--color-brand-light-gradDark) 100%);
     box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.3);
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.2);
 }
 
 .card--pro {
