@@ -1161,6 +1161,11 @@ textarea:focus {
         transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
+    /* controls can be hidden when scroll min/max are attained */
+    .panel__controls__item.isHidden {
+        opacity: 0 !important;
+    }
+
     .panel__controls__item--left {
         left: 30px;
     }

@@ -140,6 +140,39 @@ document.addEventListener("DOMContentLoaded", function() {
         let scrollDistance  = 340;
         let clickerButtons  = document.querySelectorAll('.clicker button');
 
+        // handle hide / show of clickers at beginning and end of scroll stage
+        for (const scrollerInstance of scrollers) {
+            let scrollerInstanceID              = scrollerInstance.getAttribute('data-scroller-id');
+            let scrollerInstanceStage           = document.querySelector('.scroller[data-scroller-id="'+ scrollerInstanceID +'"] .scroller__stage');
+            let scrollerInstanceClickerLeft     = document.querySelector('button[data-scroller-id="'+ scrollerInstanceID +'"][data-direction=left]').parentNode.parentNode;
+            let scrollerInstanceClickerRight    = document.querySelector('button[data-scroller-id="'+ scrollerInstanceID +'"][data-direction=right]').parentNode.parentNode;
+
+            // hide the left button when the page loads
+            scrollerInstanceClickerLeft.classList.add('isHidden');
+
+            // listen to the scroll
+            scrollerInstanceStage.addEventListener("scroll", function(e) {
+                let scrollPosition      = this.scrollLeft;
+                let scrollPositionMax   = this.scrollWidth - this.clientWidth;
+
+                // when scroll is at the start, hide the left clicker else show it
+                if (scrollPosition == 0) {
+                    scrollerInstanceClickerLeft.classList.add('isHidden');
+                } else {
+                    scrollerInstanceClickerLeft.classList.remove('isHidden');
+                }
+
+                // when scroll is at the end, hide the right clicker else show it
+                if (scrollPosition == scrollPositionMax) {
+                    scrollerInstanceClickerRight.classList.add('isHidden');
+                } else {
+                    scrollerInstanceClickerRight.classList.remove('isHidden');
+                }
+
+            });
+
+        }
+
         // add listeners to clickers
         for (const clickerButton of clickerButtons) {
             clickerButton.addEventListener('click', function(e) {
@@ -149,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // set values for all the stuff we need
                 let scrollDirection             = this.getAttribute('data-direction');
                 let scrollerID                  = this.getAttribute('data-scroller-id');
-                let scrollerStage               = document.querySelector('.scroller[data-scroller-id="'+ scrollerID +'"] .scroller__stage')
+                let scrollerStage               = document.querySelector('.scroller[data-scroller-id="'+ scrollerID +'"] .scroller__stage');
                 let scrollerStageScrollPosition = scrollerStage.scrollLeft; // current position
 
                 if (scrollDirection == 'left') {
