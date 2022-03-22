@@ -659,7 +659,7 @@ textarea:focus {
 
 .tier--peacock-dark-media {
     /* background-image supplied inline */
-    background-color: var(--color-brand-peacock-dark-gradLight); /* no bg image? text is still legible! */
+    background-color: var(--color-brand-peacock-dark); /* no bg image? text is still legible! */
     background-size: cover;
     background-position: center center;
     background-blend-mode: multiply;
