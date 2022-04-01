@@ -4,7 +4,7 @@ Silver Creek Equity is a WordPress site originally developed in 2022 to showcase
 
 ## Tech Notes
 
-* Originally built on WordPress 5.9.0
+* Originally built on WordPress 5.9.2
 * Uses a custom built theme
 * Hosted on WPEngine
 
